@@ -1,0 +1,42 @@
+@import './reset.scss';
+
+#clock,
+#hours .zero,
+#hours .one,
+#hours .two,
+#hours .three,
+#hours .four,
+#hours .five,
+#hours .six,
+#hours .seven,
+#hours .eight,
+#hours .nine,
+#minutes .zero,
+#minutes .one,
+#minutes .two,
+#minutes .three,
+#minutes .four,
+#minutes .five,
+#minutes .six,
+#minutes .seven,
+#minutes .eight,
+#minutes .nine,
+#seconds .zero,
+#seconds .one,
+#seconds .two,
+#seconds .three,
+#seconds .four,
+#seconds .five,
+#seconds .six,
+#seconds .seven,
+#seconds .eight,
+#seconds .nine,
+#otacon .eyes,
+#otacon .stationary {
+	background-image: url('../../src/images/sprites.png');
+	background-repeat: no-repeat;
+	background-size: auto 900px;
+}
+
+@import './components/Clock.scss';
+@import './components/Otacon.scss';

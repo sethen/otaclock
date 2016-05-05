@@ -1,0 +1,124 @@
+#clock {
+	background-position: 0 0;
+	height: 244px;
+	width: 392px;
+}
+
+#hours {
+	position: absolute;
+	left: 35.5px;
+	top: 70.7px;
+}
+
+#minutes {
+	position: absolute;
+	left: 147px;
+	top: 70.7px;
+}
+
+#seconds {
+	position: absolute;
+	left: 258px;
+	top: 70.7px;
+}
+
+#hours,
+#minutes,
+#seconds {
+	.second {
+		position: relative;
+		left: 6px;
+	}
+
+	.zero,
+	.one,
+	.two,
+	.three,
+	.four,
+	.five,
+	.six,
+	.seven,
+	.eight,
+	.nine {
+		display: inline-block;
+		float: left;
+		height: 48px;
+		width: 42px;
+	}
+
+	.zero {
+		background-position: 0 -245px;
+	}
+
+	.one {
+		background-position: -42px -245px;
+	}
+
+	.two {
+		background-position: -87px -245px;
+	}
+
+	.three {
+		background-position: -131px -245px;
+	}
+
+	.four {
+		background-position: -174px -245px;
+	}
+
+	.five {
+		background-position: -217px -245px;
+	}
+
+	.six {
+		background-position: -260.5px -245px;
+	}
+
+	.seven {
+		background-position: -305px -245px;
+	}
+
+	.eight {
+		background-position: -349px -245px;
+	}
+
+	.nine {
+		background-position: -393px -244px;
+	}
+
+	.small-one {
+		background-position: 0 -245px;
+	}
+
+	.small-two {
+		background-position: 0 -245px;
+	}
+
+	.small-three {
+		background-position: 0 -245px;
+	}
+
+	.small-four {
+		background-position: 0 -245px;
+	}
+
+	.small-five {
+		background-position: 0 -245px;
+	}
+
+	.small-six {
+		background-position: 0 -245px;
+	}
+
+	.small-seven {
+		background-position: 0 -245px;
+	}
+
+	.small-eight {
+		background-position: 0 -245px;
+	}
+
+	.small-nine {
+		background-position: 0 -245px;
+	}
+}

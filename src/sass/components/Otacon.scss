@@ -1,0 +1,40 @@
+#otacon {
+	left: 410px;
+	position: relative;
+	top: -140px;
+	width: 300px;
+
+	.stationary {
+		background-position: -489px 0;
+		height: 447px;
+		width: 204px;
+	}
+
+	.eyes {
+		height: 28px;
+		width: 99px;
+		position: absolute;
+		left: 21.4px;
+		top: 98px;
+
+		&.ahead {
+			background-position: -692px -30px;
+		}
+
+		&.close {
+			background-position: -692px -129px;
+		}
+
+		&.down_right {
+			background-position: -692px -96px;
+		}
+
+		&.down_left {
+			background-position: -692px 0;
+		}
+
+		&.forward {
+			background-position: -692px -64px;
+		}
+	}
+}
