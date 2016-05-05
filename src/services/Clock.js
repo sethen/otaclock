@@ -1,16 +1,19 @@
 import {
-	buildHours,
-	buildMinutes,
-	buildSeconds
+	processTime
 } from '../lib/clock';
+import moment from 'moment';
 import ClockActions from '../actions/Clock';
 
 class ClockServices {
 	getTime() {
 		return (dispatch) => {
-			dispatch(ClockActions.receiveHours(buildHours()));
-			dispatch(ClockActions.receiveMinutes(buildMinutes()));
-			dispatch(ClockActions.receiveSeconds(buildSeconds()));
+			const hours = moment().hours();
+			const minutes = moment().minutes();
+			const seconds = moment().seconds();
+
+			dispatch(ClockActions.receiveHours(processTime(hours)));
+			dispatch(ClockActions.receiveMinutes(processTime(minutes)));
+			dispatch(ClockActions.receiveSeconds(processTime(seconds)));
 		};
 	}
 }

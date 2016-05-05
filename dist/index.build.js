@@ -20704,6 +20704,10 @@
 
 	var _clock = __webpack_require__(176);
 
+	var _moment = __webpack_require__(177);
+
+	var _moment2 = _interopRequireDefault(_moment);
+
 	var _Clock = __webpack_require__(280);
 
 	var _Clock2 = _interopRequireDefault(_Clock);
@@ -20721,9 +20725,13 @@
 			key: 'getTime',
 			value: function getTime() {
 				return function (dispatch) {
-					dispatch(_Clock2.default.receiveHours((0, _clock.buildHours)()));
-					dispatch(_Clock2.default.receiveMinutes((0, _clock.buildMinutes)()));
-					dispatch(_Clock2.default.receiveSeconds((0, _clock.buildSeconds)()));
+					var hours = (0, _moment2.default)().hours();
+					var minutes = (0, _moment2.default)().minutes();
+					var seconds = (0, _moment2.default)().seconds();
+
+					dispatch(_Clock2.default.receiveHours((0, _clock.processTime)(hours)));
+					dispatch(_Clock2.default.receiveMinutes((0, _clock.processTime)(minutes)));
+					dispatch(_Clock2.default.receiveSeconds((0, _clock.processTime)(seconds)));
 				};
 			}
 		}]);
@@ -20735,7 +20743,7 @@
 
 /***/ },
 /* 176 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
 	'use strict';
 
@@ -20744,16 +20752,11 @@
 	});
 	exports.getTimeImage = getTimeImage;
 	exports.processTime = processTime;
-	exports.buildHours = buildHours;
-	exports.buildMinutes = buildMinutes;
-	exports.buildSeconds = buildSeconds;
-
-	var _moment = __webpack_require__(177);
-
-	var _moment2 = _interopRequireDefault(_moment);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
+	/**
+	 * Decides appropriate sting for image from string
+	 * @param  {string} str String to find
+	 * @return {string}     String image
+	 */
 	function getTimeImage(str) {
 		switch (str) {
 			case '0':
@@ -20779,8 +20782,13 @@
 			default:
 				break;
 		}
-	} /* global window */
+	}
 
+	/**
+	 * Processes time
+	 * @param  {number} num Number representing part of a time
+	 * @return {array}      Array of time string parts
+	 */
 	function processTime(num) {
 		var str = String(num);
 		var timeImageArr = [];
@@ -20789,31 +20797,11 @@
 			timeImageArr.push(getTimeImage(str[i]));
 		}
 
+		if (timeImageArr.length === 1) {
+			timeImageArr.unshift('zero');
+		}
+
 		return timeImageArr;
-	}
-
-	function buildHours() {
-		return processTime((0, _moment2.default)().hours());
-	}
-
-	function buildMinutes() {
-		var minutes = processTime((0, _moment2.default)().minutes());
-
-		if (minutes.length === 1) {
-			minutes.unshift('zero');
-		}
-
-		return minutes;
-	}
-
-	function buildSeconds() {
-		var seconds = processTime((0, _moment2.default)().seconds());
-
-		if (seconds.length === 1) {
-			seconds.unshift('zero');
-		}
-
-		return seconds;
 	}
 
 /***/ },
