@@ -20215,8 +20215,11 @@
 			value: function render() {
 				var eyes = this.props.otacon.eyes;
 				var _props$clock = this.props.clock;
+				var date = _props$clock.date;
+				var day = _props$clock.day;
 				var hours = _props$clock.hours;
 				var minutes = _props$clock.minutes;
+				var month = _props$clock.month;
 				var seconds = _props$clock.seconds;
 
 
@@ -20224,8 +20227,11 @@
 					'div',
 					{ id: 'otaclock' },
 					React.createElement(_Clock2.default, { getTime: this.getTime,
+						date: date,
+						day: day,
 						hours: hours,
 						minutes: minutes,
+						month: month,
 						seconds: seconds }),
 					React.createElement(_Otacon2.default, { randomizeEyes: this.randomizeEyes,
 						eyes: eyes })
@@ -20237,6 +20243,7 @@
 	}(React.Component);
 
 	Otaclock.propTypes = {
+		clock: React.PropTypes.object,
 		dispatch: React.PropTypes.func,
 		otacon: React.PropTypes.object
 	};
@@ -20278,7 +20285,7 @@
 
 
 	// module
-	exports.push([module.id, "/* \nhtml5doctor.com Reset Stylesheet\nv1.6.1\nLast Updated: 2010-09-17\nAuthor: Richard Clark - http://richclarkdesign.com \nTwitter: @rich_clark\n*/\nhtml, body, div, span, object, iframe,\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\nabbr, address, cite, code,\ndel, dfn, em, img, ins, kbd, q, samp,\nsmall, strong, sub, sup, var,\nb, i,\ndl, dt, dd, ol, ul, li,\nfieldset, form, label, legend,\ntable, caption, tbody, tfoot, thead, tr, th, td,\narticle, aside, canvas, details, figcaption, figure,\nfooter, header, hgroup, menu, nav, section, summary,\ntime, mark, audio, video {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  outline: 0;\n  font-size: 100%;\n  vertical-align: baseline;\n  background: transparent; }\n\nbody {\n  line-height: 1; }\n\narticle, aside, details, figcaption, figure,\nfooter, header, hgroup, menu, nav, section {\n  display: block; }\n\nnav ul {\n  list-style: none; }\n\nblockquote, q {\n  quotes: none; }\n\nblockquote:before, blockquote:after,\nq:before, q:after {\n  content: '';\n  content: none; }\n\na {\n  margin: 0;\n  padding: 0;\n  font-size: 100%;\n  vertical-align: baseline;\n  background: transparent; }\n\n/* change colours to suit your needs */\nins {\n  background-color: #ff9;\n  color: #000;\n  text-decoration: none; }\n\n/* change colours to suit your needs */\nmark {\n  background-color: #ff9;\n  color: #000;\n  font-style: italic;\n  font-weight: bold; }\n\ndel {\n  text-decoration: line-through; }\n\nabbr[title], dfn[title] {\n  border-bottom: 1px dotted;\n  cursor: help; }\n\ntable {\n  border-collapse: collapse;\n  border-spacing: 0; }\n\n/* change border colour to suit your needs */\nhr {\n  display: block;\n  height: 1px;\n  border: 0;\n  border-top: 1px solid #cccccc;\n  margin: 1em 0;\n  padding: 0; }\n\ninput, select {\n  vertical-align: middle; }\n\n#clock,\n#hours .zero,\n#hours .one,\n#hours .two,\n#hours .three,\n#hours .four,\n#hours .five,\n#hours .six,\n#hours .seven,\n#hours .eight,\n#hours .nine,\n#minutes .zero,\n#minutes .one,\n#minutes .two,\n#minutes .three,\n#minutes .four,\n#minutes .five,\n#minutes .six,\n#minutes .seven,\n#minutes .eight,\n#minutes .nine,\n#seconds .zero,\n#seconds .one,\n#seconds .two,\n#seconds .three,\n#seconds .four,\n#seconds .five,\n#seconds .six,\n#seconds .seven,\n#seconds .eight,\n#seconds .nine,\n#otacon .eyes,\n#otacon .stationary {\n  background-image: url(" + __webpack_require__(172) + ");\n  background-repeat: no-repeat;\n  background-size: auto 900px; }\n\n#clock {\n  background-position: 0 0;\n  height: 244px;\n  width: 392px; }\n\n#hours {\n  position: absolute;\n  left: 35.5px;\n  top: 70.7px; }\n\n#minutes {\n  position: absolute;\n  left: 147px;\n  top: 70.7px; }\n\n#seconds {\n  position: absolute;\n  left: 258px;\n  top: 70.7px; }\n\n#hours .second,\n#minutes .second,\n#seconds .second {\n  position: relative;\n  left: 6px; }\n\n#hours .zero,\n#hours .one,\n#hours .two,\n#hours .three,\n#hours .four,\n#hours .five,\n#hours .six,\n#hours .seven,\n#hours .eight,\n#hours .nine,\n#minutes .zero,\n#minutes .one,\n#minutes .two,\n#minutes .three,\n#minutes .four,\n#minutes .five,\n#minutes .six,\n#minutes .seven,\n#minutes .eight,\n#minutes .nine,\n#seconds .zero,\n#seconds .one,\n#seconds .two,\n#seconds .three,\n#seconds .four,\n#seconds .five,\n#seconds .six,\n#seconds .seven,\n#seconds .eight,\n#seconds .nine {\n  display: inline-block;\n  float: left;\n  height: 48px;\n  width: 42px; }\n\n#hours .zero,\n#minutes .zero,\n#seconds .zero {\n  background-position: 0 -245px; }\n\n#hours .one,\n#minutes .one,\n#seconds .one {\n  background-position: -42px -245px; }\n\n#hours .two,\n#minutes .two,\n#seconds .two {\n  background-position: -87px -245px; }\n\n#hours .three,\n#minutes .three,\n#seconds .three {\n  background-position: -131px -245px; }\n\n#hours .four,\n#minutes .four,\n#seconds .four {\n  background-position: -174px -245px; }\n\n#hours .five,\n#minutes .five,\n#seconds .five {\n  background-position: -217px -245px; }\n\n#hours .six,\n#minutes .six,\n#seconds .six {\n  background-position: -260.5px -245px; }\n\n#hours .seven,\n#minutes .seven,\n#seconds .seven {\n  background-position: -305px -245px; }\n\n#hours .eight,\n#minutes .eight,\n#seconds .eight {\n  background-position: -349px -245px; }\n\n#hours .nine,\n#minutes .nine,\n#seconds .nine {\n  background-position: -393px -244px; }\n\n#hours .small-one,\n#minutes .small-one,\n#seconds .small-one {\n  background-position: 0 -245px; }\n\n#hours .small-two,\n#minutes .small-two,\n#seconds .small-two {\n  background-position: 0 -245px; }\n\n#hours .small-three,\n#minutes .small-three,\n#seconds .small-three {\n  background-position: 0 -245px; }\n\n#hours .small-four,\n#minutes .small-four,\n#seconds .small-four {\n  background-position: 0 -245px; }\n\n#hours .small-five,\n#minutes .small-five,\n#seconds .small-five {\n  background-position: 0 -245px; }\n\n#hours .small-six,\n#minutes .small-six,\n#seconds .small-six {\n  background-position: 0 -245px; }\n\n#hours .small-seven,\n#minutes .small-seven,\n#seconds .small-seven {\n  background-position: 0 -245px; }\n\n#hours .small-eight,\n#minutes .small-eight,\n#seconds .small-eight {\n  background-position: 0 -245px; }\n\n#hours .small-nine,\n#minutes .small-nine,\n#seconds .small-nine {\n  background-position: 0 -245px; }\n\n#otacon {\n  left: 410px;\n  position: relative;\n  top: -140px;\n  width: 300px; }\n  #otacon .stationary {\n    background-position: -489px 0;\n    height: 447px;\n    width: 204px; }\n  #otacon .eyes {\n    height: 28px;\n    width: 99px;\n    position: absolute;\n    left: 21.4px;\n    top: 98px; }\n    #otacon .eyes.ahead {\n      background-position: -692px -30px; }\n    #otacon .eyes.close {\n      background-position: -692px -129px; }\n    #otacon .eyes.down_right {\n      background-position: -692px -96px; }\n    #otacon .eyes.down_left {\n      background-position: -692px 0; }\n    #otacon .eyes.forward {\n      background-position: -692px -64px; }\n", ""]);
+	exports.push([module.id, "/* \nhtml5doctor.com Reset Stylesheet\nv1.6.1\nLast Updated: 2010-09-17\nAuthor: Richard Clark - http://richclarkdesign.com \nTwitter: @rich_clark\n*/\nhtml, body, div, span, object, iframe,\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\nabbr, address, cite, code,\ndel, dfn, em, img, ins, kbd, q, samp,\nsmall, strong, sub, sup, var,\nb, i,\ndl, dt, dd, ol, ul, li,\nfieldset, form, label, legend,\ntable, caption, tbody, tfoot, thead, tr, th, td,\narticle, aside, canvas, details, figcaption, figure,\nfooter, header, hgroup, menu, nav, section, summary,\ntime, mark, audio, video {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  outline: 0;\n  font-size: 100%;\n  vertical-align: baseline;\n  background: transparent; }\n\nbody {\n  line-height: 1; }\n\narticle, aside, details, figcaption, figure,\nfooter, header, hgroup, menu, nav, section {\n  display: block; }\n\nnav ul {\n  list-style: none; }\n\nblockquote, q {\n  quotes: none; }\n\nblockquote:before, blockquote:after,\nq:before, q:after {\n  content: '';\n  content: none; }\n\na {\n  margin: 0;\n  padding: 0;\n  font-size: 100%;\n  vertical-align: baseline;\n  background: transparent; }\n\n/* change colours to suit your needs */\nins {\n  background-color: #ff9;\n  color: #000;\n  text-decoration: none; }\n\n/* change colours to suit your needs */\nmark {\n  background-color: #ff9;\n  color: #000;\n  font-style: italic;\n  font-weight: bold; }\n\ndel {\n  text-decoration: line-through; }\n\nabbr[title], dfn[title] {\n  border-bottom: 1px dotted;\n  cursor: help; }\n\ntable {\n  border-collapse: collapse;\n  border-spacing: 0; }\n\n/* change border colour to suit your needs */\nhr {\n  display: block;\n  height: 1px;\n  border: 0;\n  border-top: 1px solid #cccccc;\n  margin: 1em 0;\n  padding: 0; }\n\ninput, select {\n  vertical-align: middle; }\n\n#clock,\n#date .small-zero,\n#date .small-one,\n#date .small-two,\n#date .small-three,\n#date .small-four,\n#date .small-five,\n#date .small-six,\n#date .small-seven,\n#date .small-eight,\n#day .monday,\n#day .tuesday,\n#day .wednesday,\n#day .thursday,\n#day .friday,\n#day .saturday,\n#day .sunday,\n#hours .zero,\n#hours .one,\n#hours .two,\n#hours .three,\n#hours .four,\n#hours .five,\n#hours .six,\n#hours .seven,\n#hours .eight,\n#hours .nine,\n#minutes .zero,\n#minutes .one,\n#minutes .two,\n#minutes .three,\n#minutes .four,\n#minutes .five,\n#minutes .six,\n#minutes .seven,\n#minutes .eight,\n#minutes .nine,\n#month .small-zero,\n#month .small-one,\n#month .small-two,\n#month .small-three,\n#month .small-four,\n#month .small-five,\n#month .small-six,\n#month .small-seven,\n#month .small-eight,\n#month .small-nine,\n#seconds .zero,\n#seconds .one,\n#seconds .two,\n#seconds .three,\n#seconds .four,\n#seconds .five,\n#seconds .six,\n#seconds .seven,\n#seconds .eight,\n#seconds .nine,\n#otacon .eyes,\n#otacon .stationary {\n  background-image: url(" + __webpack_require__(172) + ");\n  background-repeat: no-repeat;\n  background-size: auto 900px; }\n\n#clock {\n  background-position: 0 0;\n  height: 244px;\n  width: 392px; }\n\n#date {\n  position: absolute;\n  top: 28px;\n  left: 119px; }\n\n#day {\n  position: absolute;\n  top: 35px;\n  left: 215px; }\n\n#hours {\n  position: absolute;\n  left: 35.5px;\n  top: 70.7px; }\n\n#minutes {\n  position: absolute;\n  left: 147px;\n  top: 70.7px; }\n\n#month {\n  position: absolute;\n  left: 56px;\n  top: 27px; }\n\n#seconds {\n  position: absolute;\n  left: 258px;\n  top: 70.7px; }\n\n#hours .second,\n#minutes .second,\n#seconds .second {\n  position: relative;\n  left: 6px; }\n\n#hours .zero,\n#hours .one,\n#hours .two,\n#hours .three,\n#hours .four,\n#hours .five,\n#hours .six,\n#hours .seven,\n#hours .eight,\n#hours .nine,\n#minutes .zero,\n#minutes .one,\n#minutes .two,\n#minutes .three,\n#minutes .four,\n#minutes .five,\n#minutes .six,\n#minutes .seven,\n#minutes .eight,\n#minutes .nine,\n#seconds .zero,\n#seconds .one,\n#seconds .two,\n#seconds .three,\n#seconds .four,\n#seconds .five,\n#seconds .six,\n#seconds .seven,\n#seconds .eight,\n#seconds .nine {\n  display: inline-block;\n  float: left;\n  height: 48px;\n  width: 42px; }\n\n#hours .zero,\n#minutes .zero,\n#seconds .zero {\n  background-position: 0 -245px; }\n\n#hours .one,\n#minutes .one,\n#seconds .one {\n  background-position: -42px -245px; }\n\n#hours .two,\n#minutes .two,\n#seconds .two {\n  background-position: -87px -245px; }\n\n#hours .three,\n#minutes .three,\n#seconds .three {\n  background-position: -131px -245px; }\n\n#hours .four,\n#minutes .four,\n#seconds .four {\n  background-position: -174px -245px; }\n\n#hours .five,\n#minutes .five,\n#seconds .five {\n  background-position: -217px -245px; }\n\n#hours .six,\n#minutes .six,\n#seconds .six {\n  background-position: -260.5px -245px; }\n\n#hours .seven,\n#minutes .seven,\n#seconds .seven {\n  background-position: -305px -245px; }\n\n#hours .eight,\n#minutes .eight,\n#seconds .eight {\n  background-position: -349px -245px; }\n\n#hours .nine,\n#minutes .nine,\n#seconds .nine {\n  background-position: -393px -244px; }\n\n#date .second,\n#month .second {\n  position: relative;\n  left: 7px; }\n\n#date .small-zero,\n#date .small-one,\n#date .small-two,\n#date .small-three,\n#date .small-four,\n#date .small-five,\n#date .small-six,\n#date .small-seven,\n#date .small-eight,\n#date .small-nine,\n#month .small-zero,\n#month .small-one,\n#month .small-two,\n#month .small-three,\n#month .small-four,\n#month .small-five,\n#month .small-six,\n#month .small-seven,\n#month .small-eight,\n#month .small-nine {\n  display: inline-block;\n  float: left;\n  height: 36px;\n  width: 28px; }\n\n#date .small-zero,\n#month .small-zero {\n  background-position: 0px -299px; }\n\n#date .small-one,\n#month .small-one {\n  background-position: -28 -299px; }\n\n#date .small-two,\n#month .small-two {\n  background-position: -59px -299px; }\n\n#date .small-three,\n#month .small-three {\n  background-position: -90px -299px; }\n\n#date .small-four,\n#month .small-four {\n  background-position: -120px -299px; }\n\n#date .small-five,\n#month .small-five {\n  background-position: -150px -299px; }\n\n#date .small-six,\n#month .small-six {\n  background-position: -180px -299px; }\n\n#date .small-seven,\n#month .small-seven {\n  background-position: -210 -299px; }\n\n#date .small-eight,\n#month .small-eight {\n  background-position: -239px -299px; }\n\n#date .small-nine,\n#month .small-nine {\n  background-position: -269px -299px; }\n\n#day .monday,\n#day .tuesday,\n#day .wednesday,\n#day .thursday,\n#day .friday,\n#day .saturday,\n#day .sunday {\n  height: 22px;\n  width: 120px; }\n\n#day .monday {\n  background-position: 1px -341px; }\n\n#day .tuesday {\n  background-position: -120px -341px; }\n\n#day .wednesday {\n  background-position: -242px -341px; }\n\n#day .thursday {\n  background-position: -364px -341px; }\n\n#day .friday {\n  background-position: 5px -365px; }\n\n#day .saturday {\n  background-position: -114px -365px; }\n\n#day .sunday {\n  background-position: -237px -365px; }\n\n#otacon {\n  left: 410px;\n  position: relative;\n  top: -140px;\n  width: 300px; }\n  #otacon .stationary {\n    background-position: -489px 0;\n    height: 447px;\n    width: 204px; }\n  #otacon .eyes {\n    height: 28px;\n    width: 99px;\n    position: absolute;\n    left: 21.4px;\n    top: 98px; }\n    #otacon .eyes.ahead {\n      background-position: -692px -30px; }\n    #otacon .eyes.close {\n      background-position: -692px -129px; }\n    #otacon .eyes.down_right {\n      background-position: -692px -96px; }\n    #otacon .eyes.down_left {\n      background-position: -692px 0; }\n    #otacon .eyes.forward {\n      background-position: -692px -64px; }\n", ""]);
 
 	// exports
 
@@ -20343,7 +20350,7 @@
 /* 172 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "e8463c1433328a09d96153038eb4467f.png";
+	module.exports = __webpack_require__.p + "63c46b61084c348ca098f4ba198d7d69.png";
 
 /***/ },
 /* 173 */
@@ -20648,14 +20655,33 @@
 			key: 'render',
 			value: function render() {
 				var _props = this.props;
+				var date = _props.date;
+				var day = _props.day;
 				var hours = _props.hours;
 				var minutes = _props.minutes;
+				var month = _props.month;
 				var seconds = _props.seconds;
 
 
 				return React.createElement(
 					'div',
 					{ id: 'clock' },
+					React.createElement(
+						'div',
+						{ id: 'month' },
+						React.createElement('div', { className: 'small-' + (month && month[0]) })
+					),
+					React.createElement(
+						'div',
+						{ id: 'date' },
+						React.createElement('div', { className: 'small-' + (date && date[0]) + ' first' }),
+						React.createElement('div', { className: 'small-' + (date && date[1]) + ' second' })
+					),
+					React.createElement(
+						'div',
+						{ id: 'day' },
+						React.createElement('div', { className: day })
+					),
 					React.createElement(
 						'div',
 						{ id: 'hours' },
@@ -20682,9 +20708,12 @@
 	}(React.Component);
 
 	Clock.propTypes = {
+		date: React.PropTypes.string,
+		day: React.PropTypes.string,
 		getTime: React.PropTypes.func,
 		hours: React.PropTypes.string,
 		minutes: React.PropTypes.string,
+		month: React.PropTypes.string,
 		seconds: React.PropTypes.string
 	};
 	exports.default = Clock;
@@ -20725,12 +20754,18 @@
 			key: 'getTime',
 			value: function getTime() {
 				return function (dispatch) {
+					var date = (0, _moment2.default)().date();
+					var day = (0, _moment2.default)().day();
 					var hours = (0, _moment2.default)().hours();
 					var minutes = (0, _moment2.default)().minutes();
+					var month = (0, _moment2.default)().month() + 1;
 					var seconds = (0, _moment2.default)().seconds();
 
+					dispatch(_Clock2.default.receiveDate((0, _clock.processTime)(date)));
+					dispatch(_Clock2.default.receiveDay((0, _clock.getDayImage)(day)));
 					dispatch(_Clock2.default.receiveHours((0, _clock.processTime)(hours)));
 					dispatch(_Clock2.default.receiveMinutes((0, _clock.processTime)(minutes)));
+					dispatch(_Clock2.default.receiveMonth((0, _clock.processTime)(month, false)));
 					dispatch(_Clock2.default.receiveSeconds((0, _clock.processTime)(seconds)));
 				};
 			}
@@ -20751,6 +20786,7 @@
 		value: true
 	});
 	exports.getTimeImage = getTimeImage;
+	exports.getDayImage = getDayImage;
 	exports.processTime = processTime;
 	/**
 	 * Decides appropriate sting for image from string
@@ -20784,12 +20820,39 @@
 		}
 	}
 
+	function getDayImage(num) {
+		var str = String(num);
+
+		switch (str) {
+			case '0':
+				return 'sunday';
+			case '1':
+				return 'monday';
+			case '2':
+				return 'tuesday';
+			case '3':
+				return 'wednesday';
+			case '4':
+				return 'thursday';
+			case '5':
+				return 'friday';
+			case '6':
+				return 'saturday';
+			case '7':
+				return 'sunday';
+			default:
+				break;
+		}
+	}
+
 	/**
 	 * Processes time
 	 * @param  {number} num Number representing part of a time
 	 * @return {array}      Array of time string parts
 	 */
 	function processTime(num) {
+		var zero = arguments.length <= 1 || arguments[1] === undefined ? true : arguments[1];
+
 		var str = String(num);
 		var timeImageArr = [];
 
@@ -20797,7 +20860,7 @@
 			timeImageArr.push(getTimeImage(str[i]));
 		}
 
-		if (timeImageArr.length === 1) {
+		if (timeImageArr.length === 1 && zero) {
 			timeImageArr.unshift('zero');
 		}
 
@@ -34619,6 +34682,22 @@
 		}
 
 		_createClass(ClockActions, [{
+			key: 'receiveDate',
+			value: function receiveDate(date) {
+				return {
+					date: date,
+					type: _CLOCK.CLOCK.RECEIVE_DATE
+				};
+			}
+		}, {
+			key: 'receiveDay',
+			value: function receiveDay(day) {
+				return {
+					day: day,
+					type: _CLOCK.CLOCK.RECEIVE_DAY
+				};
+			}
+		}, {
 			key: 'receiveHours',
 			value: function receiveHours(hours) {
 				return {
@@ -34632,6 +34711,14 @@
 				return {
 					minutes: minutes,
 					type: _CLOCK.CLOCK.RECEIVE_MINUTES
+				};
+			}
+		}, {
+			key: 'receiveMonth',
+			value: function receiveMonth(month) {
+				return {
+					month: month,
+					type: _CLOCK.CLOCK.RECEIVE_MONTH
 				};
 			}
 		}, {
@@ -34659,8 +34746,11 @@
 		value: true
 	});
 	var CLOCK = exports.CLOCK = {
+		RECEIVE_DATE: 'receive_date',
+		RECEIVE_DAY: 'receive_day',
 		RECEIVE_HOURS: 'receive_hours',
 		RECEIVE_MINUTES: 'receive_minutes',
+		RECEIVE_MONTH: 'receive_month',
 		RECEIVE_SECONDS: 'receive_seconds',
 		REQUEST_TIME: 'request_time'
 	};
@@ -36981,6 +37071,14 @@
 		var type = action.type;
 
 		switch (type) {
+			case _CLOCK.CLOCK.RECEIVE_DATE:
+				return Object.assign({}, state, {
+					date: action.date
+				});
+			case _CLOCK.CLOCK.RECEIVE_DAY:
+				return Object.assign({}, state, {
+					day: action.day
+				});
 			case _CLOCK.CLOCK.RECEIVE_HOURS:
 				return Object.assign({}, state, {
 					hours: action.hours
@@ -36988,6 +37086,10 @@
 			case _CLOCK.CLOCK.RECEIVE_MINUTES:
 				return Object.assign({}, state, {
 					minutes: action.minutes
+				});
+			case _CLOCK.CLOCK.RECEIVE_MONTH:
+				return Object.assign({}, state, {
+					month: action.month
 				});
 			case _CLOCK.CLOCK.RECEIVE_SECONDS:
 				return Object.assign({}, state, {
@@ -37008,8 +37110,11 @@
 		value: true
 	});
 	var clockState = {
+		date: null,
+		day: null,
 		hours: null,
 		minutes: null,
+		month: null,
 		seconds: null
 	};
 

@@ -4,6 +4,18 @@
 	width: 392px;
 }
 
+#date {
+	position: absolute;
+	top: 28px;
+	left: 119px;
+}
+
+#day {
+	position: absolute;
+	top: 35px;
+	left: 215px;
+}
+
 #hours {
 	position: absolute;
 	left: 35.5px;
@@ -14,6 +26,12 @@
 	position: absolute;
 	left: 147px;
 	top: 70.7px;
+}
+
+#month {
+	position: absolute;
+	left: 56px;
+	top: 27px;
 }
 
 #seconds {
@@ -85,40 +103,109 @@
 	.nine {
 		background-position: -393px -244px;
 	}
+}
+
+#date,
+#month {
+	.second {
+		position: relative;
+		left: 7px;
+	}
+
+	.small-zero,
+	.small-one,
+	.small-two,
+	.small-three,
+	.small-four,
+	.small-five,
+	.small-six,
+	.small-seven,
+	.small-eight,
+	.small-nine {
+		display: inline-block;
+		float: left;
+		height: 36px;
+		width: 28px;
+	}
+
+	.small-zero {
+		background-position: 0px -299px;
+	}
 
 	.small-one {
-		background-position: 0 -245px;
+		background-position: -28 -299px;
 	}
 
 	.small-two {
-		background-position: 0 -245px;
+		background-position: -59px -299px;
 	}
 
 	.small-three {
-		background-position: 0 -245px;
+		background-position: -90px -299px;
 	}
 
 	.small-four {
-		background-position: 0 -245px;
+		background-position: -120px -299px;
 	}
 
 	.small-five {
-		background-position: 0 -245px;
+		background-position: -150px -299px;
 	}
 
 	.small-six {
-		background-position: 0 -245px;
+		background-position: -180px -299px;
 	}
 
 	.small-seven {
-		background-position: 0 -245px;
+		background-position: -210 -299px;
 	}
 
 	.small-eight {
-		background-position: 0 -245px;
+		background-position: -239px -299px;
 	}
 
 	.small-nine {
-		background-position: 0 -245px;
+		background-position: -269px -299px;
+	}
+}
+
+#day {
+	.monday,
+	.tuesday,
+	.wednesday,
+	.thursday,
+	.friday,
+	.saturday,
+	.sunday {
+		height: 22px;
+		width: 120px;
+	}
+
+	.monday {
+		background-position: 1px -341px;
+	}
+
+	.tuesday {
+		background-position: -120px -341px;
+	}
+
+	.wednesday {
+		background-position: -242px -341px;
+	}
+
+	.thursday {
+		background-position: -364px -341px;
+	}
+
+	.friday {
+		background-position: 5px -365px;
+	}
+
+	.saturday {
+		background-position: -114px -365px;
+	}
+
+	.sunday {
+		background-position: -237px -365px;
 	}
 }

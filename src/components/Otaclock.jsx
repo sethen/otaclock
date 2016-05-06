@@ -17,6 +17,7 @@ const selector = (state) => {
 
 class Otaclock extends React.Component {
 	static propTypes = {
+		clock: React.PropTypes.object,
 		dispatch: React.PropTypes.func,
 		otacon: React.PropTypes.object
 	};
@@ -35,13 +36,23 @@ class Otaclock extends React.Component {
 
 	render() {
 		const { eyes } = this.props.otacon;
-		const { hours, minutes, seconds } = this.props.clock;
+		const {
+			date,
+			day,
+			hours,
+			minutes,
+			month,
+			seconds
+		} = this.props.clock;
 
 		return (
 			<div id='otaclock'>
 				<Clock getTime={ this.getTime }
+					date={ date }
+					day={ day }
 					hours={ hours }
 					minutes={ minutes }
+					month={ month }
 					seconds={ seconds } />
 				<Otacon randomizeEyes={ this.randomizeEyes }
 					eyes={ eyes } />
