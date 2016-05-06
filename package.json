@@ -1,5 +1,6 @@
 {
   "name": "otaclock",
+  "productName": "Otaclock",
   "version": "0.0.1",
   "description": "Otacon + clock = Otaclock",
   "main": "main.js",
