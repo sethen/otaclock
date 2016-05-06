@@ -2,6 +2,16 @@
 	background-position: 0 0;
 	height: 244px;
 	width: 392px;
+	-webkit-app-region: drag;
+}
+
+#date,
+#day,
+#hours,
+#minutes,
+#month,
+#seconds {
+	background-color: #FFFFFF;
 }
 
 #date {

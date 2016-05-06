@@ -3,6 +3,7 @@
 	position: relative;
 	top: -140px;
 	width: 300px;
+	-webkit-app-region: drag;
 
 	.stationary {
 		background-position: -489px 0;
@@ -15,7 +16,7 @@
 		width: 99px;
 		position: absolute;
 		left: 21.4px;
-		top: 98px;
+		top: 97px;
 
 		&.ahead {
 			background-position: -692px -30px;

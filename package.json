@@ -2,7 +2,7 @@
   "name": "otaclock",
   "version": "0.0.1",
   "description": "Otacon + clock = Otaclock",
-  "main": "index.js",
+  "main": "main.js",
   "author": "",
   "license": "ISC",
   "scripts": {
@@ -32,6 +32,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
+    "electron-prebuilt": "^0.37.8",
     "moment": "^2.13.0",
     "react-redux": "^4.4.5",
     "redux": "^3.5.2",

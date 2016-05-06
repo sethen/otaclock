@@ -1,5 +1,10 @@
 @import './reset.scss';
 
+body,
+html {
+	overflow: hidden;
+}
+
 #clock,
 #date .small-zero,
 #date .small-one,
