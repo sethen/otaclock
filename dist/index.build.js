@@ -54,7 +54,7 @@
 
 	var _reactRedux = __webpack_require__(282);
 
-	var _store = __webpack_require__(313);
+	var _store = __webpack_require__(309);
 
 	var _store2 = _interopRequireDefault(_store);
 
@@ -295,8 +295,8 @@
 /* 4 */
 /***/ function(module, exports) {
 
-	/* eslint-disable no-unused-vars */
 	'use strict';
+	/* eslint-disable no-unused-vars */
 	var hasOwnProperty = Object.prototype.hasOwnProperty;
 	var propIsEnumerable = Object.prototype.propertyIsEnumerable;
 
@@ -308,7 +308,51 @@
 		return Object(val);
 	}
 
-	module.exports = Object.assign || function (target, source) {
+	function shouldUseNative() {
+		try {
+			if (!Object.assign) {
+				return false;
+			}
+
+			// Detect buggy property enumeration order in older V8 versions.
+
+			// https://bugs.chromium.org/p/v8/issues/detail?id=4118
+			var test1 = new String('abc');  // eslint-disable-line
+			test1[5] = 'de';
+			if (Object.getOwnPropertyNames(test1)[0] === '5') {
+				return false;
+			}
+
+			// https://bugs.chromium.org/p/v8/issues/detail?id=3056
+			var test2 = {};
+			for (var i = 0; i < 10; i++) {
+				test2['_' + String.fromCharCode(i)] = i;
+			}
+			var order2 = Object.getOwnPropertyNames(test2).map(function (n) {
+				return test2[n];
+			});
+			if (order2.join('') !== '0123456789') {
+				return false;
+			}
+
+			// https://bugs.chromium.org/p/v8/issues/detail?id=3056
+			var test3 = {};
+			'abcdefghijklmnopqrst'.split('').forEach(function (letter) {
+				test3[letter] = letter;
+			});
+			if (Object.keys(Object.assign({}, test3)).join('') !==
+					'abcdefghijklmnopqrst') {
+				return false;
+			}
+
+			return true;
+		} catch (e) {
+			// We don't expect any of the above to throw, but better to be safe.
+			return false;
+		}
+	}
+
+	module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 		var from;
 		var to = toObject(target);
 		var symbols;
@@ -20160,11 +20204,11 @@
 
 	var _reactRedux = __webpack_require__(282);
 
-	var _Otacon = __webpack_require__(308);
+	var _Otacon = __webpack_require__(304);
 
 	var _Otacon2 = _interopRequireDefault(_Otacon);
 
-	var _Otacon3 = __webpack_require__(310);
+	var _Otacon3 = __webpack_require__(306);
 
 	var _Otacon4 = _interopRequireDefault(_Otacon3);
 
@@ -34935,15 +34979,15 @@
 
 	var _warning2 = _interopRequireDefault(_warning);
 
-	var _isPlainObject = __webpack_require__(302);
+	var _isPlainObject = __webpack_require__(291);
 
 	var _isPlainObject2 = _interopRequireDefault(_isPlainObject);
 
-	var _hoistNonReactStatics = __webpack_require__(306);
+	var _hoistNonReactStatics = __webpack_require__(302);
 
 	var _hoistNonReactStatics2 = _interopRequireDefault(_hoistNonReactStatics);
 
-	var _invariant = __webpack_require__(307);
+	var _invariant = __webpack_require__(303);
 
 	var _invariant2 = _interopRequireDefault(_invariant);
 
@@ -36195,164 +36239,6 @@
 
 /***/ },
 /* 302 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var getPrototype = __webpack_require__(303),
-	    isHostObject = __webpack_require__(304),
-	    isObjectLike = __webpack_require__(305);
-
-	/** `Object#toString` result references. */
-	var objectTag = '[object Object]';
-
-	/** Used for built-in method references. */
-	var objectProto = Object.prototype;
-
-	/** Used to resolve the decompiled source of functions. */
-	var funcToString = Function.prototype.toString;
-
-	/** Used to check objects for own properties. */
-	var hasOwnProperty = objectProto.hasOwnProperty;
-
-	/** Used to infer the `Object` constructor. */
-	var objectCtorString = funcToString.call(Object);
-
-	/**
-	 * Used to resolve the
-	 * [`toStringTag`](http://ecma-international.org/ecma-262/6.0/#sec-object.prototype.tostring)
-	 * of values.
-	 */
-	var objectToString = objectProto.toString;
-
-	/**
-	 * Checks if `value` is a plain object, that is, an object created by the
-	 * `Object` constructor or one with a `[[Prototype]]` of `null`.
-	 *
-	 * @static
-	 * @memberOf _
-	 * @since 0.8.0
-	 * @category Lang
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if `value` is a plain object,
-	 *  else `false`.
-	 * @example
-	 *
-	 * function Foo() {
-	 *   this.a = 1;
-	 * }
-	 *
-	 * _.isPlainObject(new Foo);
-	 * // => false
-	 *
-	 * _.isPlainObject([1, 2, 3]);
-	 * // => false
-	 *
-	 * _.isPlainObject({ 'x': 0, 'y': 0 });
-	 * // => true
-	 *
-	 * _.isPlainObject(Object.create(null));
-	 * // => true
-	 */
-	function isPlainObject(value) {
-	  if (!isObjectLike(value) ||
-	      objectToString.call(value) != objectTag || isHostObject(value)) {
-	    return false;
-	  }
-	  var proto = getPrototype(value);
-	  if (proto === null) {
-	    return true;
-	  }
-	  var Ctor = hasOwnProperty.call(proto, 'constructor') && proto.constructor;
-	  return (typeof Ctor == 'function' &&
-	    Ctor instanceof Ctor && funcToString.call(Ctor) == objectCtorString);
-	}
-
-	module.exports = isPlainObject;
-
-
-/***/ },
-/* 303 */
-/***/ function(module, exports) {
-
-	/* Built-in method references for those with the same name as other `lodash` methods. */
-	var nativeGetPrototype = Object.getPrototypeOf;
-
-	/**
-	 * Gets the `[[Prototype]]` of `value`.
-	 *
-	 * @private
-	 * @param {*} value The value to query.
-	 * @returns {null|Object} Returns the `[[Prototype]]`.
-	 */
-	function getPrototype(value) {
-	  return nativeGetPrototype(Object(value));
-	}
-
-	module.exports = getPrototype;
-
-
-/***/ },
-/* 304 */
-/***/ function(module, exports) {
-
-	/**
-	 * Checks if `value` is a host object in IE < 9.
-	 *
-	 * @private
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if `value` is a host object, else `false`.
-	 */
-	function isHostObject(value) {
-	  // Many host objects are `Object` objects that can coerce to strings
-	  // despite having improperly defined `toString` methods.
-	  var result = false;
-	  if (value != null && typeof value.toString != 'function') {
-	    try {
-	      result = !!(value + '');
-	    } catch (e) {}
-	  }
-	  return result;
-	}
-
-	module.exports = isHostObject;
-
-
-/***/ },
-/* 305 */
-/***/ function(module, exports) {
-
-	/**
-	 * Checks if `value` is object-like. A value is object-like if it's not `null`
-	 * and has a `typeof` result of "object".
-	 *
-	 * @static
-	 * @memberOf _
-	 * @since 4.0.0
-	 * @category Lang
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
-	 * @example
-	 *
-	 * _.isObjectLike({});
-	 * // => true
-	 *
-	 * _.isObjectLike([1, 2, 3]);
-	 * // => true
-	 *
-	 * _.isObjectLike(_.noop);
-	 * // => false
-	 *
-	 * _.isObjectLike(null);
-	 * // => false
-	 */
-	function isObjectLike(value) {
-	  return !!value && typeof value == 'object';
-	}
-
-	module.exports = isObjectLike;
-
-
-/***/ },
-/* 306 */
 /***/ function(module, exports) {
 
 	/**
@@ -36398,7 +36284,7 @@
 
 
 /***/ },
-/* 307 */
+/* 303 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -36456,7 +36342,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 308 */
+/* 304 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React) {'use strict';
@@ -36467,7 +36353,7 @@
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _classnames2 = __webpack_require__(309);
+	var _classnames2 = __webpack_require__(305);
 
 	var _classnames3 = _interopRequireDefault(_classnames2);
 
@@ -36529,7 +36415,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
-/* 309 */
+/* 305 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -36583,7 +36469,7 @@
 
 
 /***/ },
-/* 310 */
+/* 306 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -36594,7 +36480,7 @@
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /* global window */
 
-	var _Otacon = __webpack_require__(311);
+	var _Otacon = __webpack_require__(307);
 
 	var _Otacon2 = _interopRequireDefault(_Otacon);
 
@@ -36672,7 +36558,7 @@
 	exports.default = new OtaconServices();
 
 /***/ },
-/* 311 */
+/* 307 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -36683,7 +36569,7 @@
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _OTACON = __webpack_require__(312);
+	var _OTACON = __webpack_require__(308);
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -36735,7 +36621,7 @@
 	exports.default = new OtaconActions();
 
 /***/ },
-/* 312 */
+/* 308 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -36752,7 +36638,7 @@
 	};
 
 /***/ },
-/* 313 */
+/* 309 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -36763,15 +36649,15 @@
 
 	var _redux = __webpack_require__(289);
 
-	var _reduxLogger = __webpack_require__(314);
+	var _reduxLogger = __webpack_require__(310);
 
 	var _reduxLogger2 = _interopRequireDefault(_reduxLogger);
 
-	var _all = __webpack_require__(315);
+	var _all = __webpack_require__(311);
 
 	var _all2 = _interopRequireDefault(_all);
 
-	var _reduxThunk = __webpack_require__(320);
+	var _reduxThunk = __webpack_require__(316);
 
 	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
@@ -36784,7 +36670,7 @@
 	exports.default = createStoreWithMiddleWare(_all2.default);
 
 /***/ },
-/* 314 */
+/* 310 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -37017,7 +36903,7 @@
 	module.exports = createLogger;
 
 /***/ },
-/* 315 */
+/* 311 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -37026,13 +36912,13 @@
 		value: true
 	});
 
-	var _clock = __webpack_require__(316);
+	var _clock = __webpack_require__(312);
 
 	var _clock2 = _interopRequireDefault(_clock);
 
 	var _redux = __webpack_require__(289);
 
-	var _otacon = __webpack_require__(318);
+	var _otacon = __webpack_require__(314);
 
 	var _otacon2 = _interopRequireDefault(_otacon);
 
@@ -37046,7 +36932,7 @@
 	exports.default = reducers;
 
 /***/ },
-/* 316 */
+/* 312 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -37058,7 +36944,7 @@
 
 	var _CLOCK = __webpack_require__(281);
 
-	var _clock = __webpack_require__(317);
+	var _clock = __webpack_require__(313);
 
 	var _clock2 = _interopRequireDefault(_clock);
 
@@ -37101,7 +36987,7 @@
 	}
 
 /***/ },
-/* 317 */
+/* 313 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -37121,7 +37007,7 @@
 	exports.default = clockState;
 
 /***/ },
-/* 318 */
+/* 314 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -37131,9 +37017,9 @@
 	});
 	exports.default = otaconReducer;
 
-	var _OTACON = __webpack_require__(312);
+	var _OTACON = __webpack_require__(308);
 
-	var _otacon = __webpack_require__(319);
+	var _otacon = __webpack_require__(315);
 
 	var _otacon2 = _interopRequireDefault(_otacon);
 
@@ -37160,7 +37046,7 @@
 	}
 
 /***/ },
-/* 319 */
+/* 315 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -37169,7 +37055,7 @@
 		value: true
 	});
 
-	var _OTACON = __webpack_require__(312);
+	var _OTACON = __webpack_require__(308);
 
 	var otaconState = {
 		eyes: _OTACON.OTACON.AHEAD
@@ -37178,7 +37064,7 @@
 	exports.default = otaconState;
 
 /***/ },
-/* 320 */
+/* 316 */
 /***/ function(module, exports) {
 
 	'use strict';
