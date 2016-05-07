@@ -5,6 +5,27 @@ html {
 	overflow: hidden;
 }
 
+#alarm,
+#alarm-hours .small-zero,
+#alarm-hours .small-one,
+#alarm-hours .small-two,
+#alarm-hours .small-three,
+#alarm-hours .small-four,
+#alarm-hours .small-five,
+#alarm-hours .small-six,
+#alarm-hours .small-seven,
+#alarm-hours .small-eight,
+#alarm-hours .small-nine,
+#alarm-minutes .small-zero,
+#alarm-minutes .small-one,
+#alarm-minutes .small-two,
+#alarm-minutes .small-three,
+#alarm-minutes .small-four,
+#alarm-minutes .small-five,
+#alarm-minutes .small-six,
+#alarm-minutes .small-seven,
+#alarm-minutes .small-eight,
+#alarm-minutes .small-nine,
 #clock,
 #date .small-zero,
 #date .small-one,
@@ -63,7 +84,10 @@ html {
 #seconds .eight,
 #seconds .nine,
 #otacon .eyes,
-#otacon .stationary {
+#otacon .stationary,
+#otacon .thumbs-up-1,
+#otacon .thumbs-up-2,
+#otacon .thumbs-up-3 {
 	background-image: url('../../src/images/sprites.png');
 	background-repeat: no-repeat;
 	background-size: auto 900px;

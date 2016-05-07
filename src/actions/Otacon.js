@@ -13,6 +13,12 @@ class OtaconActions {
 		};
 	}
 
+	decreaseThumbsUp() {
+		return {
+			type: OTACON.DECREASE_THUMBS_UP
+		};
+	}
+
 	downLeft() {
 		return {
 			type: OTACON.DOWN_LEFT
@@ -28,6 +34,12 @@ class OtaconActions {
 	forward() {
 		return {
 			type: OTACON.FORWARD
+		};
+	}
+
+	increaseThumbsUp() {
+		return {
+			type: OTACON.INCREASE_THUMBS_UP
 		};
 	}
 }

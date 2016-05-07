@@ -3,7 +3,7 @@
 import OtaconActions from '../actions/Otacon';
 
 class OtaconServices {
-	blink = () => {
+	blink() {
 		return (dispatch) => {
 			dispatch(OtaconActions.close());
 
@@ -19,9 +19,9 @@ class OtaconServices {
 				dispatch(OtaconActions.ahead());
 			}, 150);
 		};
-	};
+	}
 
-	lookAhead = () => {
+	lookAhead() {
 		return (dispatch) => {
 			window.setTimeout(() => {
 				dispatch(OtaconActions.ahead());
@@ -53,6 +53,19 @@ class OtaconServices {
 					break;
 				default:
 					dispatch(OtaconActions.ahead());
+			}
+		};
+	}
+
+	thumbsUp() {
+		return (dispatch, getState) => {
+			const { thumbsUpPosition } = getState().otaconReducer;
+
+			if (thumbsUpPosition === 3) {
+				dispatch(OtaconActions.decreaseThumbsUp());
+			}
+			else {
+				dispatch(OtaconActions.increaseThumbsUp());
 			}
 		};
 	}

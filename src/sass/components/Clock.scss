@@ -1,3 +1,36 @@
+#alarm {
+	cursor: pointer;
+	height: 35px;
+	left: 35px;
+	position: relative;
+	top: 126px;
+	width: 146px;
+
+	&.blue {
+		background-position: -154px -865px;
+	}
+
+	&.red {
+		background-position: -1px -865px;
+	}
+}
+
+#alarm-hours {
+	position: relative;
+	width: 62px;
+	top: 91px;
+	left: 203px;
+	height: 35px;
+}
+
+#alarm-minutes {
+	position: relative;
+	width: 62px;
+	top: 54px;
+	left: 286px;
+	height: 35px;
+}
+
 #clock {
 	background-position: 0 0;
 	height: 244px;
@@ -119,6 +152,8 @@
 	}
 }
 
+#alarm-hours,
+#alarm-minutes,
 #date,
 #month {
 	.second {
@@ -147,7 +182,7 @@
 	}
 
 	.small-one {
-		background-position: -28 -299px;
+		background-position: -28px -299px;
 	}
 
 	.small-two {
@@ -171,7 +206,7 @@
 	}
 
 	.small-seven {
-		background-position: -210 -299px;
+		background-position: -209px -299px;
 	}
 
 	.small-eight {

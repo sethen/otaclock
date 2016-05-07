@@ -3,6 +3,7 @@
 import 'sass/otaclock.scss';
 
 import Clock from 'components/Clock.jsx';
+import ClockActions from 'actions/Clock';
 import ClockServices from 'services/Clock';
 import { connect } from 'react-redux';
 import Otacon from 'components/Otacon.jsx';
@@ -22,6 +23,30 @@ class Otaclock extends React.Component {
 		otacon: React.PropTypes.object
 	};
 
+	disableAlarm = () => {
+		const { dispatch } = this.props;
+
+		dispatch(ClockActions.disableAlarm());
+	};
+
+	enableAlarm = () => {
+		const { dispatch } = this.props;
+
+		dispatch(ClockActions.enableAlarm());
+	};
+
+	increaseAlarmHours = () => {
+		const { dispatch } = this.props;
+
+		dispatch(ClockActions.increaseAlarmHours());
+	};
+
+	increaseAlarmMinutes = () => {
+		const { dispatch } = this.props;
+
+		dispatch(ClockActions.increaseAlarmMinutes());
+	};
+
 	getTime = () => {
 		const { dispatch } = this.props;
 
@@ -34,9 +59,18 @@ class Otaclock extends React.Component {
 		dispatch(OtaconServices.randomizeEyes());
 	};
 
+	thumbsUp = () => {
+		const { dispatch } = this.props;
+
+		dispatch(OtaconServices.thumbsUp());
+	};
+
 	render() {
-		const { eyes } = this.props.otacon;
+		const { eyes, thumbsUpPosition } = this.props.otacon;
 		const {
+			alarm,
+			alarmHours,
+			alarmMinutes,
 			date,
 			day,
 			hours,
@@ -47,15 +81,24 @@ class Otaclock extends React.Component {
 
 		return (
 			<div id='otaclock'>
-				<Clock getTime={ this.getTime }
+				<Clock alarm={ alarm }
+					alarmHours={ alarmHours }
+					alarmMinutes={ alarmMinutes }
 					date={ date }
 					day={ day }
+					disableAlarm={ this.disableAlarm }
+					enableAlarm={ this.enableAlarm }
+					getTime={ this.getTime }
 					hours={ hours }
+					increaseAlarmMinutes={ this.increaseAlarmMinutes }
+					increaseAlarmHours={ this.increaseAlarmHours }
 					minutes={ minutes }
 					month={ month }
 					seconds={ seconds } />
-				<Otacon randomizeEyes={ this.randomizeEyes }
-					eyes={ eyes } />
+				<Otacon eyes={ eyes }
+					randomizeEyes={ this.randomizeEyes }
+					thumbsUpPosition={ thumbsUpPosition }
+					thumbsUp={ this.thumbsUp } />
 			</div>
 		);
 	}

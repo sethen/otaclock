@@ -1,14 +1,16 @@
 /* global React, window */
 
+import classnames from 'classnames';
+
 class Clock extends React.Component {
 	static propTypes = {
-		date: React.PropTypes.string,
-		day: React.PropTypes.string,
+		date: React.PropTypes.array,
+		day: React.PropTypes.array,
 		getTime: React.PropTypes.func,
-		hours: React.PropTypes.string,
-		minutes: React.PropTypes.string,
-		month: React.PropTypes.string,
-		seconds: React.PropTypes.string
+		hours: React.PropTypes.array,
+		minutes: React.PropTypes.array,
+		month: React.PropTypes.array,
+		seconds: React.PropTypes.array
 	}
 
 	componentWillMount() {
@@ -25,15 +27,39 @@ class Clock extends React.Component {
 		}, 1000);
 	}
 
+	toggleAlarm = () => {
+		const {
+			alarm,
+			disableAlarm,
+			enableAlarm
+		} = this.props;
+
+		if (alarm) {
+			disableAlarm();
+		}
+		else {
+			enableAlarm();
+		}
+	}
+
 	render() {
 		const {
+			alarm,
+			alarmHours,
+			alarmMinutes,
 			date,
 			day,
 			hours,
+			increaseAlarmHours,
+			increaseAlarmMinutes,
 			minutes,
 			month,
 			seconds
 		} = this.props;
+		const alarmClasses = classnames({
+			blue: alarm === false,
+			red: alarm === true
+		});
 
 		return (
 			<div id='clock'>
@@ -63,6 +89,17 @@ class Clock extends React.Component {
 				<div id='seconds'>
 					<div className={ (seconds && seconds[ 0 ]) + ' first'}></div>
 					<div className={ (seconds && seconds[ 1 ]) + ' second' }></div>
+				</div>
+
+				<div id='alarm' className={ alarmClasses } onClick={ this.toggleAlarm }></div>
+
+				<div id='alarm-hours' onClick={ increaseAlarmHours }>
+					<div className={ 'small-' + (alarmHours && alarmHours[ 0 ]) + ' first'}></div>
+					<div className={ 'small-' + (alarmHours && alarmHours[ 1 ]) + ' second'}></div>
+				</div>
+				<div id='alarm-minutes' onClick={ increaseAlarmMinutes }>
+					<div className={ 'small-' + (alarmMinutes && alarmMinutes[ 0 ]) + ' first'}></div>
+					<div className={ 'small-' + (alarmMinutes && alarmMinutes[ 1 ]) + ' second'}></div>
 				</div>
 			</div>
 		);

@@ -1,6 +1,30 @@
 import { CLOCK } from 'constants/CLOCK';
 
 class ClockActions {
+	disableAlarm() {
+		return {
+			type: CLOCK.DISABLE_ALARM
+		};
+	}
+
+	enableAlarm() {
+		return {
+			type: CLOCK.ENABLE_ALARM
+		};
+	}
+
+	increaseAlarmHours() {
+		return {
+			type: CLOCK.INCREASE_ALARM_HOURS
+		};
+	}
+
+	increaseAlarmMinutes() {
+		return {
+			type: CLOCK.INCREASE_ALARM_MINUTES
+		};
+	}
+
 	receiveDate(date) {
 		return {
 			date,
