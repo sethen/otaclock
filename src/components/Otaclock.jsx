@@ -38,13 +38,13 @@ class Otaclock extends React.Component {
 	increaseAlarmHours = () => {
 		const { dispatch } = this.props;
 
-		dispatch(ClockActions.increaseAlarmHours());
+		dispatch(ClockServices.increaseAlarmHours());
 	};
 
 	increaseAlarmMinutes = () => {
 		const { dispatch } = this.props;
 
-		dispatch(ClockActions.increaseAlarmMinutes());
+		dispatch(ClockServices.increaseAlarmMinutes());
 	};
 
 	getTime = () => {

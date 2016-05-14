@@ -5,7 +5,7 @@ import classnames from 'classnames';
 class Clock extends React.Component {
 	static propTypes = {
 		date: React.PropTypes.array,
-		day: React.PropTypes.array,
+		day: React.PropTypes.string,
 		getTime: React.PropTypes.func,
 		hours: React.PropTypes.array,
 		minutes: React.PropTypes.array,
@@ -97,6 +97,7 @@ class Clock extends React.Component {
 					<div className={ 'small-' + (alarmHours && alarmHours[ 0 ]) + ' first'}></div>
 					<div className={ 'small-' + (alarmHours && alarmHours[ 1 ]) + ' second'}></div>
 				</div>
+
 				<div id='alarm-minutes' onClick={ increaseAlarmMinutes }>
 					<div className={ 'small-' + (alarmMinutes && alarmMinutes[ 0 ]) + ' first'}></div>
 					<div className={ 'small-' + (alarmMinutes && alarmMinutes[ 1 ]) + ' second'}></div>

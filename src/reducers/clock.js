@@ -13,13 +13,13 @@ export default function clockReducer(state = clockState, action) {
 			return Object.assign({}, state, {
 				alarm: true
 			});
-		case CLOCK.INCREASE_ALARM_HOURS:
+		case CLOCK.RECEIVE_ALARM_HOURS:
 			return Object.assign({}, state, {
-				alarmHours: state.alarmHours += 1
+				alarmHours: action.arr
 			});
-		case CLOCK.INCREASE_ALARM_MINUTES:
+		case CLOCK.RECEIVE_ALARM_MINUTES:
 			return Object.assign({}, state, {
-				alarmMinutes: state.alarmMinutes += 1
+				alarmMinutes: action.arr
 			});
 		case CLOCK.RECEIVE_DATE:
 			return Object.assign({}, state, {

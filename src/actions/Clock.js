@@ -13,15 +13,17 @@ class ClockActions {
 		};
 	}
 
-	increaseAlarmHours() {
+	receiveAlarmHours(arr) {
 		return {
-			type: CLOCK.INCREASE_ALARM_HOURS
+			arr,
+			type: CLOCK.RECEIVE_ALARM_HOURS
 		};
 	}
 
-	increaseAlarmMinutes() {
+	receiveAlarmMinutes(arr) {
 		return {
-			type: CLOCK.INCREASE_ALARM_MINUTES
+			arr,
+			type: CLOCK.RECEIVE_ALARM_MINUTES
 		};
 	}
 

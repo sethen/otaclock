@@ -20259,12 +20259,12 @@
 				var dispatch = _this.props.dispatch;
 
 
-				dispatch(_Clock4.default.increaseAlarmHours());
+				dispatch(_Clock6.default.increaseAlarmHours());
 			}, _this.increaseAlarmMinutes = function () {
 				var dispatch = _this.props.dispatch;
 
 
-				dispatch(_Clock4.default.increaseAlarmMinutes());
+				dispatch(_Clock6.default.increaseAlarmMinutes());
 			}, _this.getTime = function () {
 				var dispatch = _this.props.dispatch;
 
@@ -20372,7 +20372,7 @@
 
 
 	// module
-	exports.push([module.id, "/* \nhtml5doctor.com Reset Stylesheet\nv1.6.1\nLast Updated: 2010-09-17\nAuthor: Richard Clark - http://richclarkdesign.com \nTwitter: @rich_clark\n*/\nhtml, body, div, span, object, iframe,\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\nabbr, address, cite, code,\ndel, dfn, em, img, ins, kbd, q, samp,\nsmall, strong, sub, sup, var,\nb, i,\ndl, dt, dd, ol, ul, li,\nfieldset, form, label, legend,\ntable, caption, tbody, tfoot, thead, tr, th, td,\narticle, aside, canvas, details, figcaption, figure,\nfooter, header, hgroup, menu, nav, section, summary,\ntime, mark, audio, video {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  outline: 0;\n  font-size: 100%;\n  vertical-align: baseline;\n  background: transparent; }\n\nbody {\n  line-height: 1; }\n\narticle, aside, details, figcaption, figure,\nfooter, header, hgroup, menu, nav, section {\n  display: block; }\n\nnav ul {\n  list-style: none; }\n\nblockquote, q {\n  quotes: none; }\n\nblockquote:before, blockquote:after,\nq:before, q:after {\n  content: '';\n  content: none; }\n\na {\n  margin: 0;\n  padding: 0;\n  font-size: 100%;\n  vertical-align: baseline;\n  background: transparent; }\n\n/* change colours to suit your needs */\nins {\n  background-color: #ff9;\n  color: #000;\n  text-decoration: none; }\n\n/* change colours to suit your needs */\nmark {\n  background-color: #ff9;\n  color: #000;\n  font-style: italic;\n  font-weight: bold; }\n\ndel {\n  text-decoration: line-through; }\n\nabbr[title], dfn[title] {\n  border-bottom: 1px dotted;\n  cursor: help; }\n\ntable {\n  border-collapse: collapse;\n  border-spacing: 0; }\n\n/* change border colour to suit your needs */\nhr {\n  display: block;\n  height: 1px;\n  border: 0;\n  border-top: 1px solid #cccccc;\n  margin: 1em 0;\n  padding: 0; }\n\ninput, select {\n  vertical-align: middle; }\n\nbody,\nhtml {\n  overflow: hidden; }\n\n#alarm,\n#alarm-hours .small-zero,\n#alarm-hours .small-one,\n#alarm-hours .small-two,\n#alarm-hours .small-three,\n#alarm-hours .small-four,\n#alarm-hours .small-five,\n#alarm-hours .small-six,\n#alarm-hours .small-seven,\n#alarm-hours .small-eight,\n#alarm-hours .small-nine,\n#alarm-minutes .small-zero,\n#alarm-minutes .small-one,\n#alarm-minutes .small-two,\n#alarm-minutes .small-three,\n#alarm-minutes .small-four,\n#alarm-minutes .small-five,\n#alarm-minutes .small-six,\n#alarm-minutes .small-seven,\n#alarm-minutes .small-eight,\n#alarm-minutes .small-nine,\n#clock,\n#date .small-zero,\n#date .small-one,\n#date .small-two,\n#date .small-three,\n#date .small-four,\n#date .small-five,\n#date .small-six,\n#date .small-seven,\n#date .small-eight,\n#day .monday,\n#day .tuesday,\n#day .wednesday,\n#day .thursday,\n#day .friday,\n#day .saturday,\n#day .sunday,\n#hours .zero,\n#hours .one,\n#hours .two,\n#hours .three,\n#hours .four,\n#hours .five,\n#hours .six,\n#hours .seven,\n#hours .eight,\n#hours .nine,\n#minutes .zero,\n#minutes .one,\n#minutes .two,\n#minutes .three,\n#minutes .four,\n#minutes .five,\n#minutes .six,\n#minutes .seven,\n#minutes .eight,\n#minutes .nine,\n#month .small-zero,\n#month .small-one,\n#month .small-two,\n#month .small-three,\n#month .small-four,\n#month .small-five,\n#month .small-six,\n#month .small-seven,\n#month .small-eight,\n#month .small-nine,\n#seconds .zero,\n#seconds .one,\n#seconds .two,\n#seconds .three,\n#seconds .four,\n#seconds .five,\n#seconds .six,\n#seconds .seven,\n#seconds .eight,\n#seconds .nine,\n#otacon .eyes,\n#otacon .stationary,\n#otacon .thumbs-up-1,\n#otacon .thumbs-up-2,\n#otacon .thumbs-up-3 {\n  background-image: url(" + __webpack_require__(172) + ");\n  background-repeat: no-repeat;\n  background-size: auto 900px; }\n\n#alarm {\n  cursor: pointer;\n  height: 35px;\n  left: 35px;\n  position: relative;\n  top: 126px;\n  width: 146px; }\n  #alarm.blue {\n    background-position: -154px -865px; }\n  #alarm.red {\n    background-position: -1px -865px; }\n\n#alarm-hours {\n  position: relative;\n  width: 62px;\n  top: 91px;\n  left: 203px;\n  height: 35px; }\n\n#alarm-minutes {\n  position: relative;\n  width: 62px;\n  top: 54px;\n  left: 286px;\n  height: 35px; }\n\n#clock {\n  background-position: 0 0;\n  height: 244px;\n  width: 392px;\n  -webkit-app-region: drag; }\n\n#date,\n#day,\n#hours,\n#minutes,\n#month,\n#seconds {\n  background-color: #FFFFFF; }\n\n#date {\n  position: absolute;\n  top: 28px;\n  left: 119px;\n  width: 63px; }\n\n#day {\n  position: absolute;\n  top: 35px;\n  left: 215px; }\n\n#hours {\n  position: absolute;\n  left: 35.5px;\n  top: 70.7px;\n  width: 91px; }\n\n#minutes {\n  position: absolute;\n  left: 147px;\n  top: 70.7px;\n  width: 90px; }\n\n#month {\n  position: absolute;\n  left: 56px;\n  top: 27px; }\n\n#seconds {\n  position: absolute;\n  left: 258px;\n  top: 70.7px;\n  width: 90px; }\n\n#hours .second,\n#minutes .second,\n#seconds .second {\n  position: relative;\n  left: 6px; }\n\n#hours .zero,\n#hours .one,\n#hours .two,\n#hours .three,\n#hours .four,\n#hours .five,\n#hours .six,\n#hours .seven,\n#hours .eight,\n#hours .nine,\n#minutes .zero,\n#minutes .one,\n#minutes .two,\n#minutes .three,\n#minutes .four,\n#minutes .five,\n#minutes .six,\n#minutes .seven,\n#minutes .eight,\n#minutes .nine,\n#seconds .zero,\n#seconds .one,\n#seconds .two,\n#seconds .three,\n#seconds .four,\n#seconds .five,\n#seconds .six,\n#seconds .seven,\n#seconds .eight,\n#seconds .nine {\n  display: inline-block;\n  float: left;\n  height: 48px;\n  width: 42px; }\n\n#hours .zero,\n#minutes .zero,\n#seconds .zero {\n  background-position: 0 -245px; }\n\n#hours .one,\n#minutes .one,\n#seconds .one {\n  background-position: -43px -245px; }\n\n#hours .two,\n#minutes .two,\n#seconds .two {\n  background-position: -87px -245px; }\n\n#hours .three,\n#minutes .three,\n#seconds .three {\n  background-position: -131px -245px; }\n\n#hours .four,\n#minutes .four,\n#seconds .four {\n  background-position: -174px -245px; }\n\n#hours .five,\n#minutes .five,\n#seconds .five {\n  background-position: -217px -245px; }\n\n#hours .six,\n#minutes .six,\n#seconds .six {\n  background-position: -260.5px -245px; }\n\n#hours .seven,\n#minutes .seven,\n#seconds .seven {\n  background-position: -305px -245px; }\n\n#hours .eight,\n#minutes .eight,\n#seconds .eight {\n  background-position: -349px -245px; }\n\n#hours .nine,\n#minutes .nine,\n#seconds .nine {\n  background-position: -393px -244px; }\n\n#alarm-hours .second,\n#alarm-minutes .second,\n#date .second,\n#month .second {\n  position: relative;\n  left: 7px; }\n\n#alarm-hours .small-zero,\n#alarm-hours .small-one,\n#alarm-hours .small-two,\n#alarm-hours .small-three,\n#alarm-hours .small-four,\n#alarm-hours .small-five,\n#alarm-hours .small-six,\n#alarm-hours .small-seven,\n#alarm-hours .small-eight,\n#alarm-hours .small-nine,\n#alarm-minutes .small-zero,\n#alarm-minutes .small-one,\n#alarm-minutes .small-two,\n#alarm-minutes .small-three,\n#alarm-minutes .small-four,\n#alarm-minutes .small-five,\n#alarm-minutes .small-six,\n#alarm-minutes .small-seven,\n#alarm-minutes .small-eight,\n#alarm-minutes .small-nine,\n#date .small-zero,\n#date .small-one,\n#date .small-two,\n#date .small-three,\n#date .small-four,\n#date .small-five,\n#date .small-six,\n#date .small-seven,\n#date .small-eight,\n#date .small-nine,\n#month .small-zero,\n#month .small-one,\n#month .small-two,\n#month .small-three,\n#month .small-four,\n#month .small-five,\n#month .small-six,\n#month .small-seven,\n#month .small-eight,\n#month .small-nine {\n  display: inline-block;\n  float: left;\n  height: 36px;\n  width: 28px; }\n\n#alarm-hours .small-zero,\n#alarm-minutes .small-zero,\n#date .small-zero,\n#month .small-zero {\n  background-position: 0px -299px; }\n\n#alarm-hours .small-one,\n#alarm-minutes .small-one,\n#date .small-one,\n#month .small-one {\n  background-position: -28px -299px; }\n\n#alarm-hours .small-two,\n#alarm-minutes .small-two,\n#date .small-two,\n#month .small-two {\n  background-position: -59px -299px; }\n\n#alarm-hours .small-three,\n#alarm-minutes .small-three,\n#date .small-three,\n#month .small-three {\n  background-position: -90px -299px; }\n\n#alarm-hours .small-four,\n#alarm-minutes .small-four,\n#date .small-four,\n#month .small-four {\n  background-position: -120px -299px; }\n\n#alarm-hours .small-five,\n#alarm-minutes .small-five,\n#date .small-five,\n#month .small-five {\n  background-position: -150px -299px; }\n\n#alarm-hours .small-six,\n#alarm-minutes .small-six,\n#date .small-six,\n#month .small-six {\n  background-position: -180px -299px; }\n\n#alarm-hours .small-seven,\n#alarm-minutes .small-seven,\n#date .small-seven,\n#month .small-seven {\n  background-position: -209px -299px; }\n\n#alarm-hours .small-eight,\n#alarm-minutes .small-eight,\n#date .small-eight,\n#month .small-eight {\n  background-position: -239px -299px; }\n\n#alarm-hours .small-nine,\n#alarm-minutes .small-nine,\n#date .small-nine,\n#month .small-nine {\n  background-position: -269px -299px; }\n\n#day .monday,\n#day .tuesday,\n#day .wednesday,\n#day .thursday,\n#day .friday,\n#day .saturday,\n#day .sunday {\n  height: 22px;\n  width: 120px; }\n\n#day .monday {\n  background-position: 1px -341px; }\n\n#day .tuesday {\n  background-position: -120px -341px; }\n\n#day .wednesday {\n  background-position: -242px -341px; }\n\n#day .thursday {\n  background-position: -364px -341px; }\n\n#day .friday {\n  background-position: 5px -365px; }\n\n#day .saturday {\n  background-position: -114px -365px; }\n\n#day .sunday {\n  background-position: -237px -365px; }\n\n#otacon {\n  left: 410px;\n  position: relative;\n  top: -140px;\n  width: 300px;\n  -webkit-app-region: drag; }\n  #otacon .stationary {\n    background-position: -489px 0;\n    height: 447px;\n    width: 204px; }\n  #otacon .thumbs-up-1 {\n    background-position: 0px -392px;\n    height: 448px;\n    width: 204px; }\n  #otacon .thumbs-up-2 {\n    background-position: -210px -393px;\n    height: 448px;\n    position: relative;\n    left: -41px;\n    width: 238px; }\n  #otacon .thumbs-up-3 {\n    background-position: -452px -453px;\n    height: 447px;\n    position: relative;\n    left: -42.5px;\n    top: -1px;\n    width: 238px; }\n  #otacon .eyes {\n    height: 28px;\n    width: 99px;\n    position: absolute;\n    left: 21.4px;\n    top: 97.5px; }\n    #otacon .eyes.ahead {\n      background-position: -692px -30px; }\n    #otacon .eyes.close {\n      background-position: -692px -129px; }\n    #otacon .eyes.down_right {\n      background-position: -692px -96px; }\n    #otacon .eyes.down_left {\n      background-position: -692px 0; }\n    #otacon .eyes.forward {\n      background-position: -692px -64px; }\n", ""]);
+	exports.push([module.id, "/* \nhtml5doctor.com Reset Stylesheet\nv1.6.1\nLast Updated: 2010-09-17\nAuthor: Richard Clark - http://richclarkdesign.com \nTwitter: @rich_clark\n*/\nhtml, body, div, span, object, iframe,\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\nabbr, address, cite, code,\ndel, dfn, em, img, ins, kbd, q, samp,\nsmall, strong, sub, sup, var,\nb, i,\ndl, dt, dd, ol, ul, li,\nfieldset, form, label, legend,\ntable, caption, tbody, tfoot, thead, tr, th, td,\narticle, aside, canvas, details, figcaption, figure,\nfooter, header, hgroup, menu, nav, section, summary,\ntime, mark, audio, video {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  outline: 0;\n  font-size: 100%;\n  vertical-align: baseline;\n  background: transparent; }\n\nbody {\n  line-height: 1; }\n\narticle, aside, details, figcaption, figure,\nfooter, header, hgroup, menu, nav, section {\n  display: block; }\n\nnav ul {\n  list-style: none; }\n\nblockquote, q {\n  quotes: none; }\n\nblockquote:before, blockquote:after,\nq:before, q:after {\n  content: '';\n  content: none; }\n\na {\n  margin: 0;\n  padding: 0;\n  font-size: 100%;\n  vertical-align: baseline;\n  background: transparent; }\n\n/* change colours to suit your needs */\nins {\n  background-color: #ff9;\n  color: #000;\n  text-decoration: none; }\n\n/* change colours to suit your needs */\nmark {\n  background-color: #ff9;\n  color: #000;\n  font-style: italic;\n  font-weight: bold; }\n\ndel {\n  text-decoration: line-through; }\n\nabbr[title], dfn[title] {\n  border-bottom: 1px dotted;\n  cursor: help; }\n\ntable {\n  border-collapse: collapse;\n  border-spacing: 0; }\n\n/* change border colour to suit your needs */\nhr {\n  display: block;\n  height: 1px;\n  border: 0;\n  border-top: 1px solid #cccccc;\n  margin: 1em 0;\n  padding: 0; }\n\ninput, select {\n  vertical-align: middle; }\n\nbody,\nhtml {\n  overflow: hidden; }\n\n#alarm,\n#alarm-hours .small-zero,\n#alarm-hours .small-one,\n#alarm-hours .small-two,\n#alarm-hours .small-three,\n#alarm-hours .small-four,\n#alarm-hours .small-five,\n#alarm-hours .small-six,\n#alarm-hours .small-seven,\n#alarm-hours .small-eight,\n#alarm-hours .small-nine,\n#alarm-minutes .small-zero,\n#alarm-minutes .small-one,\n#alarm-minutes .small-two,\n#alarm-minutes .small-three,\n#alarm-minutes .small-four,\n#alarm-minutes .small-five,\n#alarm-minutes .small-six,\n#alarm-minutes .small-seven,\n#alarm-minutes .small-eight,\n#alarm-minutes .small-nine,\n#clock,\n#date .small-zero,\n#date .small-one,\n#date .small-two,\n#date .small-three,\n#date .small-four,\n#date .small-five,\n#date .small-six,\n#date .small-seven,\n#date .small-eight,\n#day .monday,\n#day .tuesday,\n#day .wednesday,\n#day .thursday,\n#day .friday,\n#day .saturday,\n#day .sunday,\n#hours .zero,\n#hours .one,\n#hours .two,\n#hours .three,\n#hours .four,\n#hours .five,\n#hours .six,\n#hours .seven,\n#hours .eight,\n#hours .nine,\n#minutes .zero,\n#minutes .one,\n#minutes .two,\n#minutes .three,\n#minutes .four,\n#minutes .five,\n#minutes .six,\n#minutes .seven,\n#minutes .eight,\n#minutes .nine,\n#month .small-zero,\n#month .small-one,\n#month .small-two,\n#month .small-three,\n#month .small-four,\n#month .small-five,\n#month .small-six,\n#month .small-seven,\n#month .small-eight,\n#month .small-nine,\n#seconds .zero,\n#seconds .one,\n#seconds .two,\n#seconds .three,\n#seconds .four,\n#seconds .five,\n#seconds .six,\n#seconds .seven,\n#seconds .eight,\n#seconds .nine,\n#otacon .eyes,\n#otacon .stationary,\n#otacon .thumbs-up-1,\n#otacon .thumbs-up-2,\n#otacon .thumbs-up-3 {\n  background-image: url(" + __webpack_require__(172) + ");\n  background-repeat: no-repeat;\n  background-size: auto 900px; }\n\n#alarm,\n#alarm-hours,\n#alarm-minutes {\n  cursor: pointer; }\n\n#alarm {\n  height: 35px;\n  left: 35px;\n  position: absolute;\n  top: 126px;\n  width: 146px; }\n  #alarm.blue {\n    background-position: -154px -865px; }\n  #alarm.red {\n    background-position: -1px -865px; }\n\n#alarm-hours {\n  left: 203px;\n  height: 35px;\n  position: absolute;\n  top: 126px;\n  width: 62px; }\n\n#alarm-minutes {\n  left: 286px;\n  height: 35px;\n  position: absolute;\n  top: 126px;\n  width: 62px; }\n\n#clock {\n  background-position: 0 0;\n  height: 244px;\n  width: 392px;\n  -webkit-app-region: drag; }\n\n#date,\n#day,\n#hours,\n#minutes,\n#month,\n#seconds {\n  background-color: #FFFFFF; }\n\n#date {\n  position: absolute;\n  top: 28px;\n  left: 119px;\n  width: 63px; }\n\n#day {\n  position: absolute;\n  top: 35px;\n  left: 215px; }\n\n#hours {\n  position: absolute;\n  left: 35.5px;\n  top: 70.7px;\n  width: 91px; }\n\n#minutes {\n  position: absolute;\n  left: 147px;\n  top: 70.7px;\n  width: 90px; }\n\n#month {\n  position: absolute;\n  left: 56px;\n  top: 27px; }\n\n#seconds {\n  position: absolute;\n  left: 258px;\n  top: 70.7px;\n  width: 90px; }\n\n#hours .second,\n#minutes .second,\n#seconds .second {\n  position: relative;\n  left: 6px; }\n\n#hours .zero,\n#hours .one,\n#hours .two,\n#hours .three,\n#hours .four,\n#hours .five,\n#hours .six,\n#hours .seven,\n#hours .eight,\n#hours .nine,\n#minutes .zero,\n#minutes .one,\n#minutes .two,\n#minutes .three,\n#minutes .four,\n#minutes .five,\n#minutes .six,\n#minutes .seven,\n#minutes .eight,\n#minutes .nine,\n#seconds .zero,\n#seconds .one,\n#seconds .two,\n#seconds .three,\n#seconds .four,\n#seconds .five,\n#seconds .six,\n#seconds .seven,\n#seconds .eight,\n#seconds .nine {\n  display: inline-block;\n  float: left;\n  height: 48px;\n  width: 42px; }\n\n#hours .zero,\n#minutes .zero,\n#seconds .zero {\n  background-position: 0 -245px; }\n\n#hours .one,\n#minutes .one,\n#seconds .one {\n  background-position: -43px -245px; }\n\n#hours .two,\n#minutes .two,\n#seconds .two {\n  background-position: -87px -245px; }\n\n#hours .three,\n#minutes .three,\n#seconds .three {\n  background-position: -131px -245px; }\n\n#hours .four,\n#minutes .four,\n#seconds .four {\n  background-position: -174px -245px; }\n\n#hours .five,\n#minutes .five,\n#seconds .five {\n  background-position: -217px -245px; }\n\n#hours .six,\n#minutes .six,\n#seconds .six {\n  background-position: -260.5px -245px; }\n\n#hours .seven,\n#minutes .seven,\n#seconds .seven {\n  background-position: -305px -245px; }\n\n#hours .eight,\n#minutes .eight,\n#seconds .eight {\n  background-position: -349px -245px; }\n\n#hours .nine,\n#minutes .nine,\n#seconds .nine {\n  background-position: -393px -244px; }\n\n#alarm-hours .second,\n#alarm-minutes .second,\n#date .second,\n#month .second {\n  position: relative;\n  left: 7px; }\n\n#alarm-hours .small-zero,\n#alarm-hours .small-one,\n#alarm-hours .small-two,\n#alarm-hours .small-three,\n#alarm-hours .small-four,\n#alarm-hours .small-five,\n#alarm-hours .small-six,\n#alarm-hours .small-seven,\n#alarm-hours .small-eight,\n#alarm-hours .small-nine,\n#alarm-minutes .small-zero,\n#alarm-minutes .small-one,\n#alarm-minutes .small-two,\n#alarm-minutes .small-three,\n#alarm-minutes .small-four,\n#alarm-minutes .small-five,\n#alarm-minutes .small-six,\n#alarm-minutes .small-seven,\n#alarm-minutes .small-eight,\n#alarm-minutes .small-nine,\n#date .small-zero,\n#date .small-one,\n#date .small-two,\n#date .small-three,\n#date .small-four,\n#date .small-five,\n#date .small-six,\n#date .small-seven,\n#date .small-eight,\n#date .small-nine,\n#month .small-zero,\n#month .small-one,\n#month .small-two,\n#month .small-three,\n#month .small-four,\n#month .small-five,\n#month .small-six,\n#month .small-seven,\n#month .small-eight,\n#month .small-nine {\n  display: inline-block;\n  float: left;\n  height: 36px;\n  width: 28px; }\n\n#alarm-hours .small-zero,\n#alarm-minutes .small-zero,\n#date .small-zero,\n#month .small-zero {\n  background-position: 0px -299px; }\n\n#alarm-hours .small-one,\n#alarm-minutes .small-one,\n#date .small-one,\n#month .small-one {\n  background-position: -28px -299px; }\n\n#alarm-hours .small-two,\n#alarm-minutes .small-two,\n#date .small-two,\n#month .small-two {\n  background-position: -59px -299px; }\n\n#alarm-hours .small-three,\n#alarm-minutes .small-three,\n#date .small-three,\n#month .small-three {\n  background-position: -90px -299px; }\n\n#alarm-hours .small-four,\n#alarm-minutes .small-four,\n#date .small-four,\n#month .small-four {\n  background-position: -120px -299px; }\n\n#alarm-hours .small-five,\n#alarm-minutes .small-five,\n#date .small-five,\n#month .small-five {\n  background-position: -150px -299px; }\n\n#alarm-hours .small-six,\n#alarm-minutes .small-six,\n#date .small-six,\n#month .small-six {\n  background-position: -180px -299px; }\n\n#alarm-hours .small-seven,\n#alarm-minutes .small-seven,\n#date .small-seven,\n#month .small-seven {\n  background-position: -209px -299px; }\n\n#alarm-hours .small-eight,\n#alarm-minutes .small-eight,\n#date .small-eight,\n#month .small-eight {\n  background-position: -239px -299px; }\n\n#alarm-hours .small-nine,\n#alarm-minutes .small-nine,\n#date .small-nine,\n#month .small-nine {\n  background-position: -269px -299px; }\n\n#day .monday,\n#day .tuesday,\n#day .wednesday,\n#day .thursday,\n#day .friday,\n#day .saturday,\n#day .sunday {\n  height: 22px;\n  width: 120px; }\n\n#day .monday {\n  background-position: 1px -341px; }\n\n#day .tuesday {\n  background-position: -120px -341px; }\n\n#day .wednesday {\n  background-position: -242px -341px; }\n\n#day .thursday {\n  background-position: -364px -341px; }\n\n#day .friday {\n  background-position: 5px -365px; }\n\n#day .saturday {\n  background-position: -114px -365px; }\n\n#day .sunday {\n  background-position: -237px -365px; }\n\n#otacon {\n  left: 410px;\n  position: relative;\n  top: -140px;\n  width: 300px;\n  -webkit-app-region: drag; }\n  #otacon .stationary {\n    background-position: -489px 0;\n    height: 447px;\n    width: 204px; }\n  #otacon .thumbs-up-1 {\n    background-position: 0px -392px;\n    height: 448px;\n    width: 204px; }\n  #otacon .thumbs-up-2 {\n    background-position: -210px -393px;\n    height: 448px;\n    position: relative;\n    left: -41px;\n    width: 238px; }\n  #otacon .thumbs-up-3 {\n    background-position: -452px -453px;\n    height: 447px;\n    position: relative;\n    left: -42.5px;\n    top: -1px;\n    width: 238px; }\n  #otacon .eyes {\n    height: 28px;\n    width: 99px;\n    position: absolute;\n    left: 21.4px;\n    top: 97.5px; }\n    #otacon .eyes.ahead {\n      background-position: -692px -30px; }\n    #otacon .eyes.close {\n      background-position: -692px -129px; }\n    #otacon .eyes.down_right {\n      background-position: -692px -96px; }\n    #otacon .eyes.down_left {\n      background-position: -692px 0; }\n    #otacon .eyes.forward {\n      background-position: -692px -64px; }\n", ""]);
 
 	// exports
 
@@ -20842,7 +20842,7 @@
 
 	Clock.propTypes = {
 		date: React.PropTypes.array,
-		day: React.PropTypes.array,
+		day: React.PropTypes.string,
 		getTime: React.PropTypes.func,
 		hours: React.PropTypes.array,
 		minutes: React.PropTypes.array,
@@ -20942,17 +20942,19 @@
 				};
 			}
 		}, {
-			key: 'increaseAlarmHours',
-			value: function increaseAlarmHours() {
+			key: 'receiveAlarmHours',
+			value: function receiveAlarmHours(arr) {
 				return {
-					type: _CLOCK.CLOCK.INCREASE_ALARM_HOURS
+					arr: arr,
+					type: _CLOCK.CLOCK.RECEIVE_ALARM_HOURS
 				};
 			}
 		}, {
-			key: 'increaseAlarmMinutes',
-			value: function increaseAlarmMinutes() {
+			key: 'receiveAlarmMinutes',
+			value: function receiveAlarmMinutes(arr) {
 				return {
-					type: _CLOCK.CLOCK.INCREASE_ALARM_MINUTES
+					arr: arr,
+					type: _CLOCK.CLOCK.RECEIVE_ALARM_MINUTES
 				};
 			}
 		}, {
@@ -21022,8 +21024,8 @@
 	var CLOCK = exports.CLOCK = {
 		DISABLE_ALARM: 'disable_alarm',
 		ENABLE_ALARM: 'enable_alarm',
-		INCREASE_ALARM_HOURS: 'increase_alarm_hours',
-		INCREASE_ALARM_MINUTES: 'increase_alarm_minutes',
+		RECEIVE_ALARM_HOURS: 'receive_alarm_hours',
+		RECEIVE_ALARM_MINUTES: 'receive_alarm_minutes',
 		RECEIVE_DATE: 'receive_date',
 		RECEIVE_DAY: 'receive_day',
 		RECEIVE_HOURS: 'receive_hours',
@@ -21083,6 +21085,26 @@
 					dispatch(_Clock2.default.receiveSeconds((0, _clock.processTime)(seconds)));
 				};
 			}
+		}, {
+			key: 'increaseAlarmHours',
+			value: function increaseAlarmHours() {
+				return function (dispatch, getState) {
+					var clock = getState().clockReducer;
+					var stringNumberArray = (0, _clock.increaseStringNumberArray)(clock.alarmHours, ['two', 'four']);
+
+					dispatch(_Clock2.default.receiveAlarmHours(stringNumberArray));
+				};
+			}
+		}, {
+			key: 'increaseAlarmMinutes',
+			value: function increaseAlarmMinutes() {
+				return function (dispatch, getState) {
+					var clock = getState().clockReducer;
+					var stringNumberArray = (0, _clock.increaseStringNumberArray)(clock.alarmMinutes, ['five', 'nine']);
+
+					dispatch(_Clock2.default.receiveAlarmMinutes(stringNumberArray));
+				};
+			}
 		}]);
 
 		return ClockServices;
@@ -21101,6 +21123,7 @@
 	});
 	exports.getTimeImage = getTimeImage;
 	exports.getDayImage = getDayImage;
+	exports.increaseStringNumberArray = increaseStringNumberArray;
 	exports.processTime = processTime;
 	/**
 	 * Decides appropriate sting for image from string
@@ -21134,6 +21157,11 @@
 		}
 	}
 
+	/**
+	 * Gets day string
+	 * @param  {number} num Number of day
+	 * @return {string}     String day
+	 */
 	function getDayImage(num) {
 		var str = String(num);
 
@@ -21157,6 +21185,61 @@
 			default:
 				break;
 		}
+	}
+
+	function increaseStringNumberArray(arr, restart) {
+		var increasedArr = [];
+		var stringNumber = '';
+		var method = '';
+
+		if (restart.toString() === arr.toString()) {
+			return ['zero', 'zero'];
+		} else if (arr[1] === 'nine') {
+			increasedArr.push('zero');
+			stringNumber = arr[0];
+			method = 'unshift';
+		} else if (arr[1] !== 'nine') {
+			increasedArr.push(arr[0]);
+			stringNumber = arr[1];
+			method = 'push';
+		}
+
+		switch (stringNumber) {
+			case 'zero':
+				increasedArr[method]('one');
+				break;
+			case 'one':
+				increasedArr[method]('two');
+				break;
+			case 'two':
+				increasedArr[method]('three');
+				break;
+			case 'three':
+				increasedArr[method]('four');
+				break;
+			case 'four':
+				increasedArr[method]('five');
+				break;
+			case 'five':
+				increasedArr[method]('six');
+				break;
+			case 'six':
+				increasedArr[method]('seven');
+				break;
+			case 'seven':
+				increasedArr[method]('eight');
+				break;
+			case 'eight':
+				increasedArr[method]('nine');
+				break;
+			case 'nine':
+				increasedArr[method]('zero');
+				break;
+			default:
+				break;
+		}
+
+		return increasedArr;
 	}
 
 	/**
@@ -37150,13 +37233,13 @@
 				return Object.assign({}, state, {
 					alarm: true
 				});
-			case _CLOCK.CLOCK.INCREASE_ALARM_HOURS:
+			case _CLOCK.CLOCK.RECEIVE_ALARM_HOURS:
 				return Object.assign({}, state, {
-					alarmHours: state.alarmHours += 1
+					alarmHours: action.arr
 				});
-			case _CLOCK.CLOCK.INCREASE_ALARM_MINUTES:
+			case _CLOCK.CLOCK.RECEIVE_ALARM_MINUTES:
 				return Object.assign({}, state, {
-					alarmMinutes: state.alarmMinutes += 1
+					alarmMinutes: action.arr
 				});
 			case _CLOCK.CLOCK.RECEIVE_DATE:
 				return Object.assign({}, state, {

@@ -1,6 +1,7 @@
 import {
-	processTime,
-	getDayImage
+	getDayImage,
+	increaseStringNumberArray,
+	processTime
 } from '../lib/clock';
 import moment from 'moment';
 import ClockActions from '../actions/Clock';
@@ -21,6 +22,24 @@ class ClockServices {
 			dispatch(ClockActions.receiveMinutes(processTime(minutes)));
 			dispatch(ClockActions.receiveMonth(processTime(month, false)));
 			dispatch(ClockActions.receiveSeconds(processTime(seconds)));
+		};
+	}
+
+	increaseAlarmHours() {
+		return (dispatch, getState) => {
+			const clock = getState().clockReducer;
+			const stringNumberArray = increaseStringNumberArray(clock.alarmHours, [ 'two', 'four' ]);
+
+			dispatch(ClockActions.receiveAlarmHours(stringNumberArray));
+		};
+	}
+
+	increaseAlarmMinutes() {
+		return (dispatch, getState) => {
+			const clock = getState().clockReducer;
+			const stringNumberArray = increaseStringNumberArray(clock.alarmMinutes, [ 'five', 'nine' ]);
+
+			dispatch(ClockActions.receiveAlarmMinutes(stringNumberArray));
 		};
 	}
 }

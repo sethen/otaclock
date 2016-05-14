@@ -30,6 +30,11 @@ export function getTimeImage(str) {
 	}
 }
 
+/**
+ * Gets day string
+ * @param  {number} num Number of day
+ * @return {string}     String day
+ */
 export function getDayImage(num) {
 	const str = String(num);
 
@@ -53,6 +58,63 @@ export function getDayImage(num) {
 		default:
 			break;
 	}
+}
+
+export function increaseStringNumberArray(arr, restart) {
+	const increasedArr = [];
+	let stringNumber = '';
+	let method = '';
+
+	if (restart.toString() === arr.toString()) {
+		return [ 'zero', 'zero' ];
+	}
+	else if (arr[ 1 ] === 'nine') {
+		increasedArr.push('zero');
+		stringNumber = arr[ 0 ];
+		method = 'unshift';
+	}
+	else if (arr[ 1 ] !== 'nine') {
+		increasedArr.push(arr[ 0 ]);
+		stringNumber = arr[ 1 ];
+		method = 'push';
+	}
+
+	switch (stringNumber) {
+		case 'zero':
+			increasedArr[ method ]('one');
+			break;
+		case 'one':
+			increasedArr[ method ]('two');
+			break;
+		case 'two':
+			increasedArr[ method ]('three');
+			break;
+		case 'three':
+			increasedArr[ method ]('four');
+			break;
+		case 'four':
+			increasedArr[ method ]('five');
+			break;
+		case 'five':
+			increasedArr[ method ]('six');
+			break;
+		case 'six':
+			increasedArr[ method ]('seven');
+			break;
+		case 'seven':
+			increasedArr[ method ]('eight');
+			break;
+		case 'eight':
+			increasedArr[ method ]('nine');
+			break;
+		case 'nine':
+			increasedArr[ method ]('zero');
+			break;
+		default:
+			break;
+	}
+
+	return increasedArr;
 }
 
 /**
