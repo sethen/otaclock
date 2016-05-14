@@ -3,10 +3,33 @@ import {
 	increaseStringNumberArray,
 	processTime
 } from '../lib/clock';
-import moment from 'moment';
 import ClockActions from '../actions/Clock';
+import moment from 'moment';
+import OtaconServices from '../services/Otacon';
 
 class ClockServices {
+	compareTimeToAlarmTime() {
+		return (dispatch, getState) => {
+			const {
+				alarm,
+				alarmHours,
+				alarmMinutes,
+				hours,
+				minutes
+			} = getState().clockReducer;
+			const { thumbsUpPosition } = getState().otaconReducer;
+
+			if (alarm && !thumbsUpPosition) {
+				const alarmTime = `${alarmHours.toString()}${alarmMinutes.toString()}`;
+				const time = `${hours.toString()}${minutes.toString()}`;
+
+				if (alarmTime === time) {
+					dispatch(OtaconServices.thumbsUp());
+				}
+			}
+		};
+	}
+
 	getTime() {
 		return (dispatch) => {
 			const date = moment().date();

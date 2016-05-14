@@ -52,7 +52,7 @@
 
 	var _Otaclock2 = _interopRequireDefault(_Otaclock);
 
-	var _reactRedux = __webpack_require__(283);
+	var _reactRedux = __webpack_require__(286);
 
 	var _store = __webpack_require__(309);
 
@@ -20206,13 +20206,13 @@
 
 	var _Clock6 = _interopRequireDefault(_Clock5);
 
-	var _reactRedux = __webpack_require__(283);
+	var _reactRedux = __webpack_require__(286);
 
-	var _Otacon = __webpack_require__(305);
+	var _Otacon = __webpack_require__(308);
 
 	var _Otacon2 = _interopRequireDefault(_Otacon);
 
-	var _Otacon3 = __webpack_require__(306);
+	var _Otacon3 = __webpack_require__(283);
 
 	var _Otacon4 = _interopRequireDefault(_Otacon3);
 
@@ -20245,7 +20245,12 @@
 				args[_key] = arguments[_key];
 			}
 
-			return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(Otaclock)).call.apply(_Object$getPrototypeO, [this].concat(args))), _this), _this.disableAlarm = function () {
+			return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(Otaclock)).call.apply(_Object$getPrototypeO, [this].concat(args))), _this), _this.compareTimeToAlarmTime = function () {
+				var dispatch = _this.props.dispatch;
+
+
+				dispatch(_Clock6.default.compareTimeToAlarmTime());
+			}, _this.disableAlarm = function () {
 				var dispatch = _this.props.dispatch;
 
 
@@ -20307,6 +20312,7 @@
 					React.createElement(_Clock2.default, { alarm: alarm,
 						alarmHours: alarmHours,
 						alarmMinutes: alarmMinutes,
+						compareTimeToAlarmTime: this.compareTimeToAlarmTime,
 						date: date,
 						day: day,
 						disableAlarm: this.disableAlarm,
@@ -20372,7 +20378,7 @@
 
 
 	// module
-	exports.push([module.id, "/* \nhtml5doctor.com Reset Stylesheet\nv1.6.1\nLast Updated: 2010-09-17\nAuthor: Richard Clark - http://richclarkdesign.com \nTwitter: @rich_clark\n*/\nhtml, body, div, span, object, iframe,\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\nabbr, address, cite, code,\ndel, dfn, em, img, ins, kbd, q, samp,\nsmall, strong, sub, sup, var,\nb, i,\ndl, dt, dd, ol, ul, li,\nfieldset, form, label, legend,\ntable, caption, tbody, tfoot, thead, tr, th, td,\narticle, aside, canvas, details, figcaption, figure,\nfooter, header, hgroup, menu, nav, section, summary,\ntime, mark, audio, video {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  outline: 0;\n  font-size: 100%;\n  vertical-align: baseline;\n  background: transparent; }\n\nbody {\n  line-height: 1; }\n\narticle, aside, details, figcaption, figure,\nfooter, header, hgroup, menu, nav, section {\n  display: block; }\n\nnav ul {\n  list-style: none; }\n\nblockquote, q {\n  quotes: none; }\n\nblockquote:before, blockquote:after,\nq:before, q:after {\n  content: '';\n  content: none; }\n\na {\n  margin: 0;\n  padding: 0;\n  font-size: 100%;\n  vertical-align: baseline;\n  background: transparent; }\n\n/* change colours to suit your needs */\nins {\n  background-color: #ff9;\n  color: #000;\n  text-decoration: none; }\n\n/* change colours to suit your needs */\nmark {\n  background-color: #ff9;\n  color: #000;\n  font-style: italic;\n  font-weight: bold; }\n\ndel {\n  text-decoration: line-through; }\n\nabbr[title], dfn[title] {\n  border-bottom: 1px dotted;\n  cursor: help; }\n\ntable {\n  border-collapse: collapse;\n  border-spacing: 0; }\n\n/* change border colour to suit your needs */\nhr {\n  display: block;\n  height: 1px;\n  border: 0;\n  border-top: 1px solid #cccccc;\n  margin: 1em 0;\n  padding: 0; }\n\ninput, select {\n  vertical-align: middle; }\n\nbody,\nhtml {\n  overflow: hidden; }\n\n#alarm,\n#alarm-hours .small-zero,\n#alarm-hours .small-one,\n#alarm-hours .small-two,\n#alarm-hours .small-three,\n#alarm-hours .small-four,\n#alarm-hours .small-five,\n#alarm-hours .small-six,\n#alarm-hours .small-seven,\n#alarm-hours .small-eight,\n#alarm-hours .small-nine,\n#alarm-minutes .small-zero,\n#alarm-minutes .small-one,\n#alarm-minutes .small-two,\n#alarm-minutes .small-three,\n#alarm-minutes .small-four,\n#alarm-minutes .small-five,\n#alarm-minutes .small-six,\n#alarm-minutes .small-seven,\n#alarm-minutes .small-eight,\n#alarm-minutes .small-nine,\n#clock,\n#date .small-zero,\n#date .small-one,\n#date .small-two,\n#date .small-three,\n#date .small-four,\n#date .small-five,\n#date .small-six,\n#date .small-seven,\n#date .small-eight,\n#day .monday,\n#day .tuesday,\n#day .wednesday,\n#day .thursday,\n#day .friday,\n#day .saturday,\n#day .sunday,\n#hours .zero,\n#hours .one,\n#hours .two,\n#hours .three,\n#hours .four,\n#hours .five,\n#hours .six,\n#hours .seven,\n#hours .eight,\n#hours .nine,\n#minutes .zero,\n#minutes .one,\n#minutes .two,\n#minutes .three,\n#minutes .four,\n#minutes .five,\n#minutes .six,\n#minutes .seven,\n#minutes .eight,\n#minutes .nine,\n#month .small-zero,\n#month .small-one,\n#month .small-two,\n#month .small-three,\n#month .small-four,\n#month .small-five,\n#month .small-six,\n#month .small-seven,\n#month .small-eight,\n#month .small-nine,\n#seconds .zero,\n#seconds .one,\n#seconds .two,\n#seconds .three,\n#seconds .four,\n#seconds .five,\n#seconds .six,\n#seconds .seven,\n#seconds .eight,\n#seconds .nine,\n#otacon .eyes,\n#otacon .stationary,\n#otacon .thumbs-up-1,\n#otacon .thumbs-up-2,\n#otacon .thumbs-up-3 {\n  background-image: url(" + __webpack_require__(172) + ");\n  background-repeat: no-repeat;\n  background-size: auto 900px; }\n\n#alarm,\n#alarm-hours,\n#alarm-minutes {\n  cursor: pointer; }\n\n#alarm {\n  height: 35px;\n  left: 35px;\n  position: absolute;\n  top: 126px;\n  width: 146px; }\n  #alarm.blue {\n    background-position: -154px -865px; }\n  #alarm.red {\n    background-position: -1px -865px; }\n\n#alarm-hours {\n  left: 203px;\n  height: 35px;\n  position: absolute;\n  top: 126px;\n  width: 62px; }\n\n#alarm-minutes {\n  left: 286px;\n  height: 35px;\n  position: absolute;\n  top: 126px;\n  width: 62px; }\n\n#clock {\n  background-position: 0 0;\n  height: 244px;\n  width: 392px;\n  -webkit-app-region: drag; }\n\n#date,\n#day,\n#hours,\n#minutes,\n#month,\n#seconds {\n  background-color: #FFFFFF; }\n\n#date {\n  position: absolute;\n  top: 28px;\n  left: 119px;\n  width: 63px; }\n\n#day {\n  position: absolute;\n  top: 35px;\n  left: 215px; }\n\n#hours {\n  position: absolute;\n  left: 35.5px;\n  top: 70.7px;\n  width: 91px; }\n\n#minutes {\n  position: absolute;\n  left: 147px;\n  top: 70.7px;\n  width: 90px; }\n\n#month {\n  position: absolute;\n  left: 56px;\n  top: 27px; }\n\n#seconds {\n  position: absolute;\n  left: 258px;\n  top: 70.7px;\n  width: 90px; }\n\n#hours .second,\n#minutes .second,\n#seconds .second {\n  position: relative;\n  left: 6px; }\n\n#hours .zero,\n#hours .one,\n#hours .two,\n#hours .three,\n#hours .four,\n#hours .five,\n#hours .six,\n#hours .seven,\n#hours .eight,\n#hours .nine,\n#minutes .zero,\n#minutes .one,\n#minutes .two,\n#minutes .three,\n#minutes .four,\n#minutes .five,\n#minutes .six,\n#minutes .seven,\n#minutes .eight,\n#minutes .nine,\n#seconds .zero,\n#seconds .one,\n#seconds .two,\n#seconds .three,\n#seconds .four,\n#seconds .five,\n#seconds .six,\n#seconds .seven,\n#seconds .eight,\n#seconds .nine {\n  display: inline-block;\n  float: left;\n  height: 48px;\n  width: 42px; }\n\n#hours .zero,\n#minutes .zero,\n#seconds .zero {\n  background-position: 0 -245px; }\n\n#hours .one,\n#minutes .one,\n#seconds .one {\n  background-position: -43px -245px; }\n\n#hours .two,\n#minutes .two,\n#seconds .two {\n  background-position: -87px -245px; }\n\n#hours .three,\n#minutes .three,\n#seconds .three {\n  background-position: -131px -245px; }\n\n#hours .four,\n#minutes .four,\n#seconds .four {\n  background-position: -174px -245px; }\n\n#hours .five,\n#minutes .five,\n#seconds .five {\n  background-position: -217px -245px; }\n\n#hours .six,\n#minutes .six,\n#seconds .six {\n  background-position: -260.5px -245px; }\n\n#hours .seven,\n#minutes .seven,\n#seconds .seven {\n  background-position: -305px -245px; }\n\n#hours .eight,\n#minutes .eight,\n#seconds .eight {\n  background-position: -349px -245px; }\n\n#hours .nine,\n#minutes .nine,\n#seconds .nine {\n  background-position: -393px -244px; }\n\n#alarm-hours .second,\n#alarm-minutes .second,\n#date .second,\n#month .second {\n  position: relative;\n  left: 7px; }\n\n#alarm-hours .small-zero,\n#alarm-hours .small-one,\n#alarm-hours .small-two,\n#alarm-hours .small-three,\n#alarm-hours .small-four,\n#alarm-hours .small-five,\n#alarm-hours .small-six,\n#alarm-hours .small-seven,\n#alarm-hours .small-eight,\n#alarm-hours .small-nine,\n#alarm-minutes .small-zero,\n#alarm-minutes .small-one,\n#alarm-minutes .small-two,\n#alarm-minutes .small-three,\n#alarm-minutes .small-four,\n#alarm-minutes .small-five,\n#alarm-minutes .small-six,\n#alarm-minutes .small-seven,\n#alarm-minutes .small-eight,\n#alarm-minutes .small-nine,\n#date .small-zero,\n#date .small-one,\n#date .small-two,\n#date .small-three,\n#date .small-four,\n#date .small-five,\n#date .small-six,\n#date .small-seven,\n#date .small-eight,\n#date .small-nine,\n#month .small-zero,\n#month .small-one,\n#month .small-two,\n#month .small-three,\n#month .small-four,\n#month .small-five,\n#month .small-six,\n#month .small-seven,\n#month .small-eight,\n#month .small-nine {\n  display: inline-block;\n  float: left;\n  height: 36px;\n  width: 28px; }\n\n#alarm-hours .small-zero,\n#alarm-minutes .small-zero,\n#date .small-zero,\n#month .small-zero {\n  background-position: 0px -299px; }\n\n#alarm-hours .small-one,\n#alarm-minutes .small-one,\n#date .small-one,\n#month .small-one {\n  background-position: -28px -299px; }\n\n#alarm-hours .small-two,\n#alarm-minutes .small-two,\n#date .small-two,\n#month .small-two {\n  background-position: -59px -299px; }\n\n#alarm-hours .small-three,\n#alarm-minutes .small-three,\n#date .small-three,\n#month .small-three {\n  background-position: -90px -299px; }\n\n#alarm-hours .small-four,\n#alarm-minutes .small-four,\n#date .small-four,\n#month .small-four {\n  background-position: -120px -299px; }\n\n#alarm-hours .small-five,\n#alarm-minutes .small-five,\n#date .small-five,\n#month .small-five {\n  background-position: -150px -299px; }\n\n#alarm-hours .small-six,\n#alarm-minutes .small-six,\n#date .small-six,\n#month .small-six {\n  background-position: -180px -299px; }\n\n#alarm-hours .small-seven,\n#alarm-minutes .small-seven,\n#date .small-seven,\n#month .small-seven {\n  background-position: -209px -299px; }\n\n#alarm-hours .small-eight,\n#alarm-minutes .small-eight,\n#date .small-eight,\n#month .small-eight {\n  background-position: -239px -299px; }\n\n#alarm-hours .small-nine,\n#alarm-minutes .small-nine,\n#date .small-nine,\n#month .small-nine {\n  background-position: -269px -299px; }\n\n#day .monday,\n#day .tuesday,\n#day .wednesday,\n#day .thursday,\n#day .friday,\n#day .saturday,\n#day .sunday {\n  height: 22px;\n  width: 120px; }\n\n#day .monday {\n  background-position: 1px -341px; }\n\n#day .tuesday {\n  background-position: -120px -341px; }\n\n#day .wednesday {\n  background-position: -242px -341px; }\n\n#day .thursday {\n  background-position: -364px -341px; }\n\n#day .friday {\n  background-position: 5px -365px; }\n\n#day .saturday {\n  background-position: -114px -365px; }\n\n#day .sunday {\n  background-position: -237px -365px; }\n\n#otacon {\n  left: 410px;\n  position: relative;\n  top: -140px;\n  width: 300px;\n  -webkit-app-region: drag; }\n  #otacon .stationary {\n    background-position: -489px 0;\n    height: 447px;\n    width: 204px; }\n  #otacon .thumbs-up-1 {\n    background-position: 0px -392px;\n    height: 448px;\n    width: 204px; }\n  #otacon .thumbs-up-2 {\n    background-position: -210px -393px;\n    height: 448px;\n    position: relative;\n    left: -41px;\n    width: 238px; }\n  #otacon .thumbs-up-3 {\n    background-position: -452px -453px;\n    height: 447px;\n    position: relative;\n    left: -42.5px;\n    top: -1px;\n    width: 238px; }\n  #otacon .eyes {\n    height: 28px;\n    width: 99px;\n    position: absolute;\n    left: 21.4px;\n    top: 97.5px; }\n    #otacon .eyes.ahead {\n      background-position: -692px -30px; }\n    #otacon .eyes.close {\n      background-position: -692px -129px; }\n    #otacon .eyes.down_right {\n      background-position: -692px -96px; }\n    #otacon .eyes.down_left {\n      background-position: -692px 0; }\n    #otacon .eyes.forward {\n      background-position: -692px -64px; }\n", ""]);
+	exports.push([module.id, "/* \nhtml5doctor.com Reset Stylesheet\nv1.6.1\nLast Updated: 2010-09-17\nAuthor: Richard Clark - http://richclarkdesign.com \nTwitter: @rich_clark\n*/\nhtml, body, div, span, object, iframe,\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\nabbr, address, cite, code,\ndel, dfn, em, img, ins, kbd, q, samp,\nsmall, strong, sub, sup, var,\nb, i,\ndl, dt, dd, ol, ul, li,\nfieldset, form, label, legend,\ntable, caption, tbody, tfoot, thead, tr, th, td,\narticle, aside, canvas, details, figcaption, figure,\nfooter, header, hgroup, menu, nav, section, summary,\ntime, mark, audio, video {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  outline: 0;\n  font-size: 100%;\n  vertical-align: baseline;\n  background: transparent; }\n\nbody {\n  line-height: 1; }\n\narticle, aside, details, figcaption, figure,\nfooter, header, hgroup, menu, nav, section {\n  display: block; }\n\nnav ul {\n  list-style: none; }\n\nblockquote, q {\n  quotes: none; }\n\nblockquote:before, blockquote:after,\nq:before, q:after {\n  content: '';\n  content: none; }\n\na {\n  margin: 0;\n  padding: 0;\n  font-size: 100%;\n  vertical-align: baseline;\n  background: transparent; }\n\n/* change colours to suit your needs */\nins {\n  background-color: #ff9;\n  color: #000;\n  text-decoration: none; }\n\n/* change colours to suit your needs */\nmark {\n  background-color: #ff9;\n  color: #000;\n  font-style: italic;\n  font-weight: bold; }\n\ndel {\n  text-decoration: line-through; }\n\nabbr[title], dfn[title] {\n  border-bottom: 1px dotted;\n  cursor: help; }\n\ntable {\n  border-collapse: collapse;\n  border-spacing: 0; }\n\n/* change border colour to suit your needs */\nhr {\n  display: block;\n  height: 1px;\n  border: 0;\n  border-top: 1px solid #cccccc;\n  margin: 1em 0;\n  padding: 0; }\n\ninput, select {\n  vertical-align: middle; }\n\nbody,\nhtml {\n  overflow: hidden; }\n\n#alarm,\n#alarm-hours .small-zero,\n#alarm-hours .small-one,\n#alarm-hours .small-two,\n#alarm-hours .small-three,\n#alarm-hours .small-four,\n#alarm-hours .small-five,\n#alarm-hours .small-six,\n#alarm-hours .small-seven,\n#alarm-hours .small-eight,\n#alarm-hours .small-nine,\n#alarm-minutes .small-zero,\n#alarm-minutes .small-one,\n#alarm-minutes .small-two,\n#alarm-minutes .small-three,\n#alarm-minutes .small-four,\n#alarm-minutes .small-five,\n#alarm-minutes .small-six,\n#alarm-minutes .small-seven,\n#alarm-minutes .small-eight,\n#alarm-minutes .small-nine,\n#clock,\n#date .small-zero,\n#date .small-one,\n#date .small-two,\n#date .small-three,\n#date .small-four,\n#date .small-five,\n#date .small-six,\n#date .small-seven,\n#date .small-eight,\n#day .monday,\n#day .tuesday,\n#day .wednesday,\n#day .thursday,\n#day .friday,\n#day .saturday,\n#day .sunday,\n#hours .zero,\n#hours .one,\n#hours .two,\n#hours .three,\n#hours .four,\n#hours .five,\n#hours .six,\n#hours .seven,\n#hours .eight,\n#hours .nine,\n#minutes .zero,\n#minutes .one,\n#minutes .two,\n#minutes .three,\n#minutes .four,\n#minutes .five,\n#minutes .six,\n#minutes .seven,\n#minutes .eight,\n#minutes .nine,\n#month .small-zero,\n#month .small-one,\n#month .small-two,\n#month .small-three,\n#month .small-four,\n#month .small-five,\n#month .small-six,\n#month .small-seven,\n#month .small-eight,\n#month .small-nine,\n#seconds .zero,\n#seconds .one,\n#seconds .two,\n#seconds .three,\n#seconds .four,\n#seconds .five,\n#seconds .six,\n#seconds .seven,\n#seconds .eight,\n#seconds .nine,\n#otacon .eyes,\n#otacon .stationary,\n#otacon .thumbs-up-1,\n#otacon .thumbs-up-2,\n#otacon .thumbs-up-3 {\n  background-image: url(" + __webpack_require__(172) + ");\n  background-repeat: no-repeat;\n  background-size: auto 900px; }\n\n#alarm,\n#alarm-hours,\n#alarm-minutes {\n  cursor: pointer; }\n\n#alarm {\n  height: 35px;\n  left: 35px;\n  position: absolute;\n  top: 126px;\n  width: 146px; }\n  #alarm.blue {\n    background-position: -154px -865px; }\n  #alarm.red {\n    background-position: -1px -865px; }\n\n#alarm-hours {\n  left: 203px;\n  height: 35px;\n  position: absolute;\n  top: 126px;\n  width: 62px; }\n\n#alarm-minutes {\n  left: 286px;\n  height: 35px;\n  position: absolute;\n  top: 126px;\n  width: 62px; }\n\n#clock {\n  background-position: 0 0;\n  height: 244px;\n  width: 392px;\n  -webkit-app-region: drag; }\n\n#date,\n#day,\n#hours,\n#minutes,\n#month,\n#seconds {\n  background-color: #FFFFFF; }\n\n#date {\n  position: absolute;\n  top: 28px;\n  left: 119px;\n  width: 63px; }\n\n#day {\n  position: absolute;\n  top: 35px;\n  left: 215px; }\n\n#hours {\n  position: absolute;\n  left: 35.5px;\n  top: 70.7px;\n  width: 91px; }\n\n#minutes {\n  position: absolute;\n  left: 147px;\n  top: 70.7px;\n  width: 90px; }\n\n#month {\n  position: absolute;\n  left: 56px;\n  top: 27px; }\n\n#seconds {\n  position: absolute;\n  left: 258px;\n  top: 70.7px;\n  width: 90px; }\n\n#hours .second,\n#minutes .second,\n#seconds .second {\n  position: relative;\n  left: 6px; }\n\n#hours .zero,\n#hours .one,\n#hours .two,\n#hours .three,\n#hours .four,\n#hours .five,\n#hours .six,\n#hours .seven,\n#hours .eight,\n#hours .nine,\n#minutes .zero,\n#minutes .one,\n#minutes .two,\n#minutes .three,\n#minutes .four,\n#minutes .five,\n#minutes .six,\n#minutes .seven,\n#minutes .eight,\n#minutes .nine,\n#seconds .zero,\n#seconds .one,\n#seconds .two,\n#seconds .three,\n#seconds .four,\n#seconds .five,\n#seconds .six,\n#seconds .seven,\n#seconds .eight,\n#seconds .nine {\n  display: inline-block;\n  float: left;\n  height: 48px;\n  width: 42px; }\n\n#hours .zero,\n#minutes .zero,\n#seconds .zero {\n  background-position: 0 -245px; }\n\n#hours .one,\n#minutes .one,\n#seconds .one {\n  background-position: -43px -245px; }\n\n#hours .two,\n#minutes .two,\n#seconds .two {\n  background-position: -87px -245px; }\n\n#hours .three,\n#minutes .three,\n#seconds .three {\n  background-position: -131px -245px; }\n\n#hours .four,\n#minutes .four,\n#seconds .four {\n  background-position: -174px -245px; }\n\n#hours .five,\n#minutes .five,\n#seconds .five {\n  background-position: -217px -245px; }\n\n#hours .six,\n#minutes .six,\n#seconds .six {\n  background-position: -260.5px -245px; }\n\n#hours .seven,\n#minutes .seven,\n#seconds .seven {\n  background-position: -305px -245px; }\n\n#hours .eight,\n#minutes .eight,\n#seconds .eight {\n  background-position: -349px -245px; }\n\n#hours .nine,\n#minutes .nine,\n#seconds .nine {\n  background-position: -393px -244px; }\n\n#alarm-hours .second,\n#alarm-minutes .second,\n#date .second,\n#month .second {\n  position: relative;\n  left: 7px; }\n\n#alarm-hours .small-zero,\n#alarm-hours .small-one,\n#alarm-hours .small-two,\n#alarm-hours .small-three,\n#alarm-hours .small-four,\n#alarm-hours .small-five,\n#alarm-hours .small-six,\n#alarm-hours .small-seven,\n#alarm-hours .small-eight,\n#alarm-hours .small-nine,\n#alarm-minutes .small-zero,\n#alarm-minutes .small-one,\n#alarm-minutes .small-two,\n#alarm-minutes .small-three,\n#alarm-minutes .small-four,\n#alarm-minutes .small-five,\n#alarm-minutes .small-six,\n#alarm-minutes .small-seven,\n#alarm-minutes .small-eight,\n#alarm-minutes .small-nine,\n#date .small-zero,\n#date .small-one,\n#date .small-two,\n#date .small-three,\n#date .small-four,\n#date .small-five,\n#date .small-six,\n#date .small-seven,\n#date .small-eight,\n#date .small-nine,\n#month .small-zero,\n#month .small-one,\n#month .small-two,\n#month .small-three,\n#month .small-four,\n#month .small-five,\n#month .small-six,\n#month .small-seven,\n#month .small-eight,\n#month .small-nine {\n  display: inline-block;\n  float: left;\n  height: 36px;\n  width: 28px; }\n\n#alarm-hours .small-zero,\n#alarm-minutes .small-zero,\n#date .small-zero,\n#month .small-zero {\n  background-position: 0px -299px; }\n\n#alarm-hours .small-one,\n#alarm-minutes .small-one,\n#date .small-one,\n#month .small-one {\n  background-position: -30px -299px; }\n\n#alarm-hours .small-two,\n#alarm-minutes .small-two,\n#date .small-two,\n#month .small-two {\n  background-position: -59px -299px; }\n\n#alarm-hours .small-three,\n#alarm-minutes .small-three,\n#date .small-three,\n#month .small-three {\n  background-position: -90px -299px; }\n\n#alarm-hours .small-four,\n#alarm-minutes .small-four,\n#date .small-four,\n#month .small-four {\n  background-position: -120px -299px; }\n\n#alarm-hours .small-five,\n#alarm-minutes .small-five,\n#date .small-five,\n#month .small-five {\n  background-position: -150px -299px; }\n\n#alarm-hours .small-six,\n#alarm-minutes .small-six,\n#date .small-six,\n#month .small-six {\n  background-position: -180px -299px; }\n\n#alarm-hours .small-seven,\n#alarm-minutes .small-seven,\n#date .small-seven,\n#month .small-seven {\n  background-position: -209px -299px; }\n\n#alarm-hours .small-eight,\n#alarm-minutes .small-eight,\n#date .small-eight,\n#month .small-eight {\n  background-position: -239px -299px; }\n\n#alarm-hours .small-nine,\n#alarm-minutes .small-nine,\n#date .small-nine,\n#month .small-nine {\n  background-position: -269px -299px; }\n\n#day .monday,\n#day .tuesday,\n#day .wednesday,\n#day .thursday,\n#day .friday,\n#day .saturday,\n#day .sunday {\n  height: 22px;\n  width: 120px; }\n\n#day .monday {\n  background-position: 1px -341px; }\n\n#day .tuesday {\n  background-position: -120px -341px; }\n\n#day .wednesday {\n  background-position: -242px -341px; }\n\n#day .thursday {\n  background-position: -365px -341px; }\n\n#day .friday {\n  background-position: 6px -364px; }\n\n#day .saturday {\n  background-position: -115px -365px; }\n\n#day .sunday {\n  background-position: -237px -364px; }\n\n#otacon {\n  left: 410px;\n  position: relative;\n  top: -140px;\n  width: 300px;\n  -webkit-app-region: drag; }\n  #otacon .stationary {\n    background-position: -489px 0;\n    height: 447px;\n    width: 204px; }\n  #otacon .thumbs-up-1 {\n    background-position: 0px -392px;\n    height: 448px;\n    width: 204px; }\n  #otacon .thumbs-up-2 {\n    background-position: -214px -391px;\n    height: 448px;\n    position: relative;\n    left: -38px;\n    top: -2px;\n    width: 238px; }\n  #otacon .thumbs-up-3 {\n    background-position: -452px -453px;\n    height: 448px;\n    position: relative;\n    left: -42.4px;\n    top: -1.3px;\n    width: 238px; }\n  #otacon .eyes {\n    height: 28px;\n    width: 99px;\n    position: absolute;\n    left: 21.4px;\n    top: 97.5px; }\n    #otacon .eyes.ahead {\n      background-position: -699px -30px; }\n    #otacon .eyes.close {\n      background-position: -699px -129px; }\n    #otacon .eyes.down_right {\n      background-position: -699px -96px; }\n    #otacon .eyes.down_left {\n      background-position: -699px 0; }\n    #otacon .eyes.forward {\n      background-position: -699px -64px; }\n", ""]);
 
 	// exports
 
@@ -20437,7 +20443,7 @@
 /* 172 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "92e51d83417ee903f7e9b3770e6d4e78.png";
+	module.exports = __webpack_require__.p + "935f3fccd0c574e14ed9d9cd22594e0a.png";
 
 /***/ },
 /* 173 */
@@ -20755,28 +20761,31 @@
 		}, {
 			key: 'componentDidMount',
 			value: function componentDidMount() {
-				var getTime = this.props.getTime;
+				var _props = this.props;
+				var compareTimeToAlarmTime = _props.compareTimeToAlarmTime;
+				var getTime = _props.getTime;
 
 
 				window.setInterval(function () {
+					compareTimeToAlarmTime();
 					getTime();
 				}, 1000);
 			}
 		}, {
 			key: 'render',
 			value: function render() {
-				var _props = this.props;
-				var alarm = _props.alarm;
-				var alarmHours = _props.alarmHours;
-				var alarmMinutes = _props.alarmMinutes;
-				var date = _props.date;
-				var day = _props.day;
-				var hours = _props.hours;
-				var increaseAlarmHours = _props.increaseAlarmHours;
-				var increaseAlarmMinutes = _props.increaseAlarmMinutes;
-				var minutes = _props.minutes;
-				var month = _props.month;
-				var seconds = _props.seconds;
+				var _props2 = this.props;
+				var alarm = _props2.alarm;
+				var alarmHours = _props2.alarmHours;
+				var alarmMinutes = _props2.alarmMinutes;
+				var date = _props2.date;
+				var day = _props2.day;
+				var hours = _props2.hours;
+				var increaseAlarmHours = _props2.increaseAlarmHours;
+				var increaseAlarmMinutes = _props2.increaseAlarmMinutes;
+				var minutes = _props2.minutes;
+				var month = _props2.month;
+				var seconds = _props2.seconds;
 
 				var alarmClasses = (0, _classnames2.default)({
 					blue: alarm === false,
@@ -20841,6 +20850,7 @@
 	}(React.Component);
 
 	Clock.propTypes = {
+		compareTimeToAlarmTime: React.PropTypes.func,
 		date: React.PropTypes.array,
 		day: React.PropTypes.string,
 		getTime: React.PropTypes.func,
@@ -21049,13 +21059,17 @@
 
 	var _clock = __webpack_require__(179);
 
+	var _Clock = __webpack_require__(176);
+
+	var _Clock2 = _interopRequireDefault(_Clock);
+
 	var _moment = __webpack_require__(180);
 
 	var _moment2 = _interopRequireDefault(_moment);
 
-	var _Clock = __webpack_require__(176);
+	var _Otacon = __webpack_require__(283);
 
-	var _Clock2 = _interopRequireDefault(_Clock);
+	var _Otacon2 = _interopRequireDefault(_Otacon);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -21067,6 +21081,29 @@
 		}
 
 		_createClass(ClockServices, [{
+			key: 'compareTimeToAlarmTime',
+			value: function compareTimeToAlarmTime() {
+				return function (dispatch, getState) {
+					var _getState$clockReduce = getState().clockReducer;
+					var alarm = _getState$clockReduce.alarm;
+					var alarmHours = _getState$clockReduce.alarmHours;
+					var alarmMinutes = _getState$clockReduce.alarmMinutes;
+					var hours = _getState$clockReduce.hours;
+					var minutes = _getState$clockReduce.minutes;
+					var thumbsUpPosition = getState().otaconReducer.thumbsUpPosition;
+
+
+					if (alarm && !thumbsUpPosition) {
+						var alarmTime = '' + alarmHours.toString() + alarmMinutes.toString();
+						var time = '' + hours.toString() + minutes.toString();
+
+						if (alarmTime === time) {
+							dispatch(_Otacon2.default.thumbsUp());
+						}
+					}
+				};
+			}
+		}, {
 			key: 'getTime',
 			value: function getTime() {
 				return function (dispatch) {
@@ -35063,14 +35100,215 @@
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /* global window */
+
+	var _Otacon = __webpack_require__(284);
+
+	var _Otacon2 = _interopRequireDefault(_Otacon);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var OtaconServices = function () {
+		function OtaconServices() {
+			_classCallCheck(this, OtaconServices);
+		}
+
+		_createClass(OtaconServices, [{
+			key: 'blink',
+			value: function blink() {
+				return function (dispatch) {
+					dispatch(_Otacon2.default.close());
+
+					window.setTimeout(function () {
+						dispatch(_Otacon2.default.ahead());
+					}, 50);
+
+					window.setTimeout(function () {
+						dispatch(_Otacon2.default.close());
+					}, 100);
+
+					window.setTimeout(function () {
+						dispatch(_Otacon2.default.ahead());
+					}, 150);
+				};
+			}
+		}, {
+			key: 'lookAhead',
+			value: function lookAhead() {
+				return function (dispatch) {
+					window.setTimeout(function () {
+						dispatch(_Otacon2.default.ahead());
+					}, 1700);
+				};
+			}
+		}, {
+			key: 'randomizeEyes',
+			value: function randomizeEyes() {
+				var _this = this;
+
+				return function (dispatch) {
+					var num = Math.round(Math.random() * 5);
+
+					switch (num) {
+						case 0:
+						case 1:
+						case 2:
+							dispatch(_this.blink());
+							break;
+						case 3:
+							dispatch(_Otacon2.default.downRight());
+							dispatch(_this.lookAhead());
+							break;
+						case 4:
+							dispatch(_Otacon2.default.downLeft());
+							dispatch(_this.lookAhead());
+							break;
+						case 5:
+							dispatch(_Otacon2.default.forward());
+							dispatch(_this.lookAhead());
+							break;
+						default:
+							dispatch(_Otacon2.default.ahead());
+					}
+				};
+			}
+		}, {
+			key: 'thumbsUp',
+			value: function thumbsUp() {
+				return function (dispatch, getState) {
+					var thumbsUpPosition = getState().otaconReducer.thumbsUpPosition;
+
+
+					if (thumbsUpPosition === 3) {
+						dispatch(_Otacon2.default.decreaseThumbsUp());
+					} else {
+						dispatch(_Otacon2.default.increaseThumbsUp());
+					}
+				};
+			}
+		}]);
+
+		return OtaconServices;
+	}();
+
+	exports.default = new OtaconServices();
+
+/***/ },
+/* 284 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _OTACON = __webpack_require__(285);
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var OtaconActions = function () {
+		function OtaconActions() {
+			_classCallCheck(this, OtaconActions);
+		}
+
+		_createClass(OtaconActions, [{
+			key: 'ahead',
+			value: function ahead() {
+				return {
+					type: _OTACON.OTACON.AHEAD
+				};
+			}
+		}, {
+			key: 'close',
+			value: function close() {
+				return {
+					type: _OTACON.OTACON.CLOSE
+				};
+			}
+		}, {
+			key: 'decreaseThumbsUp',
+			value: function decreaseThumbsUp() {
+				return {
+					type: _OTACON.OTACON.DECREASE_THUMBS_UP
+				};
+			}
+		}, {
+			key: 'downLeft',
+			value: function downLeft() {
+				return {
+					type: _OTACON.OTACON.DOWN_LEFT
+				};
+			}
+		}, {
+			key: 'downRight',
+			value: function downRight() {
+				return {
+					type: _OTACON.OTACON.DOWN_RIGHT
+				};
+			}
+		}, {
+			key: 'forward',
+			value: function forward() {
+				return {
+					type: _OTACON.OTACON.FORWARD
+				};
+			}
+		}, {
+			key: 'increaseThumbsUp',
+			value: function increaseThumbsUp() {
+				return {
+					type: _OTACON.OTACON.INCREASE_THUMBS_UP
+				};
+			}
+		}]);
+
+		return OtaconActions;
+	}();
+
+	exports.default = new OtaconActions();
+
+/***/ },
+/* 285 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	var OTACON = exports.OTACON = {
+		AHEAD: 'ahead',
+		CLOSE: 'close',
+		DOWN_LEFT: 'down_left',
+		DOWN_RIGHT: 'down_right',
+		FORWARD: 'forward',
+		INCREASE_THUMBS_UP: 'increase_thumbs_up',
+		DECREASE_THUMBS_UP: 'decrease_thumbs_up'
+	};
+
+/***/ },
+/* 286 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
 	exports.__esModule = true;
 	exports.connect = exports.Provider = undefined;
 
-	var _Provider = __webpack_require__(284);
+	var _Provider = __webpack_require__(287);
 
 	var _Provider2 = _interopRequireDefault(_Provider);
 
-	var _connect = __webpack_require__(287);
+	var _connect = __webpack_require__(290);
 
 	var _connect2 = _interopRequireDefault(_connect);
 
@@ -35080,7 +35318,7 @@
 	exports.connect = _connect2["default"];
 
 /***/ },
-/* 284 */
+/* 287 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -35090,11 +35328,11 @@
 
 	var _react = __webpack_require__(1);
 
-	var _storeShape = __webpack_require__(285);
+	var _storeShape = __webpack_require__(288);
 
 	var _storeShape2 = _interopRequireDefault(_storeShape);
 
-	var _warning = __webpack_require__(286);
+	var _warning = __webpack_require__(289);
 
 	var _warning2 = _interopRequireDefault(_warning);
 
@@ -35164,7 +35402,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 285 */
+/* 288 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -35180,7 +35418,7 @@
 	});
 
 /***/ },
-/* 286 */
+/* 289 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -35209,7 +35447,7 @@
 	}
 
 /***/ },
-/* 287 */
+/* 290 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -35221,31 +35459,31 @@
 
 	var _react = __webpack_require__(1);
 
-	var _storeShape = __webpack_require__(285);
+	var _storeShape = __webpack_require__(288);
 
 	var _storeShape2 = _interopRequireDefault(_storeShape);
 
-	var _shallowEqual = __webpack_require__(288);
+	var _shallowEqual = __webpack_require__(291);
 
 	var _shallowEqual2 = _interopRequireDefault(_shallowEqual);
 
-	var _wrapActionCreators = __webpack_require__(289);
+	var _wrapActionCreators = __webpack_require__(292);
 
 	var _wrapActionCreators2 = _interopRequireDefault(_wrapActionCreators);
 
-	var _warning = __webpack_require__(286);
+	var _warning = __webpack_require__(289);
 
 	var _warning2 = _interopRequireDefault(_warning);
 
-	var _isPlainObject = __webpack_require__(292);
+	var _isPlainObject = __webpack_require__(295);
 
 	var _isPlainObject2 = _interopRequireDefault(_isPlainObject);
 
-	var _hoistNonReactStatics = __webpack_require__(303);
+	var _hoistNonReactStatics = __webpack_require__(306);
 
 	var _hoistNonReactStatics2 = _interopRequireDefault(_hoistNonReactStatics);
 
-	var _invariant = __webpack_require__(304);
+	var _invariant = __webpack_require__(307);
 
 	var _invariant2 = _interopRequireDefault(_invariant);
 
@@ -35608,7 +35846,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 288 */
+/* 291 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -35639,7 +35877,7 @@
 	}
 
 /***/ },
-/* 289 */
+/* 292 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -35647,7 +35885,7 @@
 	exports.__esModule = true;
 	exports["default"] = wrapActionCreators;
 
-	var _redux = __webpack_require__(290);
+	var _redux = __webpack_require__(293);
 
 	function wrapActionCreators(actionCreators) {
 	  return function (dispatch) {
@@ -35656,7 +35894,7 @@
 	}
 
 /***/ },
-/* 290 */
+/* 293 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -35664,27 +35902,27 @@
 	exports.__esModule = true;
 	exports.compose = exports.applyMiddleware = exports.bindActionCreators = exports.combineReducers = exports.createStore = undefined;
 
-	var _createStore = __webpack_require__(291);
+	var _createStore = __webpack_require__(294);
 
 	var _createStore2 = _interopRequireDefault(_createStore);
 
-	var _combineReducers = __webpack_require__(298);
+	var _combineReducers = __webpack_require__(301);
 
 	var _combineReducers2 = _interopRequireDefault(_combineReducers);
 
-	var _bindActionCreators = __webpack_require__(300);
+	var _bindActionCreators = __webpack_require__(303);
 
 	var _bindActionCreators2 = _interopRequireDefault(_bindActionCreators);
 
-	var _applyMiddleware = __webpack_require__(301);
+	var _applyMiddleware = __webpack_require__(304);
 
 	var _applyMiddleware2 = _interopRequireDefault(_applyMiddleware);
 
-	var _compose = __webpack_require__(302);
+	var _compose = __webpack_require__(305);
 
 	var _compose2 = _interopRequireDefault(_compose);
 
-	var _warning = __webpack_require__(299);
+	var _warning = __webpack_require__(302);
 
 	var _warning2 = _interopRequireDefault(_warning);
 
@@ -35708,7 +35946,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 291 */
+/* 294 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -35717,11 +35955,11 @@
 	exports.ActionTypes = undefined;
 	exports["default"] = createStore;
 
-	var _isPlainObject = __webpack_require__(292);
+	var _isPlainObject = __webpack_require__(295);
 
 	var _isPlainObject2 = _interopRequireDefault(_isPlainObject);
 
-	var _symbolObservable = __webpack_require__(296);
+	var _symbolObservable = __webpack_require__(299);
 
 	var _symbolObservable2 = _interopRequireDefault(_symbolObservable);
 
@@ -35975,12 +36213,12 @@
 	}
 
 /***/ },
-/* 292 */
+/* 295 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var getPrototype = __webpack_require__(293),
-	    isHostObject = __webpack_require__(294),
-	    isObjectLike = __webpack_require__(295);
+	var getPrototype = __webpack_require__(296),
+	    isHostObject = __webpack_require__(297),
+	    isObjectLike = __webpack_require__(298);
 
 	/** `Object#toString` result references. */
 	var objectTag = '[object Object]';
@@ -36051,7 +36289,7 @@
 
 
 /***/ },
-/* 293 */
+/* 296 */
 /***/ function(module, exports) {
 
 	/* Built-in method references for those with the same name as other `lodash` methods. */
@@ -36072,7 +36310,7 @@
 
 
 /***/ },
-/* 294 */
+/* 297 */
 /***/ function(module, exports) {
 
 	/**
@@ -36098,7 +36336,7 @@
 
 
 /***/ },
-/* 295 */
+/* 298 */
 /***/ function(module, exports) {
 
 	/**
@@ -36133,18 +36371,18 @@
 
 
 /***/ },
-/* 296 */
+/* 299 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/* global window */
 	'use strict';
 
-	module.exports = __webpack_require__(297)(global || window || this);
+	module.exports = __webpack_require__(300)(global || window || this);
 
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 297 */
+/* 300 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -36169,7 +36407,7 @@
 
 
 /***/ },
-/* 298 */
+/* 301 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -36177,13 +36415,13 @@
 	exports.__esModule = true;
 	exports["default"] = combineReducers;
 
-	var _createStore = __webpack_require__(291);
+	var _createStore = __webpack_require__(294);
 
-	var _isPlainObject = __webpack_require__(292);
+	var _isPlainObject = __webpack_require__(295);
 
 	var _isPlainObject2 = _interopRequireDefault(_isPlainObject);
 
-	var _warning = __webpack_require__(299);
+	var _warning = __webpack_require__(302);
 
 	var _warning2 = _interopRequireDefault(_warning);
 
@@ -36302,7 +36540,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 299 */
+/* 302 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -36332,7 +36570,7 @@
 	}
 
 /***/ },
-/* 300 */
+/* 303 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -36388,7 +36626,7 @@
 	}
 
 /***/ },
-/* 301 */
+/* 304 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -36399,7 +36637,7 @@
 
 	exports["default"] = applyMiddleware;
 
-	var _compose = __webpack_require__(302);
+	var _compose = __webpack_require__(305);
 
 	var _compose2 = _interopRequireDefault(_compose);
 
@@ -36451,7 +36689,7 @@
 	}
 
 /***/ },
-/* 302 */
+/* 305 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -36496,7 +36734,7 @@
 	}
 
 /***/ },
-/* 303 */
+/* 306 */
 /***/ function(module, exports) {
 
 	/**
@@ -36542,7 +36780,7 @@
 
 
 /***/ },
-/* 304 */
+/* 307 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -36600,7 +36838,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 305 */
+/* 308 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React) {'use strict';
@@ -36705,207 +36943,6 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
-/* 306 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /* global window */
-
-	var _Otacon = __webpack_require__(307);
-
-	var _Otacon2 = _interopRequireDefault(_Otacon);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	var OtaconServices = function () {
-		function OtaconServices() {
-			_classCallCheck(this, OtaconServices);
-		}
-
-		_createClass(OtaconServices, [{
-			key: 'blink',
-			value: function blink() {
-				return function (dispatch) {
-					dispatch(_Otacon2.default.close());
-
-					window.setTimeout(function () {
-						dispatch(_Otacon2.default.ahead());
-					}, 50);
-
-					window.setTimeout(function () {
-						dispatch(_Otacon2.default.close());
-					}, 100);
-
-					window.setTimeout(function () {
-						dispatch(_Otacon2.default.ahead());
-					}, 150);
-				};
-			}
-		}, {
-			key: 'lookAhead',
-			value: function lookAhead() {
-				return function (dispatch) {
-					window.setTimeout(function () {
-						dispatch(_Otacon2.default.ahead());
-					}, 1700);
-				};
-			}
-		}, {
-			key: 'randomizeEyes',
-			value: function randomizeEyes() {
-				var _this = this;
-
-				return function (dispatch) {
-					var num = Math.round(Math.random() * 5);
-
-					switch (num) {
-						case 0:
-						case 1:
-						case 2:
-							dispatch(_this.blink());
-							break;
-						case 3:
-							dispatch(_Otacon2.default.downRight());
-							dispatch(_this.lookAhead());
-							break;
-						case 4:
-							dispatch(_Otacon2.default.downLeft());
-							dispatch(_this.lookAhead());
-							break;
-						case 5:
-							dispatch(_Otacon2.default.forward());
-							dispatch(_this.lookAhead());
-							break;
-						default:
-							dispatch(_Otacon2.default.ahead());
-					}
-				};
-			}
-		}, {
-			key: 'thumbsUp',
-			value: function thumbsUp() {
-				return function (dispatch, getState) {
-					var thumbsUpPosition = getState().otaconReducer.thumbsUpPosition;
-
-
-					if (thumbsUpPosition === 3) {
-						dispatch(_Otacon2.default.decreaseThumbsUp());
-					} else {
-						dispatch(_Otacon2.default.increaseThumbsUp());
-					}
-				};
-			}
-		}]);
-
-		return OtaconServices;
-	}();
-
-	exports.default = new OtaconServices();
-
-/***/ },
-/* 307 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _OTACON = __webpack_require__(308);
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	var OtaconActions = function () {
-		function OtaconActions() {
-			_classCallCheck(this, OtaconActions);
-		}
-
-		_createClass(OtaconActions, [{
-			key: 'ahead',
-			value: function ahead() {
-				return {
-					type: _OTACON.OTACON.AHEAD
-				};
-			}
-		}, {
-			key: 'close',
-			value: function close() {
-				return {
-					type: _OTACON.OTACON.CLOSE
-				};
-			}
-		}, {
-			key: 'decreaseThumbsUp',
-			value: function decreaseThumbsUp() {
-				return {
-					type: _OTACON.OTACON.DECREASE_THUMBS_UP
-				};
-			}
-		}, {
-			key: 'downLeft',
-			value: function downLeft() {
-				return {
-					type: _OTACON.OTACON.DOWN_LEFT
-				};
-			}
-		}, {
-			key: 'downRight',
-			value: function downRight() {
-				return {
-					type: _OTACON.OTACON.DOWN_RIGHT
-				};
-			}
-		}, {
-			key: 'forward',
-			value: function forward() {
-				return {
-					type: _OTACON.OTACON.FORWARD
-				};
-			}
-		}, {
-			key: 'increaseThumbsUp',
-			value: function increaseThumbsUp() {
-				return {
-					type: _OTACON.OTACON.INCREASE_THUMBS_UP
-				};
-			}
-		}]);
-
-		return OtaconActions;
-	}();
-
-	exports.default = new OtaconActions();
-
-/***/ },
-/* 308 */
-/***/ function(module, exports) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	var OTACON = exports.OTACON = {
-		AHEAD: 'ahead',
-		CLOSE: 'close',
-		DOWN_LEFT: 'down_left',
-		DOWN_RIGHT: 'down_right',
-		FORWARD: 'forward',
-		INCREASE_THUMBS_UP: 'increase_thumbs_up',
-		DECREASE_THUMBS_UP: 'decrease_thumbs_up'
-	};
-
-/***/ },
 /* 309 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -36915,7 +36952,7 @@
 		value: true
 	});
 
-	var _redux = __webpack_require__(290);
+	var _redux = __webpack_require__(293);
 
 	var _reduxLogger = __webpack_require__(310);
 
@@ -37184,7 +37221,7 @@
 
 	var _clock2 = _interopRequireDefault(_clock);
 
-	var _redux = __webpack_require__(290);
+	var _redux = __webpack_require__(293);
 
 	var _otacon = __webpack_require__(314);
 
@@ -37304,7 +37341,7 @@
 	});
 	exports.default = otaconReducer;
 
-	var _OTACON = __webpack_require__(308);
+	var _OTACON = __webpack_require__(285);
 
 	var _otacon = __webpack_require__(315);
 
@@ -37350,7 +37387,7 @@
 		value: true
 	});
 
-	var _OTACON = __webpack_require__(308);
+	var _OTACON = __webpack_require__(285);
 
 	var otaconState = {
 		eyes: _OTACON.OTACON.AHEAD,

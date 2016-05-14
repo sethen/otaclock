@@ -4,6 +4,7 @@ import classnames from 'classnames';
 
 class Clock extends React.Component {
 	static propTypes = {
+		compareTimeToAlarmTime: React.PropTypes.func,
 		date: React.PropTypes.array,
 		day: React.PropTypes.string,
 		getTime: React.PropTypes.func,
@@ -20,9 +21,13 @@ class Clock extends React.Component {
 	}
 
 	componentDidMount() {
-		const { getTime } = this.props;
+		const {
+			compareTimeToAlarmTime,
+			getTime
+		} = this.props;
 
 		window.setInterval(() => {
+			compareTimeToAlarmTime();
 			getTime();
 		}, 1000);
 	}

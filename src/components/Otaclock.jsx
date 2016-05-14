@@ -23,6 +23,12 @@ class Otaclock extends React.Component {
 		otacon: React.PropTypes.object
 	};
 
+	compareTimeToAlarmTime = () => {
+		const { dispatch } = this.props;
+
+		dispatch(ClockServices.compareTimeToAlarmTime());
+	}
+
 	disableAlarm = () => {
 		const { dispatch } = this.props;
 
@@ -84,6 +90,7 @@ class Otaclock extends React.Component {
 				<Clock alarm={ alarm }
 					alarmHours={ alarmHours }
 					alarmMinutes={ alarmMinutes }
+					compareTimeToAlarmTime={ this.compareTimeToAlarmTime }
 					date={ date }
 					day={ day }
 					disableAlarm={ this.disableAlarm }
