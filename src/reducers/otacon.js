@@ -21,6 +21,10 @@ export default function otaconReducer(state = otaconState, action) {
 			return Object.assign({}, state, {
 				thumbsUpPosition: state.thumbsUpPosition += 1
 			});
+		case OTACON.STATIONARY:
+			return Object.assign({}, state, {
+				thumbsUpPosition: null
+			});
 		default:
 			return state;
 	}

@@ -20212,7 +20212,7 @@
 
 	var _Otacon2 = _interopRequireDefault(_Otacon);
 
-	var _Otacon3 = __webpack_require__(283);
+	var _Otacon3 = __webpack_require__(285);
 
 	var _Otacon4 = _interopRequireDefault(_Otacon3);
 
@@ -20280,6 +20280,11 @@
 
 
 				dispatch(_Otacon4.default.randomizeEyes());
+			}, _this.toggleAlarm = function () {
+				var dispatch = _this.props.dispatch;
+
+
+				dispatch(_Clock6.default.toggleAlarm());
 			}, _this.thumbsUp = function () {
 				var dispatch = _this.props.dispatch;
 
@@ -20323,8 +20328,10 @@
 						increaseAlarmHours: this.increaseAlarmHours,
 						minutes: minutes,
 						month: month,
-						seconds: seconds }),
-					React.createElement(_Otacon2.default, { eyes: eyes,
+						seconds: seconds,
+						toggleAlarm: this.toggleAlarm }),
+					React.createElement(_Otacon2.default, { alarm: alarm,
+						eyes: eyes,
 						randomizeEyes: this.randomizeEyes,
 						thumbsUpPosition: thumbsUpPosition,
 						thumbsUp: this.thumbsUp })
@@ -20378,7 +20385,7 @@
 
 
 	// module
-	exports.push([module.id, "/* \nhtml5doctor.com Reset Stylesheet\nv1.6.1\nLast Updated: 2010-09-17\nAuthor: Richard Clark - http://richclarkdesign.com \nTwitter: @rich_clark\n*/\nhtml, body, div, span, object, iframe,\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\nabbr, address, cite, code,\ndel, dfn, em, img, ins, kbd, q, samp,\nsmall, strong, sub, sup, var,\nb, i,\ndl, dt, dd, ol, ul, li,\nfieldset, form, label, legend,\ntable, caption, tbody, tfoot, thead, tr, th, td,\narticle, aside, canvas, details, figcaption, figure,\nfooter, header, hgroup, menu, nav, section, summary,\ntime, mark, audio, video {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  outline: 0;\n  font-size: 100%;\n  vertical-align: baseline;\n  background: transparent; }\n\nbody {\n  line-height: 1; }\n\narticle, aside, details, figcaption, figure,\nfooter, header, hgroup, menu, nav, section {\n  display: block; }\n\nnav ul {\n  list-style: none; }\n\nblockquote, q {\n  quotes: none; }\n\nblockquote:before, blockquote:after,\nq:before, q:after {\n  content: '';\n  content: none; }\n\na {\n  margin: 0;\n  padding: 0;\n  font-size: 100%;\n  vertical-align: baseline;\n  background: transparent; }\n\n/* change colours to suit your needs */\nins {\n  background-color: #ff9;\n  color: #000;\n  text-decoration: none; }\n\n/* change colours to suit your needs */\nmark {\n  background-color: #ff9;\n  color: #000;\n  font-style: italic;\n  font-weight: bold; }\n\ndel {\n  text-decoration: line-through; }\n\nabbr[title], dfn[title] {\n  border-bottom: 1px dotted;\n  cursor: help; }\n\ntable {\n  border-collapse: collapse;\n  border-spacing: 0; }\n\n/* change border colour to suit your needs */\nhr {\n  display: block;\n  height: 1px;\n  border: 0;\n  border-top: 1px solid #cccccc;\n  margin: 1em 0;\n  padding: 0; }\n\ninput, select {\n  vertical-align: middle; }\n\nbody,\nhtml {\n  overflow: hidden; }\n\n#alarm,\n#alarm-hours .small-zero,\n#alarm-hours .small-one,\n#alarm-hours .small-two,\n#alarm-hours .small-three,\n#alarm-hours .small-four,\n#alarm-hours .small-five,\n#alarm-hours .small-six,\n#alarm-hours .small-seven,\n#alarm-hours .small-eight,\n#alarm-hours .small-nine,\n#alarm-minutes .small-zero,\n#alarm-minutes .small-one,\n#alarm-minutes .small-two,\n#alarm-minutes .small-three,\n#alarm-minutes .small-four,\n#alarm-minutes .small-five,\n#alarm-minutes .small-six,\n#alarm-minutes .small-seven,\n#alarm-minutes .small-eight,\n#alarm-minutes .small-nine,\n#clock,\n#date .small-zero,\n#date .small-one,\n#date .small-two,\n#date .small-three,\n#date .small-four,\n#date .small-five,\n#date .small-six,\n#date .small-seven,\n#date .small-eight,\n#day .monday,\n#day .tuesday,\n#day .wednesday,\n#day .thursday,\n#day .friday,\n#day .saturday,\n#day .sunday,\n#hours .zero,\n#hours .one,\n#hours .two,\n#hours .three,\n#hours .four,\n#hours .five,\n#hours .six,\n#hours .seven,\n#hours .eight,\n#hours .nine,\n#minutes .zero,\n#minutes .one,\n#minutes .two,\n#minutes .three,\n#minutes .four,\n#minutes .five,\n#minutes .six,\n#minutes .seven,\n#minutes .eight,\n#minutes .nine,\n#month .small-zero,\n#month .small-one,\n#month .small-two,\n#month .small-three,\n#month .small-four,\n#month .small-five,\n#month .small-six,\n#month .small-seven,\n#month .small-eight,\n#month .small-nine,\n#seconds .zero,\n#seconds .one,\n#seconds .two,\n#seconds .three,\n#seconds .four,\n#seconds .five,\n#seconds .six,\n#seconds .seven,\n#seconds .eight,\n#seconds .nine,\n#otacon .eyes,\n#otacon .stationary,\n#otacon .thumbs-up-1,\n#otacon .thumbs-up-2,\n#otacon .thumbs-up-3 {\n  background-image: url(" + __webpack_require__(172) + ");\n  background-repeat: no-repeat;\n  background-size: auto 900px; }\n\n#alarm,\n#alarm-hours,\n#alarm-minutes {\n  cursor: pointer; }\n\n#alarm {\n  height: 35px;\n  left: 35px;\n  position: absolute;\n  top: 126px;\n  width: 146px; }\n  #alarm.blue {\n    background-position: -154px -865px; }\n  #alarm.red {\n    background-position: -1px -865px; }\n\n#alarm-hours {\n  left: 203px;\n  height: 35px;\n  position: absolute;\n  top: 126px;\n  width: 62px; }\n\n#alarm-minutes {\n  left: 286px;\n  height: 35px;\n  position: absolute;\n  top: 126px;\n  width: 62px; }\n\n#clock {\n  background-position: 0 0;\n  height: 244px;\n  width: 392px;\n  -webkit-app-region: drag; }\n\n#date,\n#day,\n#hours,\n#minutes,\n#month,\n#seconds {\n  background-color: #FFFFFF; }\n\n#date {\n  position: absolute;\n  top: 28px;\n  left: 119px;\n  width: 63px; }\n\n#day {\n  position: absolute;\n  top: 35px;\n  left: 215px; }\n\n#hours {\n  position: absolute;\n  left: 35.5px;\n  top: 70.7px;\n  width: 91px; }\n\n#minutes {\n  position: absolute;\n  left: 147px;\n  top: 70.7px;\n  width: 90px; }\n\n#month {\n  position: absolute;\n  left: 56px;\n  top: 27px; }\n\n#seconds {\n  position: absolute;\n  left: 258px;\n  top: 70.7px;\n  width: 90px; }\n\n#hours .second,\n#minutes .second,\n#seconds .second {\n  position: relative;\n  left: 6px; }\n\n#hours .zero,\n#hours .one,\n#hours .two,\n#hours .three,\n#hours .four,\n#hours .five,\n#hours .six,\n#hours .seven,\n#hours .eight,\n#hours .nine,\n#minutes .zero,\n#minutes .one,\n#minutes .two,\n#minutes .three,\n#minutes .four,\n#minutes .five,\n#minutes .six,\n#minutes .seven,\n#minutes .eight,\n#minutes .nine,\n#seconds .zero,\n#seconds .one,\n#seconds .two,\n#seconds .three,\n#seconds .four,\n#seconds .five,\n#seconds .six,\n#seconds .seven,\n#seconds .eight,\n#seconds .nine {\n  display: inline-block;\n  float: left;\n  height: 48px;\n  width: 42px; }\n\n#hours .zero,\n#minutes .zero,\n#seconds .zero {\n  background-position: 0 -245px; }\n\n#hours .one,\n#minutes .one,\n#seconds .one {\n  background-position: -43px -245px; }\n\n#hours .two,\n#minutes .two,\n#seconds .two {\n  background-position: -87px -245px; }\n\n#hours .three,\n#minutes .three,\n#seconds .three {\n  background-position: -131px -245px; }\n\n#hours .four,\n#minutes .four,\n#seconds .four {\n  background-position: -174px -245px; }\n\n#hours .five,\n#minutes .five,\n#seconds .five {\n  background-position: -217px -245px; }\n\n#hours .six,\n#minutes .six,\n#seconds .six {\n  background-position: -260.5px -245px; }\n\n#hours .seven,\n#minutes .seven,\n#seconds .seven {\n  background-position: -305px -245px; }\n\n#hours .eight,\n#minutes .eight,\n#seconds .eight {\n  background-position: -349px -245px; }\n\n#hours .nine,\n#minutes .nine,\n#seconds .nine {\n  background-position: -393px -244px; }\n\n#alarm-hours .second,\n#alarm-minutes .second,\n#date .second,\n#month .second {\n  position: relative;\n  left: 7px; }\n\n#alarm-hours .small-zero,\n#alarm-hours .small-one,\n#alarm-hours .small-two,\n#alarm-hours .small-three,\n#alarm-hours .small-four,\n#alarm-hours .small-five,\n#alarm-hours .small-six,\n#alarm-hours .small-seven,\n#alarm-hours .small-eight,\n#alarm-hours .small-nine,\n#alarm-minutes .small-zero,\n#alarm-minutes .small-one,\n#alarm-minutes .small-two,\n#alarm-minutes .small-three,\n#alarm-minutes .small-four,\n#alarm-minutes .small-five,\n#alarm-minutes .small-six,\n#alarm-minutes .small-seven,\n#alarm-minutes .small-eight,\n#alarm-minutes .small-nine,\n#date .small-zero,\n#date .small-one,\n#date .small-two,\n#date .small-three,\n#date .small-four,\n#date .small-five,\n#date .small-six,\n#date .small-seven,\n#date .small-eight,\n#date .small-nine,\n#month .small-zero,\n#month .small-one,\n#month .small-two,\n#month .small-three,\n#month .small-four,\n#month .small-five,\n#month .small-six,\n#month .small-seven,\n#month .small-eight,\n#month .small-nine {\n  display: inline-block;\n  float: left;\n  height: 36px;\n  width: 28px; }\n\n#alarm-hours .small-zero,\n#alarm-minutes .small-zero,\n#date .small-zero,\n#month .small-zero {\n  background-position: 0px -299px; }\n\n#alarm-hours .small-one,\n#alarm-minutes .small-one,\n#date .small-one,\n#month .small-one {\n  background-position: -30px -299px; }\n\n#alarm-hours .small-two,\n#alarm-minutes .small-two,\n#date .small-two,\n#month .small-two {\n  background-position: -59px -299px; }\n\n#alarm-hours .small-three,\n#alarm-minutes .small-three,\n#date .small-three,\n#month .small-three {\n  background-position: -90px -299px; }\n\n#alarm-hours .small-four,\n#alarm-minutes .small-four,\n#date .small-four,\n#month .small-four {\n  background-position: -120px -299px; }\n\n#alarm-hours .small-five,\n#alarm-minutes .small-five,\n#date .small-five,\n#month .small-five {\n  background-position: -150px -299px; }\n\n#alarm-hours .small-six,\n#alarm-minutes .small-six,\n#date .small-six,\n#month .small-six {\n  background-position: -180px -299px; }\n\n#alarm-hours .small-seven,\n#alarm-minutes .small-seven,\n#date .small-seven,\n#month .small-seven {\n  background-position: -209px -299px; }\n\n#alarm-hours .small-eight,\n#alarm-minutes .small-eight,\n#date .small-eight,\n#month .small-eight {\n  background-position: -239px -299px; }\n\n#alarm-hours .small-nine,\n#alarm-minutes .small-nine,\n#date .small-nine,\n#month .small-nine {\n  background-position: -269px -299px; }\n\n#day .monday,\n#day .tuesday,\n#day .wednesday,\n#day .thursday,\n#day .friday,\n#day .saturday,\n#day .sunday {\n  height: 22px;\n  width: 120px; }\n\n#day .monday {\n  background-position: 1px -341px; }\n\n#day .tuesday {\n  background-position: -120px -341px; }\n\n#day .wednesday {\n  background-position: -242px -341px; }\n\n#day .thursday {\n  background-position: -365px -341px; }\n\n#day .friday {\n  background-position: 6px -364px; }\n\n#day .saturday {\n  background-position: -115px -365px; }\n\n#day .sunday {\n  background-position: -237px -364px; }\n\n#otacon {\n  left: 410px;\n  position: relative;\n  top: -140px;\n  width: 300px;\n  -webkit-app-region: drag; }\n  #otacon .stationary {\n    background-position: -489px 0;\n    height: 447px;\n    width: 204px; }\n  #otacon .thumbs-up-1 {\n    background-position: 0px -392px;\n    height: 448px;\n    width: 204px; }\n  #otacon .thumbs-up-2 {\n    background-position: -214px -391px;\n    height: 448px;\n    position: relative;\n    left: -35px;\n    top: -2px;\n    width: 238px; }\n  #otacon .thumbs-up-3 {\n    background-position: -452px -452px;\n    height: 448px;\n    position: relative;\n    left: -35px;\n    top: -2px;\n    width: 238px; }\n  #otacon .eyes {\n    height: 28px;\n    width: 99px;\n    position: absolute;\n    left: 21.4px;\n    top: 97.5px; }\n    #otacon .eyes.ahead {\n      background-position: -699px -30px; }\n    #otacon .eyes.close {\n      background-position: -699px -129px; }\n    #otacon .eyes.down_right {\n      background-position: -699px -96px; }\n    #otacon .eyes.down_left {\n      background-position: -699px 0; }\n    #otacon .eyes.forward {\n      background-position: -699px -64px; }\n", ""]);
+	exports.push([module.id, "/* \nhtml5doctor.com Reset Stylesheet\nv1.6.1\nLast Updated: 2010-09-17\nAuthor: Richard Clark - http://richclarkdesign.com \nTwitter: @rich_clark\n*/\nhtml, body, div, span, object, iframe,\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\nabbr, address, cite, code,\ndel, dfn, em, img, ins, kbd, q, samp,\nsmall, strong, sub, sup, var,\nb, i,\ndl, dt, dd, ol, ul, li,\nfieldset, form, label, legend,\ntable, caption, tbody, tfoot, thead, tr, th, td,\narticle, aside, canvas, details, figcaption, figure,\nfooter, header, hgroup, menu, nav, section, summary,\ntime, mark, audio, video {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  outline: 0;\n  font-size: 100%;\n  vertical-align: baseline;\n  background: transparent; }\n\nbody {\n  line-height: 1; }\n\narticle, aside, details, figcaption, figure,\nfooter, header, hgroup, menu, nav, section {\n  display: block; }\n\nnav ul {\n  list-style: none; }\n\nblockquote, q {\n  quotes: none; }\n\nblockquote:before, blockquote:after,\nq:before, q:after {\n  content: '';\n  content: none; }\n\na {\n  margin: 0;\n  padding: 0;\n  font-size: 100%;\n  vertical-align: baseline;\n  background: transparent; }\n\n/* change colours to suit your needs */\nins {\n  background-color: #ff9;\n  color: #000;\n  text-decoration: none; }\n\n/* change colours to suit your needs */\nmark {\n  background-color: #ff9;\n  color: #000;\n  font-style: italic;\n  font-weight: bold; }\n\ndel {\n  text-decoration: line-through; }\n\nabbr[title], dfn[title] {\n  border-bottom: 1px dotted;\n  cursor: help; }\n\ntable {\n  border-collapse: collapse;\n  border-spacing: 0; }\n\n/* change border colour to suit your needs */\nhr {\n  display: block;\n  height: 1px;\n  border: 0;\n  border-top: 1px solid #cccccc;\n  margin: 1em 0;\n  padding: 0; }\n\ninput, select {\n  vertical-align: middle; }\n\nbody,\nhtml {\n  overflow: hidden; }\n\n#alarm,\n#alarm-hours .small-zero,\n#alarm-hours .small-one,\n#alarm-hours .small-two,\n#alarm-hours .small-three,\n#alarm-hours .small-four,\n#alarm-hours .small-five,\n#alarm-hours .small-six,\n#alarm-hours .small-seven,\n#alarm-hours .small-eight,\n#alarm-hours .small-nine,\n#alarm-minutes .small-zero,\n#alarm-minutes .small-one,\n#alarm-minutes .small-two,\n#alarm-minutes .small-three,\n#alarm-minutes .small-four,\n#alarm-minutes .small-five,\n#alarm-minutes .small-six,\n#alarm-minutes .small-seven,\n#alarm-minutes .small-eight,\n#alarm-minutes .small-nine,\n#clock,\n#date .small-zero,\n#date .small-one,\n#date .small-two,\n#date .small-three,\n#date .small-four,\n#date .small-five,\n#date .small-six,\n#date .small-seven,\n#date .small-eight,\n#date .small-nine,\n#day .monday,\n#day .tuesday,\n#day .wednesday,\n#day .thursday,\n#day .friday,\n#day .saturday,\n#day .sunday,\n#hours .zero,\n#hours .one,\n#hours .two,\n#hours .three,\n#hours .four,\n#hours .five,\n#hours .six,\n#hours .seven,\n#hours .eight,\n#hours .nine,\n#minutes .zero,\n#minutes .one,\n#minutes .two,\n#minutes .three,\n#minutes .four,\n#minutes .five,\n#minutes .six,\n#minutes .seven,\n#minutes .eight,\n#minutes .nine,\n#month .small-zero,\n#month .small-one,\n#month .small-two,\n#month .small-three,\n#month .small-four,\n#month .small-five,\n#month .small-six,\n#month .small-seven,\n#month .small-eight,\n#month .small-nine,\n#seconds .zero,\n#seconds .one,\n#seconds .two,\n#seconds .three,\n#seconds .four,\n#seconds .five,\n#seconds .six,\n#seconds .seven,\n#seconds .eight,\n#seconds .nine,\n#otacon .eyes,\n#otacon .stationary,\n#otacon .thumbs-up-1,\n#otacon .thumbs-up-2,\n#otacon .thumbs-up-3 {\n  background-image: url(" + __webpack_require__(172) + ");\n  background-repeat: no-repeat;\n  background-size: auto 900px; }\n\n#alarm,\n#alarm-hours,\n#alarm-minutes {\n  cursor: pointer; }\n\n#alarm {\n  height: 35px;\n  left: 35px;\n  position: absolute;\n  top: 126px;\n  width: 146px; }\n  #alarm.blue {\n    background-position: -154px -865px; }\n  #alarm.red {\n    background-position: -1px -865px; }\n\n#alarm-hours {\n  left: 203px;\n  height: 35px;\n  position: absolute;\n  top: 126px;\n  width: 62px; }\n\n#alarm-minutes {\n  left: 286px;\n  height: 35px;\n  position: absolute;\n  top: 126px;\n  width: 62px; }\n\n#clock {\n  background-position: 0 0;\n  height: 244px;\n  width: 392px;\n  -webkit-app-region: drag; }\n\n#date,\n#day,\n#hours,\n#minutes,\n#month,\n#seconds {\n  background-color: #FFFFFF; }\n\n#date {\n  position: absolute;\n  top: 28px;\n  left: 119px;\n  width: 63px; }\n\n#day {\n  position: absolute;\n  top: 35px;\n  left: 215px; }\n\n#hours {\n  position: absolute;\n  left: 35.5px;\n  top: 70.7px;\n  width: 91px; }\n\n#minutes {\n  position: absolute;\n  left: 147px;\n  top: 70.7px;\n  width: 90px; }\n\n#month {\n  position: absolute;\n  left: 56px;\n  top: 27px; }\n\n#seconds {\n  position: absolute;\n  left: 258px;\n  top: 70.7px;\n  width: 90px; }\n\n#hours .second,\n#minutes .second,\n#seconds .second {\n  position: relative;\n  left: 6px; }\n\n#hours .zero,\n#hours .one,\n#hours .two,\n#hours .three,\n#hours .four,\n#hours .five,\n#hours .six,\n#hours .seven,\n#hours .eight,\n#hours .nine,\n#minutes .zero,\n#minutes .one,\n#minutes .two,\n#minutes .three,\n#minutes .four,\n#minutes .five,\n#minutes .six,\n#minutes .seven,\n#minutes .eight,\n#minutes .nine,\n#seconds .zero,\n#seconds .one,\n#seconds .two,\n#seconds .three,\n#seconds .four,\n#seconds .five,\n#seconds .six,\n#seconds .seven,\n#seconds .eight,\n#seconds .nine {\n  display: inline-block;\n  float: left;\n  height: 48px;\n  width: 42px; }\n\n#hours .zero,\n#minutes .zero,\n#seconds .zero {\n  background-position: 0 -245px; }\n\n#hours .one,\n#minutes .one,\n#seconds .one {\n  background-position: -43px -245px; }\n\n#hours .two,\n#minutes .two,\n#seconds .two {\n  background-position: -87px -245px; }\n\n#hours .three,\n#minutes .three,\n#seconds .three {\n  background-position: -131px -245px; }\n\n#hours .four,\n#minutes .four,\n#seconds .four {\n  background-position: -174px -245px; }\n\n#hours .five,\n#minutes .five,\n#seconds .five {\n  background-position: -217px -245px; }\n\n#hours .six,\n#minutes .six,\n#seconds .six {\n  background-position: -260.5px -245px; }\n\n#hours .seven,\n#minutes .seven,\n#seconds .seven {\n  background-position: -305px -245px; }\n\n#hours .eight,\n#minutes .eight,\n#seconds .eight {\n  background-position: -349px -245px; }\n\n#hours .nine,\n#minutes .nine,\n#seconds .nine {\n  background-position: -393px -244px; }\n\n#alarm-hours .second,\n#alarm-minutes .second,\n#date .second,\n#month .second {\n  position: relative;\n  left: 7px; }\n\n#alarm-hours .small-zero,\n#alarm-hours .small-one,\n#alarm-hours .small-two,\n#alarm-hours .small-three,\n#alarm-hours .small-four,\n#alarm-hours .small-five,\n#alarm-hours .small-six,\n#alarm-hours .small-seven,\n#alarm-hours .small-eight,\n#alarm-hours .small-nine,\n#alarm-minutes .small-zero,\n#alarm-minutes .small-one,\n#alarm-minutes .small-two,\n#alarm-minutes .small-three,\n#alarm-minutes .small-four,\n#alarm-minutes .small-five,\n#alarm-minutes .small-six,\n#alarm-minutes .small-seven,\n#alarm-minutes .small-eight,\n#alarm-minutes .small-nine,\n#date .small-zero,\n#date .small-one,\n#date .small-two,\n#date .small-three,\n#date .small-four,\n#date .small-five,\n#date .small-six,\n#date .small-seven,\n#date .small-eight,\n#date .small-nine,\n#month .small-zero,\n#month .small-one,\n#month .small-two,\n#month .small-three,\n#month .small-four,\n#month .small-five,\n#month .small-six,\n#month .small-seven,\n#month .small-eight,\n#month .small-nine {\n  display: inline-block;\n  float: left;\n  height: 36px;\n  width: 28px; }\n\n#alarm-hours .small-zero,\n#alarm-minutes .small-zero,\n#date .small-zero,\n#month .small-zero {\n  background-position: 0px -299px; }\n\n#alarm-hours .small-one,\n#alarm-minutes .small-one,\n#date .small-one,\n#month .small-one {\n  background-position: -30px -299px; }\n\n#alarm-hours .small-two,\n#alarm-minutes .small-two,\n#date .small-two,\n#month .small-two {\n  background-position: -59px -299px; }\n\n#alarm-hours .small-three,\n#alarm-minutes .small-three,\n#date .small-three,\n#month .small-three {\n  background-position: -90px -299px; }\n\n#alarm-hours .small-four,\n#alarm-minutes .small-four,\n#date .small-four,\n#month .small-four {\n  background-position: -120px -299px; }\n\n#alarm-hours .small-five,\n#alarm-minutes .small-five,\n#date .small-five,\n#month .small-five {\n  background-position: -150px -299px; }\n\n#alarm-hours .small-six,\n#alarm-minutes .small-six,\n#date .small-six,\n#month .small-six {\n  background-position: -180px -299px; }\n\n#alarm-hours .small-seven,\n#alarm-minutes .small-seven,\n#date .small-seven,\n#month .small-seven {\n  background-position: -209px -299px; }\n\n#alarm-hours .small-eight,\n#alarm-minutes .small-eight,\n#date .small-eight,\n#month .small-eight {\n  background-position: -239px -299px; }\n\n#alarm-hours .small-nine,\n#alarm-minutes .small-nine,\n#date .small-nine,\n#month .small-nine {\n  background-position: -269px -299px; }\n\n#day .monday,\n#day .tuesday,\n#day .wednesday,\n#day .thursday,\n#day .friday,\n#day .saturday,\n#day .sunday {\n  height: 22px;\n  width: 120px; }\n\n#day .monday {\n  background-position: 1px -341px; }\n\n#day .tuesday {\n  background-position: -120px -341px; }\n\n#day .wednesday {\n  background-position: -242px -341px; }\n\n#day .thursday {\n  background-position: -365px -341px; }\n\n#day .friday {\n  background-position: 6px -364px; }\n\n#day .saturday {\n  background-position: -115px -365px; }\n\n#day .sunday {\n  background-position: -237px -364px; }\n\n#otacon {\n  left: 410px;\n  position: relative;\n  top: -140px;\n  width: 300px;\n  -webkit-app-region: drag; }\n  #otacon .stationary {\n    background-position: -489px 0;\n    height: 447px;\n    width: 204px; }\n  #otacon .thumbs-up-1 {\n    background-position: 0px -392px;\n    height: 448px;\n    width: 204px; }\n  #otacon .thumbs-up-2 {\n    background-position: -214px -391px;\n    height: 448px;\n    position: relative;\n    left: -35px;\n    top: -2px;\n    width: 238px; }\n  #otacon .thumbs-up-3 {\n    background-position: -452px -452px;\n    height: 448px;\n    position: relative;\n    left: -39px;\n    top: -2px;\n    width: 238px; }\n  #otacon .eyes {\n    height: 28px;\n    width: 99px;\n    position: absolute;\n    left: 21.4px;\n    top: 97.5px; }\n    #otacon .eyes.ahead {\n      background-position: -699px -30px; }\n    #otacon .eyes.close {\n      background-position: -699px -129px; }\n    #otacon .eyes.down_right {\n      background-position: -699px -96px; }\n    #otacon .eyes.down_left {\n      background-position: -699px 0; }\n    #otacon .eyes.forward {\n      background-position: -699px -64px; }\n", ""]);
 
 	// exports
 
@@ -20725,29 +20732,9 @@
 		_inherits(Clock, _React$Component);
 
 		function Clock() {
-			var _Object$getPrototypeO;
-
-			var _temp, _this, _ret;
-
 			_classCallCheck(this, Clock);
 
-			for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-				args[_key] = arguments[_key];
-			}
-
-			return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(Clock)).call.apply(_Object$getPrototypeO, [this].concat(args))), _this), _this.toggleAlarm = function () {
-				var _this$props = _this.props;
-				var alarm = _this$props.alarm;
-				var disableAlarm = _this$props.disableAlarm;
-				var enableAlarm = _this$props.enableAlarm;
-
-
-				if (alarm) {
-					disableAlarm();
-				} else {
-					enableAlarm();
-				}
-			}, _temp), _possibleConstructorReturn(_this, _ret);
+			return _possibleConstructorReturn(this, Object.getPrototypeOf(Clock).apply(this, arguments));
 		}
 
 		_createClass(Clock, [{
@@ -20786,6 +20773,7 @@
 				var minutes = _props2.minutes;
 				var month = _props2.month;
 				var seconds = _props2.seconds;
+				var toggleAlarm = _props2.toggleAlarm;
 
 				var alarmClasses = (0, _classnames2.default)({
 					blue: alarm === false,
@@ -20829,7 +20817,7 @@
 						React.createElement('div', { className: (seconds && seconds[0]) + ' first' }),
 						React.createElement('div', { className: (seconds && seconds[1]) + ' second' })
 					),
-					React.createElement('div', { id: 'alarm', className: alarmClasses, onClick: this.toggleAlarm }),
+					React.createElement('div', { id: 'alarm', className: alarmClasses, onClick: toggleAlarm }),
 					React.createElement(
 						'div',
 						{ id: 'alarm-hours', onClick: increaseAlarmHours },
@@ -21071,6 +21059,10 @@
 
 	var _Otacon2 = _interopRequireDefault(_Otacon);
 
+	var _Otacon3 = __webpack_require__(285);
+
+	var _Otacon4 = _interopRequireDefault(_Otacon3);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -21098,7 +21090,7 @@
 						var time = '' + hours.toString() + minutes.toString();
 
 						if (alarmTime === time) {
-							dispatch(_Otacon2.default.thumbsUp());
+							dispatch(_Otacon4.default.thumbsUp());
 						}
 					}
 				};
@@ -21140,6 +21132,21 @@
 					var stringNumberArray = (0, _clock.increaseStringNumberArray)(clock.alarmMinutes, ['five', 'nine']);
 
 					dispatch(_Clock2.default.receiveAlarmMinutes(stringNumberArray));
+				};
+			}
+		}, {
+			key: 'toggleAlarm',
+			value: function toggleAlarm() {
+				return function (dispatch, getState) {
+					var alarm = getState().clockReducer.alarm;
+
+
+					if (alarm) {
+						dispatch(_Clock2.default.disableAlarm());
+						dispatch(_Otacon2.default.stationary());
+					} else {
+						dispatch(_Clock2.default.enableAlarm());
+					}
 				};
 			}
 		}]);
@@ -35104,9 +35111,113 @@
 		value: true
 	});
 
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _OTACON = __webpack_require__(284);
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var OtaconActions = function () {
+		function OtaconActions() {
+			_classCallCheck(this, OtaconActions);
+		}
+
+		_createClass(OtaconActions, [{
+			key: 'ahead',
+			value: function ahead() {
+				return {
+					type: _OTACON.OTACON.AHEAD
+				};
+			}
+		}, {
+			key: 'close',
+			value: function close() {
+				return {
+					type: _OTACON.OTACON.CLOSE
+				};
+			}
+		}, {
+			key: 'decreaseThumbsUp',
+			value: function decreaseThumbsUp() {
+				return {
+					type: _OTACON.OTACON.DECREASE_THUMBS_UP
+				};
+			}
+		}, {
+			key: 'downLeft',
+			value: function downLeft() {
+				return {
+					type: _OTACON.OTACON.DOWN_LEFT
+				};
+			}
+		}, {
+			key: 'downRight',
+			value: function downRight() {
+				return {
+					type: _OTACON.OTACON.DOWN_RIGHT
+				};
+			}
+		}, {
+			key: 'forward',
+			value: function forward() {
+				return {
+					type: _OTACON.OTACON.FORWARD
+				};
+			}
+		}, {
+			key: 'increaseThumbsUp',
+			value: function increaseThumbsUp() {
+				return {
+					type: _OTACON.OTACON.INCREASE_THUMBS_UP
+				};
+			}
+		}, {
+			key: 'stationary',
+			value: function stationary() {
+				return {
+					type: _OTACON.OTACON.STATIONARY
+				};
+			}
+		}]);
+
+		return OtaconActions;
+	}();
+
+	exports.default = new OtaconActions();
+
+/***/ },
+/* 284 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	var OTACON = exports.OTACON = {
+		AHEAD: 'ahead',
+		CLOSE: 'close',
+		DECREASE_THUMBS_UP: 'decrease_thumbs_up',
+		DOWN_LEFT: 'down_left',
+		DOWN_RIGHT: 'down_right',
+		FORWARD: 'forward',
+		INCREASE_THUMBS_UP: 'increase_thumbs_up',
+		STATIONARY: 'stationary'
+	};
+
+/***/ },
+/* 285 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /* global window */
 
-	var _Otacon = __webpack_require__(284);
+	var _Otacon = __webpack_require__(283);
 
 	var _Otacon2 = _interopRequireDefault(_Otacon);
 
@@ -35198,102 +35309,6 @@
 	}();
 
 	exports.default = new OtaconServices();
-
-/***/ },
-/* 284 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _OTACON = __webpack_require__(285);
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	var OtaconActions = function () {
-		function OtaconActions() {
-			_classCallCheck(this, OtaconActions);
-		}
-
-		_createClass(OtaconActions, [{
-			key: 'ahead',
-			value: function ahead() {
-				return {
-					type: _OTACON.OTACON.AHEAD
-				};
-			}
-		}, {
-			key: 'close',
-			value: function close() {
-				return {
-					type: _OTACON.OTACON.CLOSE
-				};
-			}
-		}, {
-			key: 'decreaseThumbsUp',
-			value: function decreaseThumbsUp() {
-				return {
-					type: _OTACON.OTACON.DECREASE_THUMBS_UP
-				};
-			}
-		}, {
-			key: 'downLeft',
-			value: function downLeft() {
-				return {
-					type: _OTACON.OTACON.DOWN_LEFT
-				};
-			}
-		}, {
-			key: 'downRight',
-			value: function downRight() {
-				return {
-					type: _OTACON.OTACON.DOWN_RIGHT
-				};
-			}
-		}, {
-			key: 'forward',
-			value: function forward() {
-				return {
-					type: _OTACON.OTACON.FORWARD
-				};
-			}
-		}, {
-			key: 'increaseThumbsUp',
-			value: function increaseThumbsUp() {
-				return {
-					type: _OTACON.OTACON.INCREASE_THUMBS_UP
-				};
-			}
-		}]);
-
-		return OtaconActions;
-	}();
-
-	exports.default = new OtaconActions();
-
-/***/ },
-/* 285 */
-/***/ function(module, exports) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	var OTACON = exports.OTACON = {
-		AHEAD: 'ahead',
-		CLOSE: 'close',
-		DOWN_LEFT: 'down_left',
-		DOWN_RIGHT: 'down_right',
-		FORWARD: 'forward',
-		INCREASE_THUMBS_UP: 'increase_thumbs_up',
-		DECREASE_THUMBS_UP: 'decrease_thumbs_up'
-	};
 
 /***/ },
 /* 286 */
@@ -37341,7 +37356,7 @@
 	});
 	exports.default = otaconReducer;
 
-	var _OTACON = __webpack_require__(285);
+	var _OTACON = __webpack_require__(284);
 
 	var _otacon = __webpack_require__(315);
 
@@ -37372,6 +37387,10 @@
 				return Object.assign({}, state, {
 					thumbsUpPosition: state.thumbsUpPosition += 1
 				});
+			case _OTACON.OTACON.STATIONARY:
+				return Object.assign({}, state, {
+					thumbsUpPosition: null
+				});
 			default:
 				return state;
 		}
@@ -37387,7 +37406,7 @@
 		value: true
 	});
 
-	var _OTACON = __webpack_require__(285);
+	var _OTACON = __webpack_require__(284);
 
 	var otaconState = {
 		eyes: _OTACON.OTACON.AHEAD,

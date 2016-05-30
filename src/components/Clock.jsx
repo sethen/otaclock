@@ -32,21 +32,6 @@ class Clock extends React.Component {
 		}, 1000);
 	}
 
-	toggleAlarm = () => {
-		const {
-			alarm,
-			disableAlarm,
-			enableAlarm
-		} = this.props;
-
-		if (alarm) {
-			disableAlarm();
-		}
-		else {
-			enableAlarm();
-		}
-	}
-
 	render() {
 		const {
 			alarm,
@@ -59,7 +44,8 @@ class Clock extends React.Component {
 			increaseAlarmMinutes,
 			minutes,
 			month,
-			seconds
+			seconds,
+			toggleAlarm
 		} = this.props;
 		const alarmClasses = classnames({
 			blue: alarm === false,
@@ -96,7 +82,7 @@ class Clock extends React.Component {
 					<div className={ (seconds && seconds[ 1 ]) + ' second' }></div>
 				</div>
 
-				<div id='alarm' className={ alarmClasses } onClick={ this.toggleAlarm }></div>
+				<div id='alarm' className={ alarmClasses } onClick={ toggleAlarm }></div>
 
 				<div id='alarm-hours' onClick={ increaseAlarmHours }>
 					<div className={ 'small-' + (alarmHours && alarmHours[ 0 ]) + ' first'}></div>

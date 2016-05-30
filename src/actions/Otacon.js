@@ -42,6 +42,12 @@ class OtaconActions {
 			type: OTACON.INCREASE_THUMBS_UP
 		};
 	}
+
+	stationary() {
+		return {
+			type: OTACON.STATIONARY
+		};
+	}
 }
 
 export default new OtaconActions();

@@ -5,6 +5,7 @@ import {
 } from '../lib/clock';
 import ClockActions from '../actions/Clock';
 import moment from 'moment';
+import OtaconActions from '../actions/Otacon';
 import OtaconServices from '../services/Otacon';
 
 class ClockServices {
@@ -63,6 +64,20 @@ class ClockServices {
 			const stringNumberArray = increaseStringNumberArray(clock.alarmMinutes, [ 'five', 'nine' ]);
 
 			dispatch(ClockActions.receiveAlarmMinutes(stringNumberArray));
+		};
+	}
+
+	toggleAlarm() {
+		return (dispatch, getState) => {
+			const { alarm } = getState().clockReducer;
+
+			if (alarm) {
+				dispatch(ClockActions.disableAlarm());
+				dispatch(OtaconActions.stationary());
+			}
+			else {
+				dispatch(ClockActions.enableAlarm());
+			}
 		};
 	}
 }

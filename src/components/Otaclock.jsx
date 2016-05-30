@@ -65,6 +65,12 @@ class Otaclock extends React.Component {
 		dispatch(OtaconServices.randomizeEyes());
 	};
 
+	toggleAlarm = () => {
+		const { dispatch } = this.props;
+
+		dispatch(ClockServices.toggleAlarm());
+	};
+
 	thumbsUp = () => {
 		const { dispatch } = this.props;
 
@@ -101,8 +107,10 @@ class Otaclock extends React.Component {
 					increaseAlarmHours={ this.increaseAlarmHours }
 					minutes={ minutes }
 					month={ month }
-					seconds={ seconds } />
-				<Otacon eyes={ eyes }
+					seconds={ seconds }
+					toggleAlarm={ this.toggleAlarm } />
+				<Otacon alarm={ alarm }
+					eyes={ eyes }
 					randomizeEyes={ this.randomizeEyes }
 					thumbsUpPosition={ thumbsUpPosition }
 					thumbsUp={ this.thumbsUp } />
