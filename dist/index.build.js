@@ -20838,14 +20838,20 @@
 	}(React.Component);
 
 	Clock.propTypes = {
+		alarm: React.PropTypes.bool,
+		alarmHours: React.PropTypes.array,
+		alarmMinutes: React.PropTypes.array,
 		compareTimeToAlarmTime: React.PropTypes.func,
 		date: React.PropTypes.array,
 		day: React.PropTypes.string,
 		getTime: React.PropTypes.func,
 		hours: React.PropTypes.array,
+		increaseAlarmHours: React.PropTypes.func,
+		increaseAlarmMinutes: React.PropTypes.func,
 		minutes: React.PropTypes.array,
 		month: React.PropTypes.array,
-		seconds: React.PropTypes.array
+		seconds: React.PropTypes.array,
+		toggleAlarm: React.PropTypes.func
 	};
 	exports.default = Clock;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
@@ -36900,7 +36906,10 @@
 
 
 				if (nextProps.thumbsUpPosition > 0) {
-					window.clearInterval(randomizeEyesInterval);
+					if (randomizeEyesInterval) {
+						window.clearInterval(randomizeEyesInterval);
+						randomizeEyesInterval = null;
+					}
 
 					if (!thumbsUpInterval) {
 						thumbsUpInterval = window.setInterval(function () {
@@ -36908,7 +36917,10 @@
 						}, 500);
 					}
 				} else {
-					window.clearInterval(thumbsUpInterval);
+					if (thumbsUpInterval) {
+						window.clearInterval(thumbsUpInterval);
+						thumbsUpInterval = null;
+					}
 
 					if (!randomizeEyesInterval) {
 						randomizeEyesInterval = window.setInterval(function () {

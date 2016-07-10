@@ -4,14 +4,20 @@ import classnames from 'classnames';
 
 class Clock extends React.Component {
 	static propTypes = {
+		alarm: React.PropTypes.bool,
+		alarmHours: React.PropTypes.array,
+		alarmMinutes: React.PropTypes.array,
 		compareTimeToAlarmTime: React.PropTypes.func,
 		date: React.PropTypes.array,
 		day: React.PropTypes.string,
 		getTime: React.PropTypes.func,
 		hours: React.PropTypes.array,
+		increaseAlarmHours: React.PropTypes.func,
+		increaseAlarmMinutes: React.PropTypes.func,
 		minutes: React.PropTypes.array,
 		month: React.PropTypes.array,
-		seconds: React.PropTypes.array
+		seconds: React.PropTypes.array,
+		toggleAlarm: React.PropTypes.func
 	}
 
 	componentWillMount() {

@@ -18,7 +18,10 @@ class Otacon extends React.Component {
 		const { randomizeEyes, thumbsUp } = this.props;
 
 		if (nextProps.thumbsUpPosition > 0) {
-			window.clearInterval(randomizeEyesInterval);
+			if (randomizeEyesInterval) {
+				window.clearInterval(randomizeEyesInterval);
+				randomizeEyesInterval = null;
+			}
 
 			if (!thumbsUpInterval) {
 				thumbsUpInterval = window.setInterval(() => {
@@ -27,7 +30,10 @@ class Otacon extends React.Component {
 			}
 		}
 		else {
-			window.clearInterval(thumbsUpInterval);
+			if (thumbsUpInterval) {
+				window.clearInterval(thumbsUpInterval);
+				thumbsUpInterval = null;
+			}
 
 			if (!randomizeEyesInterval) {
 				randomizeEyesInterval = window.setInterval(() => {
