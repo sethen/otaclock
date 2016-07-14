@@ -25,7 +25,7 @@ module.exports = {
 			},
 			{
 				loader: 'file',
-				test: /\.(png)$/
+				test: /\.(png|mp3)$/
 			},
 			{
 				test: /\.scss$/,

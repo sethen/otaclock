@@ -1,3 +1,9 @@
+/* global Audio, require, window */
+
+const alarmOne = require('sounds/alarm-one.mp3');
+const alarm = new Audio(alarmOne);
+let alarmInterval;
+
 /**
  * Decides appropriate sting for image from string
  * @param  {string} str String to find
@@ -115,6 +121,23 @@ export function increaseStringNumberArray(arr, restart) {
 	}
 
 	return increasedArr;
+}
+
+export function playAlarm() {
+	alarm.play();
+
+	alarmInterval = window.setInterval(() => {
+		alarm.pause();
+		alarm.currentTime = 0;
+		alarm.play();
+	}, 720);
+}
+
+
+export function stopAlarm() {
+	window.clearInterval(alarmInterval);
+	alarm.pause();
+	alarm.currentTime = 0;
 }
 
 /**

@@ -1,7 +1,9 @@
 import {
 	getDayImage,
 	increaseStringNumberArray,
-	processTime
+	playAlarm,
+	processTime,
+	stopAlarm
 } from '../lib/clock';
 import ClockActions from '../actions/Clock';
 import moment from 'moment';
@@ -26,6 +28,7 @@ class ClockServices {
 
 				if (alarmTime === time) {
 					dispatch(OtaconServices.thumbsUp());
+					playAlarm();
 				}
 			}
 		};
@@ -74,6 +77,7 @@ class ClockServices {
 			if (alarm) {
 				dispatch(ClockActions.disableAlarm());
 				dispatch(OtaconActions.stationary());
+				stopAlarm();
 			}
 			else {
 				dispatch(ClockActions.enableAlarm());
