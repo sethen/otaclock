@@ -26,6 +26,10 @@
 	position: absolute;
 	top: 126px;
 	width: 62px;
+
+	&.separator {
+		width: 77px;
+	}
 }
 
 #alarm-minutes {
@@ -48,53 +52,55 @@
 #hours,
 #minutes,
 #month,
-#seconds {
+#seconds,
+#alarm-hours,
+#alarm-minutes {
+	position: absolute;
 	background-color: #FFFFFF;
 }
 
+#month {
+	left: 56px;
+	top: 27px;
+}
+
 #date {
-	position: absolute;
 	top: 28px;
 	left: 119px;
 	width: 63px;
 }
 
 #day {
-	position: absolute;
 	top: 35px;
 	left: 215px;
 }
 
 #hours {
-	position: absolute;
 	left: 35.5px;
-	top: 70.7px;
-	width: 91px;
+
+	&.separator {
+		width: 105px;
+	}
 }
 
 #minutes {
-	position: absolute;
 	left: 147px;
-	top: 70.7px;
-	width: 90px;
-}
 
-#month {
-	position: absolute;
-	left: 56px;
-	top: 27px;
+	&.separator {
+		width: 105px;
+	}
 }
 
 #seconds {
-	position: absolute;
 	left: 258px;
-	top: 70.7px;
-	width: 90px;
 }
 
 #hours,
 #minutes,
 #seconds {
+	top: 70.7px;
+	width: 90px;
+
 	.second {
 		position: relative;
 		left: 6px;

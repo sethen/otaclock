@@ -41,6 +41,18 @@ class Otaclock extends React.Component {
 		dispatch(ClockActions.enableAlarm());
 	};
 
+	getTime = () => {
+		const { dispatch } = this.props;
+
+		dispatch(ClockServices.getTime());
+	};
+
+	hideSeparators = () => {
+		const { dispatch } = this.props;
+
+		dispatch(ClockActions.hideSeparators());
+	}
+
 	increaseAlarmHours = () => {
 		const { dispatch } = this.props;
 
@@ -53,17 +65,17 @@ class Otaclock extends React.Component {
 		dispatch(ClockServices.increaseAlarmMinutes());
 	};
 
-	getTime = () => {
-		const { dispatch } = this.props;
-
-		dispatch(ClockServices.getTime());
-	};
-
 	randomizeEyes = () => {
 		const { dispatch } = this.props;
 
 		dispatch(OtaconServices.randomizeEyes());
 	};
+
+	showSeparators = () => {
+		const { dispatch } = this.props;
+
+		dispatch(ClockActions.showSeparators());
+	}
 
 	toggleAlarm = () => {
 		const { dispatch } = this.props;
@@ -88,7 +100,8 @@ class Otaclock extends React.Component {
 			hours,
 			minutes,
 			month,
-			seconds
+			seconds,
+			separators
 		} = this.props.clock;
 
 		return (
@@ -108,6 +121,7 @@ class Otaclock extends React.Component {
 					minutes={ minutes }
 					month={ month }
 					seconds={ seconds }
+					separators={ separators }
 					toggleAlarm={ this.toggleAlarm } />
 				<Otacon alarm={ alarm }
 					eyes={ eyes }

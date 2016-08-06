@@ -13,6 +13,12 @@ class ClockActions {
 		};
 	}
 
+	hideSeparators() {
+		return {
+			type: CLOCK.HIDE_SEPARATORS
+		};
+	}
+
 	receiveAlarmHours(arr) {
 		return {
 			arr,
@@ -66,6 +72,12 @@ class ClockActions {
 		return {
 			seconds,
 			type: CLOCK.RECEIVE_SECONDS
+		};
+	}
+
+	showSeparators() {
+		return {
+			type: CLOCK.SHOW_SEPARATORS
 		};
 	}
 }

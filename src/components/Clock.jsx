@@ -17,6 +17,7 @@ class Clock extends React.Component {
 		minutes: React.PropTypes.array,
 		month: React.PropTypes.array,
 		seconds: React.PropTypes.array,
+		separators: React.PropTypes.bool,
 		toggleAlarm: React.PropTypes.func
 	}
 
@@ -51,11 +52,15 @@ class Clock extends React.Component {
 			minutes,
 			month,
 			seconds,
+			separators,
 			toggleAlarm
 		} = this.props;
 		const alarmClasses = classnames({
 			blue: alarm === false,
 			red: alarm === true
+		});
+		const separatorClasses = classnames({
+			separator: separators
 		});
 
 		return (
@@ -73,12 +78,12 @@ class Clock extends React.Component {
 					<div className={ day }></div>
 				</div>
 
-				<div id='hours'>
+				<div id='hours' className={ separatorClasses }>
 					<div className={ (hours && hours[ 0 ]) + ' first' }></div>
 					<div className={ (hours && hours[ 1 ]) + ' second' }></div>
 				</div>
 
-				<div id='minutes'>
+				<div id='minutes' className={ separatorClasses }>
 					<div className={ (minutes && minutes[ 0 ]) + ' first' }></div>
 					<div className={ (minutes && minutes[ 1 ]) + ' second' }></div>
 				</div>
@@ -90,7 +95,7 @@ class Clock extends React.Component {
 
 				<div id='alarm' className={ alarmClasses } onClick={ toggleAlarm }></div>
 
-				<div id='alarm-hours' onClick={ increaseAlarmHours }>
+				<div id='alarm-hours' className={ separatorClasses } onClick={ increaseAlarmHours }>
 					<div className={ 'small-' + (alarmHours && alarmHours[ 0 ]) + ' first'}></div>
 					<div className={ 'small-' + (alarmHours && alarmHours[ 1 ]) + ' second'}></div>
 				</div>

@@ -7,7 +7,8 @@ const clockState = {
 	hours: null,
 	minutes: null,
 	month: null,
-	seconds: null
+	seconds: null,
+	separators: null
 };
 
 export default clockState;

@@ -13,6 +13,10 @@ export default function clockReducer(state = clockState, action) {
 			return Object.assign({}, state, {
 				alarm: true
 			});
+		case CLOCK.HIDE_SEPARATORS:
+			return Object.assign({}, state, {
+				separators: false
+			});
 		case CLOCK.RECEIVE_ALARM_HOURS:
 			return Object.assign({}, state, {
 				alarmHours: action.arr
@@ -44,6 +48,10 @@ export default function clockReducer(state = clockState, action) {
 		case CLOCK.RECEIVE_SECONDS:
 			return Object.assign({}, state, {
 				seconds: action.seconds
+			});
+		case CLOCK.SHOW_SEPARATORS:
+			return Object.assign({}, state, {
+				separators: true
 			});
 		default:
 			return state;

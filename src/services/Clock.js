@@ -49,6 +49,13 @@ class ClockServices {
 			dispatch(ClockActions.receiveMinutes(processTime(minutes)));
 			dispatch(ClockActions.receiveMonth(processTime(month, false)));
 			dispatch(ClockActions.receiveSeconds(processTime(seconds)));
+
+			if (seconds % 2 === 0) {
+				dispatch(ClockActions.hideSeparators());
+			}
+			else {
+				dispatch(ClockActions.showSeparators());
+			}
 		};
 	}
 

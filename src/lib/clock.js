@@ -1,6 +1,6 @@
 /* global Audio, require, window */
 
-const alarmOne = require('sounds/alarm-one.mp3');
+const alarmOne = require('sounds/alarm.wav');
 const alarm = new Audio(alarmOne);
 let alarmInterval;
 
@@ -66,6 +66,12 @@ export function getDayImage(num) {
 	}
 }
 
+/**
+ * Increase string number array
+ * @param  {array} arr      Array of string numbers
+ * @param  {[type]} restart
+ * @return {array}          Array of increased string numbers
+ */
 export function increaseStringNumberArray(arr, restart) {
 	const increasedArr = [];
 	let stringNumber = '';
@@ -123,21 +129,21 @@ export function increaseStringNumberArray(arr, restart) {
 	return increasedArr;
 }
 
+/**
+ * Play alarm
+ */
 export function playAlarm() {
+	if (typeof alarm.loop === 'boolean') {
+		alarm.loop = true;
+	}
+	else {
+		alarm.addEventListener('ended', () => {
+			this.currentTime = 0;
+			this.play();
+		}, false);
+	}
+
 	alarm.play();
-
-	alarmInterval = window.setInterval(() => {
-		alarm.pause();
-		alarm.currentTime = 0;
-		alarm.play();
-	}, 720);
-}
-
-
-export function stopAlarm() {
-	window.clearInterval(alarmInterval);
-	alarm.pause();
-	alarm.currentTime = 0;
 }
 
 /**
@@ -158,4 +164,13 @@ export function processTime(num, zero = true) {
 	}
 
 	return timeImageArr;
+}
+
+/**
+ * Stop alarm
+ */
+export function stopAlarm() {
+	window.clearInterval(alarmInterval);
+	alarm.pause();
+	alarm.currentTime = 0;
 }
