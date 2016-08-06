@@ -14,12 +14,16 @@ export default function otaconReducer(state = otaconState, action) {
 				eyes: type
 			});
 		case OTACON.DECREASE_THUMBS_UP:
+			const decreaseThumbsUp = state.thumbsUpPosition -= 1;
+
 			return Object.assign({}, state, {
-				thumbsUpPosition: state.thumbsUpPosition -= 1
+				thumbsUpPosition: decreaseThumbsUp
 			});
 		case OTACON.INCREASE_THUMBS_UP:
+			const increaseThumbsUp = state.thumbsUpPosition += 1;
+
 			return Object.assign({}, state, {
-				thumbsUpPosition: state.thumbsUpPosition += 1
+				thumbsUpPosition: increaseThumbsUp
 			});
 		case OTACON.STATIONARY:
 			return Object.assign({}, state, {
