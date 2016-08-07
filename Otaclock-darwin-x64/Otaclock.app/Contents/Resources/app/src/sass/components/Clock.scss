@@ -1,0 +1,271 @@
+#alarm,
+#alarm-hours,
+#alarm-minutes {
+	cursor: pointer;
+}
+
+#alarm {
+	height: 35px;
+	left: 35px;
+	position: absolute;
+	top: 126px;
+	width: 146px;
+
+	&.blue {
+		background-position: -154px -865px;
+	}
+
+	&.red {
+		background-position: -1px -865px;
+	}
+}
+
+#alarm-hours {
+	left: 203px;
+	height: 35px;
+	position: absolute;
+	top: 126px;
+	width: 62px;
+
+	&.separator {
+		width: 77px;
+	}
+}
+
+#alarm-minutes {
+	left: 286px;
+	height: 35px;
+	position: absolute;
+	top: 126px;
+	width: 62px;
+}
+
+#clock {
+	background-position: 0 0;
+	height: 244px;
+	width: 392px;
+	-webkit-app-region: drag;
+}
+
+#date,
+#day,
+#hours,
+#minutes,
+#month,
+#seconds,
+#alarm-hours,
+#alarm-minutes {
+	position: absolute;
+	background-color: #FFFFFF;
+}
+
+#month {
+	left: 56px;
+	top: 27px;
+}
+
+#date {
+	top: 28px;
+	left: 119px;
+	width: 63px;
+}
+
+#day {
+	top: 35px;
+	left: 215px;
+}
+
+#hours {
+	left: 35.5px;
+
+	&.separator {
+		width: 105px;
+	}
+}
+
+#minutes {
+	left: 147px;
+
+	&.separator {
+		width: 105px;
+	}
+}
+
+#seconds {
+	left: 258px;
+}
+
+#hours,
+#minutes,
+#seconds {
+	top: 70.7px;
+	width: 90px;
+
+	.second {
+		position: relative;
+		left: 6px;
+	}
+
+	.zero,
+	.one,
+	.two,
+	.three,
+	.four,
+	.five,
+	.six,
+	.seven,
+	.eight,
+	.nine {
+		display: inline-block;
+		float: left;
+		height: 48px;
+		width: 42px;
+	}
+
+	.zero {
+		background-position: 0 -245px;
+	}
+
+	.one {
+		background-position: -43px -245px;
+	}
+
+	.two {
+		background-position: -87px -245px;
+	}
+
+	.three {
+		background-position: -131px -245px;
+	}
+
+	.four {
+		background-position: -174px -245px;
+	}
+
+	.five {
+		background-position: -217px -245px;
+	}
+
+	.six {
+		background-position: -260.5px -245px;
+	}
+
+	.seven {
+		background-position: -305px -245px;
+	}
+
+	.eight {
+		background-position: -349px -245px;
+	}
+
+	.nine {
+		background-position: -393px -244px;
+	}
+}
+
+#alarm-hours,
+#alarm-minutes,
+#date,
+#month {
+	.second {
+		position: relative;
+		left: 7px;
+	}
+
+	.small-zero,
+	.small-one,
+	.small-two,
+	.small-three,
+	.small-four,
+	.small-five,
+	.small-six,
+	.small-seven,
+	.small-eight,
+	.small-nine {
+		display: inline-block;
+		float: left;
+		height: 36px;
+		width: 28px;
+	}
+
+	.small-zero {
+		background-position: 0px -299px;
+	}
+
+	.small-one {
+		background-position: -30px -299px;
+	}
+
+	.small-two {
+		background-position: -59px -299px;
+	}
+
+	.small-three {
+		background-position: -90px -299px;
+	}
+
+	.small-four {
+		background-position: -120px -299px;
+	}
+
+	.small-five {
+		background-position: -150px -299px;
+	}
+
+	.small-six {
+		background-position: -180px -299px;
+	}
+
+	.small-seven {
+		background-position: -209px -299px;
+	}
+
+	.small-eight {
+		background-position: -239px -299px;
+	}
+
+	.small-nine {
+		background-position: -269px -299px;
+	}
+}
+
+#day {
+	.monday,
+	.tuesday,
+	.wednesday,
+	.thursday,
+	.friday,
+	.saturday,
+	.sunday {
+		height: 22px;
+		width: 120px;
+	}
+
+	.monday {
+		background-position: 1px -341px;
+	}
+
+	.tuesday {
+		background-position: -120px -341px;
+	}
+
+	.wednesday {
+		background-position: -242px -341px;
+	}
+
+	.thursday {
+		background-position: -365px -341px;
+	}
+
+	.friday {
+		background-position: 6px -364px;
+	}
+
+	.saturday {
+		background-position: -115px -365px;
+	}
+
+	.sunday {
+		background-position: -237px -364px;
+	}
+}

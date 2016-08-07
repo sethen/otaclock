@@ -1,0 +1,67 @@
+#otacon {
+	left: 410px;
+	position: relative;
+	top: -140px;
+	width: 300px;
+	-webkit-app-region: drag;
+
+	.stationary {
+		background-position: -489px 0;
+		height: 447px;
+		width: 205px;
+	}
+
+	.thumbs-up-1 {
+		background-position: 0px -392px;
+		height: 448px;
+		left: -7px;
+		position: relative;
+		width: 204px;
+	}
+
+	.thumbs-up-2 {
+		background-position: -214px -391px;
+		height: 448px;
+		position: relative;
+		left: -44px;
+		top: -1px;
+		width: 238px;
+	}
+
+	.thumbs-up-3 {
+		background-position: -452px -452px;
+		height: 448px;
+		position: relative;
+		left: -48px;
+		top: -1px;
+		width: 238px;
+	}
+
+	.eyes {
+		height: 28px;
+		width: 99px;
+		position: absolute;
+		left: 21.4px;
+		top: 97.5px;
+
+		&.ahead {
+			background-position: -699px -30px;
+		}
+
+		&.close {
+			background-position: -699px -129px;
+		}
+
+		&.down_right {
+			background-position: -699px -96px;
+		}
+
+		&.down_left {
+			background-position: -699px 0;
+		}
+
+		&.forward {
+			background-position: -699px -64px;
+		}
+	}
+}

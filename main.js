@@ -26,7 +26,7 @@ app.on('ready', function () {
 	});
 
 	mainWindow.loadURL('file://' + __dirname + '/dist/index.html');
-	mainWindow.openDevTools();
+
 	mainWindow.on('closed', () => {
 		mainWindow = null;
 	});
